@@ -27,10 +27,18 @@
   box-sizing: border-box; /* souvent préférable pour un layout propre */
 }
 
-body {
+body.chapitre-list {
+  /* layout horizontal: le body devient un container flex scrollable */
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+
   color: white;
-   font-family: "futura-100-greek-book", sans-serif;
-  /* font-weight: 700; normal */
+  font-family: "futura-100-greek-book", sans-serif;
   background: var(--color-bg);
   width: 100vw;
   height: 100vh;
@@ -83,19 +91,17 @@ button .item {
 /* Frame 78 */
 .window {
   position: relative;
-  /* box-sizing: border-box; */
-  /* overflow: hidden; */
-  width: 100%;
-  height: 100%;
+  /* chaque fenêtre occupe la largeur visible moins les paddings du body (50px left + right) */
+  flex: 0 0 calc(100vw - 100px);
+  height: calc(100vh - 100px);
   background: rgba(235, 115, 51, 0.01);
   border: 4px solid var(--color-primary);
   border-radius: 30px;
   display: flex;
   flex-direction: column;
   justify-items: center;
-    align-items: center;
-
-  /* justify-content: center; */
+  align-items: center;
+  scroll-snap-align: center;
 }
 .chapitre-name{
   position: absolute;
@@ -223,24 +229,30 @@ height: 76px;
     transform: rotate(calc(var(--base-rotation) + 360deg));
   }
 }
-.illustration-container{
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  left: 50px;
-  /* gap: 40px; */
-}
-.illustration{
-  position: absolute;
-  bottom: -12px;
-}
+
 
 .chapitre-list{
-  display: flex;
   position: relative;
+  height: 100%;
 }
 
+.illustration-list {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
 
+.illustration {
+  flex: 0 0 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  position: relative;
+  bottom: -5px;
+  background: #2e5cd6;
+}
