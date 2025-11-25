@@ -1,6 +1,6 @@
 @font-face {
   font-family: archides; /* set name */
-  src: url("./assests/font/archides.otf"); /* url of the font */
+  src: url("./public/font/archides.otf"); /* url of the font */
 }
 
 :root {

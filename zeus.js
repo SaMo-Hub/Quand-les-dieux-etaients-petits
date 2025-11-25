@@ -1,73 +1,93 @@
-/* GSAP horizontal illustration scroller + text parallax
-   - pin each `.illustration-container` while scrolling horizontally through its `.illustration` children
-   - images move faster; text elements move slower for parallax
-*/
-console.log("lsdikjfsl");
+const chapitreName = document.getElementById("chapitre-name");
 
-if (typeof gsap !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
 
-  const init = () => {
-    // clean previously created ScrollTriggers when re-initializing
-    ScrollTrigger.getAll().forEach(st => st.kill());
+const chapitreNames = [
+  "L'enfant de la prophétie",
+  "Chapitre 2",
+  "Chapitre 3"
+];
 
-    document.querySelectorAll('.illustration-container').forEach(container => {
-      const scroller = container.querySelector('.illustration');
-      if (!scroller) return;
+let currentChapitreIndex = 0;
 
-      // total horizontal distance to scroll the illustrations
-      const totalScroll = Math.max(0, scroller.scrollWidth - window.innerWidth + 100);
+// Initialisation
+chapitreName.textContent = chapitreNames[0];
 
-      // main horizontal animation for illustrations (faster)
-      gsap.to(scroller, {
-        x: () => -totalScroll,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: container,
-          start: 'top top',
-          end: () => '+=' + (totalScroll + window.innerHeight),
-          scrub: 0.8,
-          pin: true,
-          anticipatePin: 1,
-        }
-      });
 
-      // parallax: text inside the same window moves slower (smaller offset)
-      const parentWindow = container.closest('.window');
-      if (parentWindow) {
-        const slowElems = parentWindow.querySelectorAll('.explication, .chapitre-name, .nav-chapitre, .chapitre, p');
-        // move text a fraction of the illustrations' distance (slower)
-        const slowDist = Math.round(totalScroll * 0.22);
+// ANIMATION ENTREE
+function animateEntree(newText) {
 
-        slowElems.forEach(el => {
-          gsap.to(el, {
-            x: () => -slowDist,
-            ease: 'none',
-            scrollTrigger: {
-              trigger: container,
-              start: 'top top',
-              end: () => '+=' + (totalScroll + window.innerHeight),
-              scrub: 0.8,
-            }
-          });
-        });
-      }
-    });
+  chapitreName.innerHTML = '';
 
-    // refresh ScrollTrigger after layout changes
-    ScrollTrigger.refresh();
-  };
-
-  // init on load
-  window.addEventListener('load', init);
-  // re-init on resize (debounced)
-  let resizeTimer;
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => init(), 150);
+  [...newText].forEach(letter => {
+    const span = document.createElement('span');
+    span.textContent = letter;
+    span.style.display = 'inline-block';
+    span.style.opacity = 0;
+    span.style.transform = 'translateY(50px)';
+    chapitreName.appendChild(span);
   });
 
-} else {
-  // GSAP not loaded — silently fail but log for debugging
-  console.warn('GSAP not found. Horizontal scroller not initialized.');
+  gsap.to(chapitreName.querySelectorAll('span'), {
+    y: 0,
+    opacity: 1,
+    duration: 0.4,
+    ease: "power2.out",
+    stagger: 0.04
+  });
 }
+
+
+// ANIMATION SORTIE + ENTRÉE
+function animateSortie(oldText, newText) {
+console.log(oldText);
+
+  chapitreName.innerHTML = '';
+
+  [...oldText].forEach(letter => {
+    const span = document.createElement('span');
+    span.textContent = letter;
+    span.style.display = 'inline-block';
+    span.style.opacity = 1;
+    span.style.transform = 'translateY(0px)';
+    chapitreName.appendChild(span);
+  });
+
+  const tl = gsap.timeline();
+
+  tl.to(chapitreName.querySelectorAll('span'), {
+    y: 50,
+    opacity: 0,
+    duration: 0.3,
+    ease: "power2.in",
+    stagger: 0.03
+  });
+
+  tl.add(() => animateEntree(newText));
+}
+
+
+
+// 📌 SELECTION DES OCTOGONES
+const octogones = document.querySelectorAll('.octogone');
+
+octogones.forEach(octo => {
+  octo.addEventListener('click', () => {
+    const index = parseInt(octo.dataset.index);
+
+    // si on clique sur le même chapitre → ne rien faire
+    if (index === currentChapitreIndex) return;
+
+    // retire l'ancien selected
+    document.querySelector('.octogone.selected')?.classList.remove('selected');
+
+    // mets le nouveau
+    octo.classList.add('selected');
+// console.log(chapitreNames[index]);
+
+    // lance l'animation
+    animateSortie(chapitreNames[currentChapitreIndex], chapitreNames[index]);
+
+    // met à jour l’index
+    currentChapitreIndex = index;
+  });
+});
