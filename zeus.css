@@ -42,6 +42,9 @@ body.chapitre-list {
   background: var(--color-bg);
   width: 100vw;
   height: 100vh;
+    overflow-x: visible; /* au lieu de auto */
+  overflow-y: auto;
+  scroll-behavior: smooth;
   
 }
 /* Frame 82 */
@@ -68,26 +71,7 @@ a {
   gap: 24px;
 
 }
-.button {
-   font-family: var(--font-title);
 
-  width: 40px;
-  height: 40px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: #140100;
-  border: 3px solid var(--color-primary);
-  transform: rotate(45deg);
-  color: white;
-  background: var(--color-bg);
-}
-button .item {
-  transform: rotate(-45deg);
-  /* font-size: 24px; */
-}
 /* Frame 78 */
 .window {
   position: fixed;
@@ -132,7 +116,6 @@ button .item {
 }
 .octogone.selected {
     opacity: 1;
-
   position: relative;
   width: fit-content;
  color: var(--color-primary);
@@ -159,6 +142,8 @@ stroke: var(--color-primary);
 }
 
 .octogone {
+transition: all 1s cubic-bezier(.34,1.56,.6,1);
+
   opacity: 0.5;
   position: relative;
   width: fit-content;
@@ -210,38 +195,6 @@ width: 80%;
   line-height: 1.5;
 }
 
-.interaction-bouton{
-  position: absolute;
-display: flex;
-justify-content: center;
-z-index: 20;
-height: 76px;
-}
- #gaia-interaction{
-  bottom: 345px;
-  left: 645px;
-}
-.spin-wrapper {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.spin {
-  animation: rotate 3s linear infinite;
-  transform-origin: center;
-    transition: opacity 0.3s ease; /* durée et style du fade */
-
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(var(--base-rotation));
-  }
-  to {
-    transform: rotate(calc(var(--base-rotation) + 360deg));
-  }
-}
 
 
 .chapitre-list{
@@ -262,12 +215,15 @@ flex: 0 0 auto;
   border-radius: 30px;
   justify-content: center;
   align-items: center;
+  display: flex;
+  flex-direction: row; /* assure que les éléments sont en ligne */
+  flex-wrap: nowrap;
 }
 
 .illustration {
 
   height: 100%;
-width: calc(100vw - 100px);  
+width: 1800px;  
 display: flex;
   justify-content: center;
   align-items: end;
@@ -276,22 +232,33 @@ display: flex;
   /* background: #2e5cd6; */
   flex-shrink: 0;
 }
-.illustration-list .texte {
-  padding: 50px;
+
+
+.text-end{
+    padding: 50px;
   height: 100%;
-width: calc(100vw - 100px);  
+width: fit-content;  
 display: flex;
-  justify-content: center;
+
   align-items: center;
   position: relative;
   bottom: -5px;
   /* background: #2e5cd6; */
   flex-shrink: 0;
+  justify-content: end;
 }
-.illustration-list .texte p{
- width: 40%;
+.small-frame{
+    padding: 50px;
+  height: 100%;
+width: 500px;  
+display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: -5px;
+  /* background: #2e5cd6; */
+  flex-shrink: 0
 }
-
 /* .illustration img */
 .meandre-wrapper{
   width: 100%;
@@ -315,3 +282,70 @@ background-image: url("./public/img/meandres.png");
 }
 
 
+.chapitre-title{
+  font-family: var(--font-title);
+  font-size: 96px;
+  color: var(--color-primary);
+  text-align: center;
+}
+
+.frame-space{
+  position: relative;
+  width: 300px;
+  height: 100%;
+
+}
+
+.chapitre-frame  {
+  padding: 50px;
+  height: 100%;
+width: calc(100vw - 100px);  
+display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  bottom: -5px;
+  /* background: #2e5cd6; */
+  flex-shrink: 0;
+}
+
+.frame-texte  {
+  width: fit-content;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  top: 50%;
+  left: 85%;
+  transform: translate(-50%, -50%);
+  flex-shrink: 0;
+}
+.frame-texte p{
+ width: max-content;
+}
+/* .illustration-list .frame {
+  padding: 50px;
+  height: 100%;
+width: 500px;  
+display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  bottom: -5px;
+ 
+  flex-shrink: 0;
+} */
+
+.right{
+  left: 200%;
+}
+
+.frame-space-medium{
+  position: relative;
+  width: 300px;
+  height: 100%;
+}
+
+.frame-space-medium div {
+  left: 450%;
+}

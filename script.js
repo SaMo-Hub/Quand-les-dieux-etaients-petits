@@ -27,3 +27,21 @@ updateOpacities();
 
 // Changer toutes les 1 seconde (ajuster le timing si besoin)
 setInterval(updateOpacities, 600);
+
+const btn = document.getElementById("toggle-btn");
+
+const iconOn = btn.querySelector(".on");
+const iconOff = btn.querySelector(".off");
+console.log(btn, iconOn, iconOff);
+
+btn.addEventListener("click", () => {
+  const isOn = iconOn.style.display !== "none";
+
+  if (isOn) {
+    iconOn.style.display = "none";
+    iconOff.style.display = "block";
+  } else {
+    iconOn.style.display = "block";
+    iconOff.style.display = "none";
+  }
+});
