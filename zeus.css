@@ -17,7 +17,7 @@
   --color-border: #e0e0e0;
 
   /* ===== FONTS ===== */
-  --font-primary: "futura-100-greek";
+  --font-primary: "futura-100-greek-book";
   --font-title: Archides;
   --font-mono: "JetBrains Mono", "Fira Code", monospace;
 }
@@ -38,7 +38,8 @@ body.chapitre-list {
   -webkit-overflow-scrolling: touch;
 
   color: white;
-  font-family: "futura-100-greek-book", sans-serif;
+  font-family: var(--font-primary);
+  /* font-weight: 400; */
   background: var(--color-bg);
   width: 100vw;
   height: 100vh;
@@ -74,21 +75,22 @@ a {
 
 /* Frame 78 */
 .window {
-  position: fixed;
+   position: fixed;
   padding: 50px;
-  /* chaque fenêtre occupe la largeur visible moins les paddings du body (50px left + right) */
   width: 100vw;
   height: 100vh;
   background: rgba(235, 115, 51, 0.01);
-  /* border: 4px solid var(--color-primary); */
   border-radius: 30px;
   display: flex;
   flex-direction: column;
   justify-items: center;
   align-items: center;
   z-index: 10;
+  pointer-events: none;
 }
-
+.window * {
+  pointer-events: auto;
+}
 
 .nav-chapitre-wrapper{
   display: flex;
@@ -264,6 +266,8 @@ display: flex;
   bottom: -5px;
   /* background: #2e5cd6; */
   flex-shrink: 0;
+    color: white;
+
   
 }
 
@@ -272,7 +276,6 @@ display: flex;
  /* width: 40%; */
  width: 300px;
  
-  color: white;
  text-align: center;
 }
 /* .illustration-list .frame {
@@ -312,6 +315,21 @@ display: flex;
   bottom: -5px;
   /* background: #2e5cd6; */
   flex-shrink: 0;
+}
+.illustration-large {
+  /* border: 4px solid var(--color-primary); */
+/* padding: 0 100px; */
+  height: 100%;
+width: fit-content;  
+display: flex;
+  justify-content: center;
+  align-items: end;
+  position: relative;
+  bottom: -5px;
+  /* background: #2e5cd6; */
+  flex-shrink: 0;
+   position: relative;
+  left: -5px;
 }
 
 
@@ -367,12 +385,12 @@ display: flex;
 
 .all-chapitre{
    display: flex;
-  gap: 24px;
+  /* gap: 24px; */
   align-items: flex-start;
  
 
   color: white;
-  font-family: "futura-100-greek-book", sans-serif;
+  /* font-family: "futura-100-greek-book", sans-serif; */
   background: var(--color-bg);
   width: fit-content;
   height: 100%;
@@ -394,4 +412,190 @@ display: flex;
   left: 85%;
   transform: translate(-50%, -50%);
   flex-shrink: 0; */
+}
+
+.tartare-frame{
+  display: flex;
+  background-color: var(--color-primary);
+  height: 100%;
+}
+
+#tartare-door {
+  /* position: relative; */
+  left: -5px;
+}
+
+
+/* ===== STYLES MODAL ===== */
+
+/* Bouton dans le texte pour ouvrir la modal */
+/* ===== STYLES MODAL ===== */
+
+/* Bouton dans le texte pour ouvrir la modal */
+.text-modal {
+ font-family: "futura-100-greek";
+ background-color: var(--color-bg);
+  text-decoration: underline;
+  /* font-weight: 400; */
+  color: var(--color-primary);
+  cursor: pointer;
+  text-decoration: underline;
+  /* text-decoration-style: wavy; */
+  /* text-decoration-color: var(--color-primary); */
+  transition: all 0.3s ease;
+  padding: 2px 6px;
+}
+
+.text-modal:hover {
+  /* color: #ff8f5c;
+  text-decoration-color: #ff8f5c; */
+  transform: scale(1.05);
+}
+
+/* Overlay de la modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(20, 1, 0, 0.8);
+  backdrop-filter: blur(5px);
+  z-index: 9999;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-overlay.active {
+  display: flex;
+  opacity: 1;
+}
+
+/* Contenu de la modal */
+.modal-content {
+  position: relative;
+  background: linear-gradient(135deg, #1a0200 0%, #2d0400 100%);
+  border: 4px solid var(--color-primary);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 
+    0 20px 60px rgba(235, 115, 51, 0.3),
+    0 0 40px rgba(235, 115, 51, 0.2);
+}
+
+/* Bouton de fermeture */
+.close-modal {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 20px;
+  height: 20px;
+}
+
+
+
+/* Titre de la modal */
+.modal-name {
+  font-family: var(--font-title);
+  font-size: 36px;
+  color: var(--color-primary);
+  margin: 0 0 20px 0;
+  text-align: left;
+}
+
+/* Texte de la modal */
+.modal-paragraphe {
+  font-family: var(--font-primary);
+  font-size: 16px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 30px 0;
+  text-align: justify;
+}
+
+/* Bouton "En savoir plus" */
+.modal-button {
+  display: inline-block;
+  background: var(--color-primary);
+  color: #140100;
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(235, 115, 51, 0.3);
+}
+
+.modal-button:hover {
+  background: #ff8f5c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(235, 115, 51, 0.5);
+}
+
+.modal-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(235, 115, 51, 0.3);
+}
+
+/* Scrollbar personnalisée pour la modal */
+/* .modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: #ff8f5c;
+} */
+
+/* Animation d'entrée */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .modal-content {
+    padding: 30px 20px;
+    max-width: 90%;
+  }
+  
+  .modal-name {
+    font-size: 28px;
+  }
+  
+  .modal-paragraphe {
+    font-size: 14px;
+  }
 }

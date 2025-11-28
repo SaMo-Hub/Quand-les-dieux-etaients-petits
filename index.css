@@ -29,7 +29,7 @@
 
 body {
   color: white;
-   font-family: "futura-100-greek-book", sans-serif;
+   font-family: "futura-100-greek", sans-serif;
   /* font-weight: 700; normal */
   background: var(--color-bg);
   width: 100vw;
