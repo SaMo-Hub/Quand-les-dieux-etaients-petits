@@ -2,135 +2,132 @@
 const svgs = document.querySelectorAll('.spin');
 let currentIndex = 0;
 
-svgs.forEach((svg, index) => {
-  const angle = index * 45; // 0°, 45°, 90°, 135°, etc.
-  svg.style.setProperty('--base-rotation', angle + 'deg');
-});
-
-function updateOpacities() {
+if (svgs.length > 0) {
   svgs.forEach((svg, index) => {
-    // L'opacité est 1 seulement pour l'élément courant
-    if (index === currentIndex) {
-      svg.style.opacity = '1';
-    } else {
-      svg.style.opacity = '0.5';
-    }
+    const angle = index * 45;
+    svg.style.setProperty('--base-rotation', angle + 'deg');
   });
 
-  currentIndex = (currentIndex + 1) % svgs.length;
+  function updateOpacities() {
+    svgs.forEach((svg, index) => {
+      if (index === currentIndex) {
+        svg.style.opacity = '1';
+      } else {
+        svg.style.opacity = '0.5';
+      }
+    });
+    currentIndex = (currentIndex + 1) % svgs.length;
+  }
+
+  updateOpacities();
+  setInterval(updateOpacities, 600);
 }
 
-// Initialisation
-updateOpacities();
+// ===== SYSTÈME AUDIO PERSISTANT VIA IFRAME =====
 
-// Changer toutes les 600ms
-setInterval(updateOpacities, 600);
+// Créer l'iframe audio une seule fois
+if (!document.getElementById('audio-player-frame')) {
+  const iframe = document.createElement('iframe');
+  iframe.id = 'audio-player-frame';
+  iframe.src = 'audio-player.html';
+  iframe.style.display = 'none';
+  iframe.style.position = 'fixed';
+  iframe.style.width = '1px';
+  iframe.style.height = '1px';
+  iframe.style.opacity = '0';
+  iframe.style.pointerEvents = 'none';
+  document.body.appendChild(iframe);
+}
 
-// ===== SYSTÈME AUDIO =====
+// Attendre que l'iframe soit chargée
+let audioPlayer = null;
+const audioFrame = document.getElementById('audio-player-frame');
 
-// Créer l'élément audio
-// const backgroundMusic = new Audio('./public/music/NujabesLuv.mp3');
-console.log();
-
-backgroundMusic.loop = true; // La musique boucle à l'infini
-backgroundMusic.volume = 0; // Commence à 0 pour le fade in
+audioFrame.addEventListener('load', () => {
+  audioPlayer = audioFrame.contentWindow;
+  initAudioControls();
+});
 
 // Sélectionner les éléments
 const btn = document.getElementById("toggle-btn");
-const iconOn = btn.querySelector(".on");
-const iconOff = btn.querySelector(".off");
+const iconOn = btn?.querySelector(".on");
+const iconOff = btn?.querySelector(".off");
 
-console.log(btn, iconOn, iconOff);
+function initAudioControls() {
+  if (!audioPlayer) return;
 
-// État de la musique
-let isMusicPlaying = false;
-let isAudioReady = false; // Pour savoir si l'utilisateur a déjà interagi
+  // Récupérer l'état
+  const isMusicPlaying = localStorage.getItem('musicPlaying') === 'true';
+  const hasInteracted = localStorage.getItem('hasInteracted') === 'true';
 
-// Fade in/out pour des transitions plus douces
-function fadeIn(audio, duration = 1000) {
-  const targetVolume = 0.5;
-  audio.volume = 0;
-  
-  return audio.play()
-    .then(() => {
-      const step = 0.05;
-      const time = duration / (targetVolume / step);
+  // Fonction pour jouer la musique
+  window.playMusic = function() {
+    if (!audioPlayer) return;
+    
+    audioPlayer.playAudio().then(() => {
+      localStorage.setItem('musicPlaying', 'true');
       
-      const fadeInterval = setInterval(() => {
-        if (audio.volume < targetVolume - step) {
-          audio.volume = Math.min(audio.volume + step, targetVolume);
-        } else {
-          audio.volume = targetVolume;
-          clearInterval(fadeInterval);
-        }
-      }, time);
-    })
-    .catch(error => {
-      console.error('Erreur lors de la lecture:', error);
-    });
-}
+      if (iconOn && iconOff) {
+        iconOn.style.display = "block";
+        iconOff.style.display = "none";
+      }
+    }).catch(err => console.error('Erreur play:', err));
+  };
 
-function fadeOut(audio, duration = 1000) {
-  const step = 0.05;
-  const currentVolume = audio.volume;
-  const time = duration / (currentVolume / step);
-  
-  const fadeInterval = setInterval(() => {
-    if (audio.volume > step) {
-      audio.volume = Math.max(audio.volume - step, 0);
-    } else {
-      audio.volume = 0;
-      audio.pause();
-      clearInterval(fadeInterval);
+  // Fonction pour mettre en pause
+  window.pauseMusic = function() {
+    if (!audioPlayer) return;
+    
+    audioPlayer.pauseAudio();
+    localStorage.setItem('musicPlaying', 'false');
+    
+    if (iconOn && iconOff) {
+      iconOn.style.display = "none";
+      iconOff.style.display = "block";
     }
-  }, time);
-}
+  };
 
-// Fonction pour jouer la musique
-function playMusic() {
-  fadeIn(backgroundMusic)
-    .then(() => {
-      console.log('Musique lancée');
-      isMusicPlaying = true;
-      isAudioReady = true;
+  // Toggle au clic
+  if (btn) {
+    btn.addEventListener("click", () => {
+      if (audioPlayer && audioPlayer.isPlaying()) {
+        window.pauseMusic();
+      } else {
+        window.playMusic();
+      }
+    });
+  }
+
+  // Initialiser l'icône
+  if (iconOn && iconOff) {
+    if (isMusicPlaying && audioPlayer.isPlaying()) {
       iconOn.style.display = "block";
       iconOff.style.display = "none";
-    });
-}
-
-// Fonction pour mettre en pause la musique
-function pauseMusic() {
-  fadeOut(backgroundMusic);
-  console.log('Musique mise en pause');
-  isMusicPlaying = false;
-  iconOn.style.display = "none";
-  iconOff.style.display = "block";
-}
-
-// Toggle au clic sur le bouton
-btn.addEventListener("click", () => {
-  if (isMusicPlaying) {
-    pauseMusic();
-  } else {
-    playMusic();
-  }
-});
-
-// ===== DÉMARRAGE AU PREMIER CLIC =====
-// La musique démarre automatiquement au premier clic n'importe où sur la page
-let hasFirstInteraction = false;
-
-document.addEventListener('click', (e) => {
-  // Si c'est la première interaction ET que la musique n'est pas déjà en cours
-  if (!hasFirstInteraction && !isMusicPlaying) {
-    // Si le clic n'est PAS sur le bouton de toggle
-    if (!btn.contains(e.target)) {
-      playMusic();
+    } else if (isMusicPlaying && hasInteracted) {
+      iconOn.style.display = "block";
+      iconOff.style.display = "none";
+      setTimeout(() => window.playMusic(), 100);
+    } else {
+      iconOn.style.display = "none";
+      iconOff.style.display = "block";
     }
-    hasFirstInteraction = true;
   }
-}, { once: true });
 
-// Initialiser l'icône au chargement (musique éteinte par défaut)
-iconOn.style.display = "none";
-iconOff.style.display = "block";
+  // Démarrage automatique au premier clic
+  if (!hasInteracted) {
+    const startMusic = (e) => {
+      if (!audioPlayer.isPlaying() && btn && !e.target.closest('#toggle-btn')) {
+        window.playMusic();
+        localStorage.setItem('hasInteracted', 'true');
+        document.removeEventListener('click', startMusic);
+      }
+    };
+    document.addEventListener('click', startMusic);
+  }
+}
+
+// Si l'iframe est déjà chargée
+if (audioFrame.contentWindow && audioFrame.contentWindow.playAudio) {
+  audioPlayer = audioFrame.contentWindow;
+  initAudioControls();
+}

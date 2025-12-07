@@ -50,7 +50,7 @@ a {
   padding: 50px;
   width: 100vw;
   height: 100vh;
-  background: rgba(235, 115, 51, 0.01);
+  /* background: rgba(235, 115, 51, 0.01); */
   display: flex;
   flex-direction: column;
   justify-items: center;
@@ -92,64 +92,6 @@ a {
   gap: 8px;
 }
 
-.octogone.selected p {
-  position: absolute;
-  z-index: 10;
-
-  margin: 0;
-}
-
-.octogone.selected svg {
-  position: relative;
-  fill: #140100;
-  stroke-width: 4px;
-  stroke: var(--color-primary);
-}
-
-.octogone {
-
-  opacity: 0.5;
-  position: relative;
-  width: fit-content;
-  color: var(--color-primary);
-  font-family: var(--font-title);
-  font-size: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-  /* position: relative; */
-}
-
-.octogone.selected {
-  opacity: 1;
-  position: relative;
-  width: fit-content;
-  color: var(--color-primary);
-  font-family: var(--font-title);
-  font-size: 26px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80px;
-
-  /* position: relative; */
-}
-
-.octogone p {
-  position: absolute;
-  z-index: 10;
-
-  margin: 0;
-}
-
-.octogone svg {
-  height: 100%;
-  position: relative;
-  fill: #140100;
-  stroke-width: 6px;
-  stroke: var(--color-primary);
-}
 
 .subtitle {
   font-size: 16px;
@@ -225,6 +167,7 @@ h1 {
   background-image: url("./public/img/meandres.png");
   background-repeat: repeat-x;
   background-size: auto 50px;
+  opacity: 0;
 }
 
 
@@ -234,8 +177,13 @@ h1 {
   color: var(--color-primary);
   text-align: center;
   position: relative;
-  z-index: 10;
+  z-index: 50;
     mix-blend-mode: difference;
+overflow: hidden;
+opacity: 0;
+}
+.chapitre-title span {
+ transform: translateY(500px);
 
 }
 
@@ -566,7 +514,7 @@ body.scroll-blocked::after {
 /* Titre de la modal */
 .modal-name {
   position: absolute;
-  top: -30px;
+  top: -26px;
 }
 
 .modal-h1 {
@@ -699,6 +647,15 @@ body.scroll-blocked::after {
 .hand {
   display: flex;
 }
+/* .rightHand {
+  transform: translateY(500px);
+}
+.leftHand {
+  transform: translateY(500px);
+} */
+.chapitre-img {
+  transform: translateY(500px);
+} 
 
 .baby-star {
   display: flex;
@@ -723,3 +680,66 @@ left:229%;
   bottom: -2px;
   z-index: 2;
 }
+
+.star{
+  scale: 0;
+}
+
+.next-frame{
+  position: absolute;
+right: 29px;
+bottom: 89px;
+}
+
+.lanngue-grid {
+    text-transform: uppercase;
+  display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-template-rows: repeat(3, 1fr);
+grid-column-gap: 12px;
+grid-row-gap: 12px;
+}
+
+.modal-content-langue{
+  position: absolute;
+  background: var(--color-bg);
+  /* background: linear-gradient(135deg, #1a0200 0%, #2d0400 100%); */
+  border: var(--border-size) solid var(--color-primary);
+  /* border-radius: 20px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  top: 50px;
+  left: 90px;
+  z-index: 400;
+}
+
+
+
+.langue-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(20, 1, 0, 0.822);
+  /* backdrop-filter: blur(5px); */
+  z-index: 9999;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  justify-content: center;
+  align-items: center;
+}
+
+.langue-modal-overlay.active {
+  display: flex;
+  opacity: 1;
+}
+
+.langue {
+  z-index: 100;
+}
+

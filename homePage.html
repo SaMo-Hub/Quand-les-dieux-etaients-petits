@@ -4,32 +4,61 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./bouton.css" />
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="./index.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="bouton.css" />
+  <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="./abregénaologique.css" />
 
     <link rel="stylesheet" href="https://use.typekit.net/ihj8hvi.css" />
   </head>
   <body>
     <section class="window">
-      <nav class="nav-button">
-        <button id="toggle-btn" class="button">
+         <nav class="nav-button">
+      <button id="toggle-btn" class="button">
+        <div class="item">
+          <svg id="sound on" class="sound on" width="28" height="28" viewBox="0 0 64 64" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M34.3423 55.0938L16.5386 41.0488H7.51904V22.9521H16.5386L34.3423 8.90625V55.0938ZM56.019 31.0186L56.5728 32.001L56.019 32.9834L48.2554 46.749L44.771 44.7842L51.98 32L44.771 19.2168L48.2554 17.252L56.019 31.0186ZM47.7524 31.0117L48.3149 32L47.7524 32.9893L44.1724 39.2842L42.4341 38.2959L40.6958 37.3066L43.7124 32L40.6958 26.6934L44.1724 24.7168L47.7524 31.0117Z"
+              fill="white" />
+          </svg>
+          <svg id="sound-off" class="sound off" width="28" height="28" viewBox="0 0 64 64" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M34.3315 55.0938L16.5278 41.0488H7.5083V22.9521H16.5278L34.3315 8.90625V55.0938ZM49.314 29.0342L54.7925 23.5557L57.6206 26.3838L52.1421 31.8613L57.9653 37.6846L56.5513 39.0996L55.1372 40.5137L49.314 34.6904L43.2153 40.7891L40.3872 37.9609L46.4858 31.8623L40.6626 26.0391L43.4907 23.2109L49.314 29.0342Z"
+              fill="white" />
+          </svg>
+        </div>
+      </button>
+     
+      <a href="./">
+        <button class="button">
           <div class="item">
-         <svg id="sound on" class="sound on" width="28" height="28" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M34.3423 55.0938L16.5386 41.0488H7.51904V22.9521H16.5386L34.3423 8.90625V55.0938ZM56.019 31.0186L56.5728 32.001L56.019 32.9834L48.2554 46.749L44.771 44.7842L51.98 32L44.771 19.2168L48.2554 17.252L56.019 31.0186ZM47.7524 31.0117L48.3149 32L47.7524 32.9893L44.1724 39.2842L42.4341 38.2959L40.6958 37.3066L43.7124 32L40.6958 26.6934L44.1724 24.7168L47.7524 31.0117Z" fill="white"/>
-</svg>
-<svg id="sound-off" class="sound off" width="28" height="28" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M34.3315 55.0938L16.5278 41.0488H7.5083V22.9521H16.5278L34.3315 8.90625V55.0938ZM49.314 29.0342L54.7925 23.5557L57.6206 26.3838L52.1421 31.8613L57.9653 37.6846L56.5513 39.0996L55.1372 40.5137L49.314 34.6904L43.2153 40.7891L40.3872 37.9609L46.4858 31.8623L40.6626 26.0391L43.4907 23.2109L49.314 29.0342Z" fill="white"/>
-</svg>
-
-
+            <svg width="22" height="14" viewBox="0 0 22 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M10 2H6V4H16V2H12V0H22V2H18V6H12V8H20V12H22V14H16V12H18V10H12V12H14V14H8V12H10V10H4V12H6V14H0V12H2V8H10V6H4V2H0V0H10V2Z"
+                fill="white" />
+            </svg>
           </div>
         </button>
+      </a>
+      <a href="./zeusPage.html">
         <button class="button">
-          <div class="item">S</div>
+          <div class="item">
+             <svg width="32" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1230_9555)">
+<path d="M33.039 9.63574L27.5586 29.0098H45.8506L21.7793 53.0811L20.9932 52.4775L31.6924 33.9453H17.8672L18.3008 33.1953L32.125 9.25L33.039 9.63574Z" fill="white" stroke="white"/>
+</g>
+<defs>
+<clipPath id="clip0_1230_9555">
+<rect width="31" height="45" fill="white" transform="translate(17 9)"/>
+</clipPath>
+</defs>
+</svg>
+          </div>
         </button>
-      </nav>
+      </a>
+    </nav>
      
       <h1>Quand les dieux étaient petits</h1>
       <p class="explication">
@@ -123,7 +152,10 @@
       <!-- <button>Enter</button> -->
     </section>
     <script src="./script.js"></script>
-    <script src="./components/bouton.js"></script>
-    <script src="./abregenealogique.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+      <script src="./homePageElementAnimation.js"></script>
+      <!-- <script src="./text-animation.js"></script> -->
+      <script src="./components/bouton.js"></script>
+    <!-- <script src="./abregenealogique.js"></script> -->
   </body>
 </html>

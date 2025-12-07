@@ -2,24 +2,26 @@
 document.addEventListener('DOMContentLoaded', () => {
   
   // ========== ANIMATION DES BOUTONS DE NAVIGATION ==========
-  const btn = document.querySelectorAll(' .button');
-  
-  
-    gsap.set(btn, {
-      scale: 0,
-      rotation: 0,
-      opacity: 0
-    });
-    
-    // Animation d'entrée avec délai échelonné
-    gsap.to(btn, {
-      scale: 1,
-      rotation: 45,
-      opacity: 1,
-      duration: 2,
-      // delay: index * 0.2, // Délai échelonné entre chaque bouton
-      ease: "back.out(1.5)"
-    });
+  const btn = document.querySelectorAll('.button');
+
+  // initial state for all buttons
+  gsap.set(btn, {
+    scale: 0.1,
+    rotation: 0,
+    // opacity: 0
+  });
+
+  // Animation d'entrée — on utilise `stagger` pour l'échelonnement
+  // (ancien code utilisait `index` qui n'était pas défini dans ce scope)
+  gsap.to(btn, {
+    scale: 1,
+    rotation: 45,
+    opacity: 1,
+    delay:0.4,
+    duration: 0.4,
+    stagger: 0.2, // échelonne automatiquement chaque élément
+    ease: "back.out(1.5)"
+  });
   
   // ========== ANIMATION DU TITRE ==========
   const titleElement = document.querySelector('h1');
@@ -183,18 +185,45 @@ document.addEventListener('DOMContentLoaded', () => {
     // Animer les octogones
     const octogones = navChapitre.querySelectorAll('.octogone');
     octogones.forEach((octogone, index) => {
+      // état initial de l'octogone
       gsap.set(octogone, {
-        // scale: 0,
+        scale: 0.1,
         opacity: 0
       });
-      
+
+      // sélectionner le chiffre à l'intérieur (si présent)
+      const octNumber = octogone.querySelector('p');
+      if (octNumber) {
+        // état initial du chiffre (léger décalage pour effet pop)
+        gsap.set(octNumber, {
+          y: 8,
+          scale: 0.1,
+          opacity: 0,
+          transformOrigin: '50% 50%'
+        });
+      }
+
+      // animation de l'octogone
+      const baseDelay = 1.8 + (index * 0.2);
       gsap.to(octogone, {
         scale: 1,
         opacity: 1,
         duration: 0.7,
-        delay: 1.8 + (index * 0.2),
+        delay: baseDelay,
         ease: "back.out(1.5)"
       });
+
+      // animation du chiffre — légèrement après l'octogone pour synchroniser
+      if (octNumber) {
+        gsap.to(octNumber, {
+          y: 0,
+          scale: 1,
+          opacity: 1,
+          duration: 0.45,
+          delay: baseDelay + 0.5,
+          ease: 'power2.out'
+        });
+      }
     });
   }
   
@@ -273,7 +302,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // rotation: -90,
       duration: 0.8,
       ease: "back.out(1.5)"
-    }, "-=0.8");
+    }, "-=0.7");
     
     // 4. Le bébé apparaît légèrement après l'étoile
     tlChapitre.to(baby, {

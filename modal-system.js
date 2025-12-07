@@ -92,61 +92,24 @@ function createModal() {
    <div class="modal">
    <div class="modal-content">
               <div class="modal-name">
-               <div class="button-primary">
-                <svg
-                  role="img"
-                  viewBox="0 0 294 50"
-                  preserveAspectRatio="xMinYMin meet"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M21 1H273L281 9V41L273 49H21L13 40.5V9L21 1Z"
-                    fill="var(--color-bg)"
-                    stroke="var(--color-primary)"
-                    stroke-width="var(--border-size)"
-                  ></path>
-                  <rect
-                    x="2"
-                    y="25"
-                    width="15.5563"
-                    height="15.5563"
-                    transform="rotate(-45 2 25)"
-                    fill="var(--color-bg)"
-                    stroke="var(--color-primary)"
-                    stroke-width="var(--border-size)"
-                  ></rect>
-                  <rect
-                    x="10"
-                    y="25"
-                    width="4.24264"
-                    height="4.24264"
-                    transform="rotate(-45 10 25)"
-                    fill="#fff"
-                  ></rect>
-                  <rect
-                    x="270"
-                    y="25"
-                    width="15.5563"
-                    height="15.5563"
-                    transform="rotate(-45 270 25)"
-                  fill="var(--color-bg)"
-                    stroke="var(--color-primary)"
-                    stroke-width="var(--border-size)"
-                  ></rect>
-                  <rect
-                    x="278"
-                    y="25"
-                    width="4.24264"
-                    height="4.24264"
-                    transform="rotate(-45 278 25)"
-                    fill="#fff"
-                  ></rect>
-                </svg>
-              
-                  <p class="">You selected...</p>
-              
-              </div>
+              <div class="button-primary">
+        <svg role="img" viewBox="0 0 294 50" preserveAspectRatio="xMinYMin meet" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M21 1H273L281 9V41L273 49H21L13 40.5V9L21 1Z" fill="var(--color-bg)" stroke="var(--color-primary)"
+            stroke-width="var(--border-size)"></path>
+          <rect x="2" y="25" width="15.5563" height="15.5563" transform="rotate(-45 2 25)" fill="var(--color-bg)"
+            stroke="var(--color-primary)" stroke-width="var(--border-size)"></rect>
+          <rect x="10" y="25" width="4.24264" height="4.24264" transform="rotate(-45 10 25)" fill="#fff"></rect>
+          <rect x="270" y="25" width="15.5563" height="15.5563" transform="rotate(-45 270 25)" fill="var(--color-bg)"
+            stroke="var(--color-primary)" stroke-width="var(--border-size)"></rect>
+          <rect x="278" y="25" width="4.24264" height="4.24264" transform="rotate(-45 278 25)" fill="#fff"></rect>
+        </svg>
+<div class="chapitre-name-overflow">
+  <p id="chapitre-name" class="">You selected...</p>
+</div>
+
+
+      </div>
             </div>
               <h4 class="modal-h1">QUI C'EST ?</h4>
               <p class="modal-paragraphe">dddddddddd</p>
