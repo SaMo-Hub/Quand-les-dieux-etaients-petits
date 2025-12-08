@@ -25,19 +25,7 @@ if (svgs.length > 0) {
 
 // ===== SYSTÈME AUDIO PERSISTANT VIA IFRAME =====
 
-// Créer l'iframe audio une seule fois
-if (!document.getElementById('audio-player-frame')) {
-  const iframe = document.createElement('iframe');
-  iframe.id = 'audio-player-frame';
-  iframe.src = 'audio-player.html';
-  iframe.style.display = 'none';
-  iframe.style.position = 'fixed';
-  iframe.style.width = '1px';
-  iframe.style.height = '1px';
-  iframe.style.opacity = '0';
-  iframe.style.pointerEvents = 'none';
-  document.body.appendChild(iframe);
-}
+
 
 // Attendre que l'iframe soit chargée
 let audioPlayer = null;

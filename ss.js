@@ -1,187 +1,230 @@
-// ===== SYSTÈME DE BLOCAGE DU SCROLL =====
+// ===== SYSTÈME DE BLOCAGE DU SCROLL MULTI-ÉTAPES =====
 
-// Variable pour suivre l'état du déblocage
-let isScrollUnlocked = true;
-let isChapitreNavigation = true; // Flag pour la navigation entre chapitres
+// Variables pour suivre l'état du déblocage
+let currentBlockIndex = 0; // Index du blocage actuel (0 = premier blocage, 1 = second blocage)
+let isFullyUnlocked = false; // Scroll complètement débloqué
+let isChapitreNavigation = false; // Flag pour la navigation entre chapitres
 
-// Fonction pour calculer précisément la position de blocage
-function calculateBlockPosition() {
+// Configuration des points de blocage
+const blockPoints = [
+  {
+    interactionId: 'gaia-interaction',
+    bulleSelector: '.bulle-gai-talk',
+    frameId: 'gaia-talk'
+  },
+  {
+    interactionId: 'gaia-bebe-interaction',
+    bulleSelector: '#gaia-bebe-talk',
+    frameId: 'gaia-bebe-frame'
+  }
+];
+
+// Fonction pour calculer la position de blocage pour un élément donné
+function calculateBlockPosition(frameId, interactionId) {
   const illustrationList = document.querySelector('.illustration-list');
-  const gaiaFrame = document.getElementById('gaia-talk');
-  const gaiaInteraction = document.getElementById('gaia-interaction');
+  const frame = document.getElementById(frameId);
+  const interaction = document.getElementById(interactionId);
   
-  if (!illustrationList || !gaiaFrame || !gaiaInteraction) {
-    console.error('Éléments requis non trouvés pour le calcul');
+  if (!illustrationList || !frame || !interaction) {
+    console.error('Éléments requis non trouvés pour le calcul:', frameId, interactionId);
     return 0;
   }
   
   // Obtenir les rectangles des éléments
   const illustrationListRect = illustrationList.getBoundingClientRect();
-  const gaiaInteractionRect = gaiaInteraction.getBoundingClientRect();
+  const interactionRect = interaction.getBoundingClientRect();
   
   // Calculer la position absolue de l'interaction dans le conteneur
-  const interactionAbsoluteLeft = gaiaInteractionRect.left - illustrationListRect.left + illustrationList.scrollLeft;
+  const interactionAbsoluteLeft = interactionRect.left - illustrationListRect.left + illustrationList.scrollLeft;
   
   // Calculer la position pour centrer l'interaction à l'écran
-  const centerOffset = (window.innerWidth / 2) - (gaiaInteractionRect.width / 2);
+  const centerOffset = (window.innerWidth / 2) - (interactionRect.width / 2);
   
   // Position de blocage = position de l'interaction - offset pour la centrer
   const blockPosition = interactionAbsoluteLeft - centerOffset;
   
-  console.log('Position de blocage calculée:', blockPosition);
+  console.log(`Position de blocage calculée pour ${frameId}:`, blockPosition);
   
   return blockPosition;
 }
 
-// Initialiser le système de blocage
-function initScrollBlock() {
-  const gaiaFrame = document.getElementById('gaia-talk');
-  const gaiaInteraction = document.getElementById('gaia-interaction');
-  const bulle = document.querySelector('.bulle');
-  
-  if (!gaiaFrame || !gaiaInteraction || !bulle) {
-    console.error('Éléments requis non trouvés');
-    return;
+// Fonction pour obtenir la position de blocage actuelle
+function getCurrentMaxScroll() {
+  if (isFullyUnlocked || currentBlockIndex >= blockPoints.length) {
+    return Infinity;
   }
   
-  // Cacher la bulle initialement
-  bulle.style.opacity = '0';
-  bulle.style.pointerEvents = 'none';
+  const currentBlock = blockPoints[currentBlockIndex];
+  return calculateBlockPosition(currentBlock.frameId, currentBlock.interactionId);
+}
+
+// Initialiser le système de blocage
+function initScrollBlock() {
+  // Vérifier que tous les éléments nécessaires existent
+  blockPoints.forEach((block, index) => {
+    const interaction = document.getElementById(block.interactionId);
+    const bulle = document.querySelector(block.bulleSelector);
+    
+    if (!interaction || !bulle) {
+      console.error(`Éléments non trouvés pour le blocage ${index}:`, block);
+      return;
+    }
+    
+    // Cacher les bulles initialement (sauf si déjà débloquées)
+    if (index >= currentBlockIndex) {
+      bulle.style.opacity = '0';
+      bulle.style.pointerEvents = 'none';
+    }
+    
+    // Configurer le style du bouton d'interaction
+    interaction.style.cursor = 'pointer';
+    interaction.style.transition = 'transform 0.3s ease';
+    
+    // Hover effects
+    interaction.addEventListener('mouseenter', function() {
+      if (currentBlockIndex === index && !isFullyUnlocked) {
+        gsap.to(this, {
+          scale: 1.1,
+          duration: 0.3,
+          ease: "power2.out"
+        });
+      }
+    });
+    
+    interaction.addEventListener('mouseleave', function() {
+      if (currentBlockIndex === index && !isFullyUnlocked) {
+        gsap.to(this, {
+          scale: 1,
+          duration: 0.3,
+          ease: "power2.out"
+        });
+      }
+    });
+    
+    // Gestion du clic sur l'interaction
+    interaction.addEventListener('click', function() {
+      if (currentBlockIndex === index && !isFullyUnlocked) {
+        unlockCurrentBlock(index);
+      }
+    });
+  });
   
   // Ajouter une classe au body pour indiquer le blocage
   document.body.classList.add('scroll-blocked');
   
-  // Calculer la position de blocage précise
-  const maxScroll = calculateBlockPosition();
-  
   // Intercepter le scroll
-  let lastScrollTop = 0;
-  
   window.addEventListener('scroll', function(e) {
-    // Ne pas bloquer si c'est une navigation entre chapitres
-    if (!isScrollUnlocked && !isChapitreNavigation) {
+    // Ne pas bloquer si c'est une navigation entre chapitres ou si complètement débloqué
+    if (!isFullyUnlocked && !isChapitreNavigation) {
       const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+      const maxScroll = getCurrentMaxScroll();
       
       // Si on essaie d'aller au-delà de la limite
       if (currentScroll > maxScroll) {
         window.scrollTo(0, maxScroll);
       }
-      
-      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
     }
   }, false);
   
-  // Gestion du clic sur l'interaction
-  gaiaInteraction.addEventListener('click', function() {
-    if (!isScrollUnlocked) {
-      // Débloquer le scroll
-      isScrollUnlocked = true;
-      document.body.classList.remove('scroll-blocked');
-      document.body.classList.add('scroll-unlocked');
-      
-      // Afficher la bulle avec animation
-      gsap.to(bulle, {
-        opacity: 1,
-        duration: 0.5,
-        ease: "power2.out"
-      });
-      
-      bulle.style.pointerEvents = 'auto';
-      
-      // Animation de l'icône d'interaction (disparition)
-      gsap.to(gaiaInteraction, {
-        scale: 0,
-        opacity: 0,
-        duration: 0.4,
-        ease: "back.in(1.7)",
-        onComplete: () => {
-          gaiaInteraction.style.display = 'none';
-        }
-      });
-      
-      // Animation du bouton de fermeture de la modal
-      const closeModal = document.querySelector('.close-modal');
-      if (closeModal) {
-        gsap.to(closeModal, {
-          scale: 1,
-          opacity: 1,
-          duration: 0.4,
-          delay: 0.2,
-          ease: "back.out(1.7)"
-        });
-      }
-      
-      console.log('Scroll débloqué !');
-    }
-  });
-  
-  // Ajouter un style visuel au bouton d'interaction
-  gaiaInteraction.style.cursor = 'pointer';
-  gaiaInteraction.style.transition = 'transform 0.3s ease';
-  
-  gaiaInteraction.addEventListener('mouseenter', function() {
-    if (!isScrollUnlocked) {
-      gsap.to(this, {
-        scale: 1.1,
-        duration: 0.3,
-        ease: "power2.out"
-      });
-    }
-  });
-  
-  gaiaInteraction.addEventListener('mouseleave', function() {
-    if (!isScrollUnlocked) {
-      gsap.to(this, {
-        scale: 1,
-        duration: 0.3,
-        ease: "power2.out"
-      });
-    }
-  });
-  
   // ===== GESTION DE LA NAVIGATION ENTRE CHAPITRES =====
-  // Intercepter les clics sur les octogones
   const octogones = document.querySelectorAll('.octogone');
   
   octogones.forEach((octogone, index) => {
     octogone.addEventListener('click', function() {
       // Si on change de chapitre et qu'on n'est pas au chapitre 1
       if (index !== 0) {
-        // Débloquer temporairement pour la navigation
+        // Débloquer complètement pour la navigation
         isChapitreNavigation = true;
-        
-        // Débloquer complètement le scroll
-        isScrollUnlocked = true;
+        isFullyUnlocked = true;
         document.body.classList.remove('scroll-blocked');
         document.body.classList.add('scroll-unlocked');
         
-        // Afficher la bulle
-        if (bulle) {
-          gsap.to(bulle, {
-            opacity: 1,
-            duration: 0.5,
-            ease: "power2.out"
-          });
-          bulle.style.pointerEvents = 'auto';
-        }
+        // Afficher toutes les bulles et cacher toutes les interactions
+        blockPoints.forEach((block) => {
+          const bulle = document.querySelector(block.bulleSelector);
+          const interaction = document.getElementById(block.interactionId);
+          
+          if (bulle) {
+            gsap.to(bulle, {
+              opacity: 1,
+              duration: 0.5,
+              ease: "power2.out"
+            });
+            bulle.style.pointerEvents = 'auto';
+          }
+          
+          if (interaction) {
+            gsap.to(interaction, {
+              scale: 0,
+              opacity: 0,
+              duration: 0.4,
+              ease: "back.in(1.7)",
+              onComplete: () => {
+                interaction.style.display = 'none';
+              }
+            });
+          }
+        });
         
-        // Cacher l'interaction
-        if (gaiaInteraction) {
-          gsap.to(gaiaInteraction, {
-            scale: 0,
-            opacity: 0,
-            duration: 0.4,
-            ease: "back.in(1.7)",
-            onComplete: () => {
-              gaiaInteraction.style.display = 'none';
-            }
-          });
-        }
-        
-        console.log('Navigation vers chapitre', index + 1, '- Scroll débloqué');
+        console.log('Navigation vers chapitre', index + 1, '- Scroll complètement débloqué');
       }
     });
   });
+}
+
+// Fonction pour débloquer un point de blocage
+function unlockCurrentBlock(index) {
+  const block = blockPoints[index];
+  const interaction = document.getElementById(block.interactionId);
+  const bulle = document.querySelector(block.bulleSelector);
+  
+  console.log(`Déblocage du point ${index}:`, block.interactionId);
+  
+  // Afficher la bulle avec animation
+  gsap.to(bulle, {
+    opacity: 1,
+    duration: 0.5,
+    ease: "power2.out"
+  });
+  bulle.style.pointerEvents = 'auto';
+  
+  // Animation de l'icône d'interaction (disparition)
+  gsap.to(interaction, {
+    scale: 0,
+    opacity: 0,
+    duration: 0.4,
+    ease: "back.in(1.7)",
+    onComplete: () => {
+      interaction.style.display = 'none';
+    }
+  });
+  
+  // Animation du bouton de fermeture de la modal (si c'est le premier blocage)
+  if (index === 0) {
+    const closeModal = document.querySelector('.close-modal');
+    if (closeModal) {
+      gsap.to(closeModal, {
+        scale: 1,
+        opacity: 1,
+        duration: 0.4,
+        delay: 0.2,
+        ease: "back.out(1.7)"
+      });
+    }
+  }
+  
+  // Passer au prochain point de blocage
+  currentBlockIndex++;
+  
+  // Si tous les points sont débloqués
+  if (currentBlockIndex >= blockPoints.length) {
+    isFullyUnlocked = true;
+    document.body.classList.remove('scroll-blocked');
+    document.body.classList.add('scroll-unlocked');
+    console.log('Scroll complètement débloqué !');
+  } else {
+    console.log(`Prochain point de blocage: ${blockPoints[currentBlockIndex].interactionId}`);
+  }
 }
 
 // Attendre que GSAP et le DOM soient prêts
@@ -229,7 +272,7 @@ style.textContent = `
     display: none;
   }
   
-  #gaia-interaction.blocked {
+  .interaction-bouton {
     animation: pulseInteraction 2s ease-in-out infinite;
   }
   

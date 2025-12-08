@@ -8,23 +8,98 @@
   <link rel="stylesheet" href="zeus.css" />
   <link rel="stylesheet" href="bouton.css" />
   <link rel="stylesheet" href="style.css" />
-      <link rel="stylesheet" href="./abregénaologique.css" />
-
+  <link rel="stylesheet" href="./abregénaologique.css" />
   <link rel="stylesheet" href="https://use.typekit.net/ihj8hvi.css" />
 </head>
 
 <body class="chapitre-list">
   <section class="window">
-<div class="next-frame">
-    <button id="toggle-btn" class="button">
+    <div class="next-frame">
+      <button id="toggle-btn" class="button">
         <div class="item">
-         <svg width="30" height="12" viewBox="0 0 30 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M29.3351 5.29541L24.0397 10.5908L22.4489 9L25.0285 6.42041H23.7101L18.7443 11.3862L14.2443 6.88623L9.74432 11.3862L5.47723 7.11914L1.48865 10.6392L0 8.95166L5.57391 4.03363L9.74432 8.20459L14.2443 3.70459L18.7443 8.20459L22.7785 4.17041H25.0285L22.4489 1.59082L24.0397 0L29.3351 5.29541Z" fill="white"/>
-</svg>
-
+          <svg width="30" height="12" viewBox="0 0 30 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M29.3351 5.29541L24.0397 10.5908L22.4489 9L25.0285 6.42041H23.7101L18.7443 11.3862L14.2443 6.88623L9.74432 11.3862L5.47723 7.11914L1.48865 10.6392L0 8.95166L5.57391 4.03363L9.74432 8.20459L14.2443 3.70459L18.7443 8.20459L22.7785 4.17041H25.0285L22.4489 1.59082L24.0397 0L29.3351 5.29541Z" fill="white"/>
+          </svg>
         </div>
       </button>
-</div>
+    </div>
+     <div class="langue-modal-overlay">
+          <div class="modal">
+            <div class="modal-content-langue">
+              <!-- <div class="modal-name">
+                <div class="button-primary">
+                  <svg role="img" viewBox="0 0 294 50" preserveAspectRatio="xMinYMin meet" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 1H273L281 9V41L273 49H21L13 40.5V9L21 1Z" fill="var(--color-bg)" stroke="var(--color-primary)"
+                      stroke-width="var(--border-size)"></path>
+                    <rect x="2" y="25" width="15.5563" height="15.5563" transform="rotate(-45 2 25)" fill="var(--color-bg)"
+                      stroke="var(--color-primary)" stroke-width="var(--border-size)"></rect>
+                    <rect x="10" y="25" width="4.24264" height="4.24264" transform="rotate(-45 10 25)" fill="#fff"></rect>
+                    <rect x="270" y="25" width="15.5563" height="15.5563" transform="rotate(-45 270 25)" fill="var(--color-bg)"
+                      stroke="var(--color-primary)" stroke-width="var(--border-size)"></rect>
+                    <rect x="278" y="25" width="4.24264" height="4.24264" transform="rotate(-45 278 25)" fill="#fff"></rect>
+                  </svg>
+                  <div class="chapitre-name-overflow">
+                    <p class="">You selected...</p>
+                  </div>
+                </div>
+              </div> -->
+              <h4 class="modal-h1">Choisis ta langue</h4>
+              <div class="lanngue-grid">
+                <button class="secondary-button">
+                  <p>Francais</p>
+                  <svg class="btn-svg" width="288" height="62" viewBox="0 0 288 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="bg-hover" d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z" fill="#57280F" />
+                    <path d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z" fill="#" stroke="#EB7333" stroke-width="var(--border-size)"/>
+                  </svg>
+                </button>
+                <button class="secondary-button">
+                  <p>Francais</p>
+                  <svg class="btn-svg" width="288" height="62" viewBox="0 0 288 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="bg-hover" d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z" fill="#57280F" />
+                    <path d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z" fill="#" stroke="#EB7333" stroke-width="var(--border-size)"/>
+                  </svg>
+                </button>
+                <button class="secondary-button">
+                  <p>Francais</p>
+                  <svg class="btn-svg" width="288" height="62" viewBox="0 0 288 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="bg-hover" d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z" fill="#57280F" />
+                    <path d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z" fill="#" stroke="#EB7333" stroke-width="var(--border-size)"/>
+                  </svg>
+                </button>
+                <button class="secondary-button">
+                  <p>Francais</p>
+                  <svg class="btn-svg" width="288" height="62" viewBox="0 0 288 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="bg-hover" d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z" fill="#57280F" />
+                    <path d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z" fill="#" stroke="#EB7333" stroke-width="var(--border-size)"/>
+                  </svg>
+                </button>
+                <button class="secondary-button">
+                  <p>Francais</p>
+                  <svg class="btn-svg" width="288" height="62" viewBox="0 0 288 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="bg-hover" d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z" fill="#57280F" />
+                    <path d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z" fill="#" stroke="#EB7333" stroke-width="var(--border-size)"/>
+                  </svg>
+                </button>
+                <button class="secondary-button">
+                  <p>Francais</p>
+                  <svg class="btn-svg" width="288" height="62" viewBox="0 0 288 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="bg-hover" d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z" fill="#57280F" />
+                    <path d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z" fill="#" stroke="#EB7333" stroke-width="var(--border-size)"/>
+                  </svg>
+                </button>
+               
+              </div>
+            </div>
+            <button class="button close-modal">
+              <div class="item">
+                <svg width="16" height="16" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0.707031 0.707031L5.27539 5.27539M9.84375 9.84375L5.27539 5.27539M5.27539 5.27539L0.707031 9.84375L9.84375 0.707031" stroke="#EB7333" stroke-width="var(--border-size)"/>
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
     <nav class="nav-button">
       <button id="toggle-btn" class="button">
         <div class="item">
@@ -42,8 +117,7 @@
           </svg>
         </div>
       </button>
-    
-    
+      
       <a href="./homePage.html">
         <button class="button">
           <div class="item">
@@ -55,135 +129,35 @@
           </div>
         </button>
       </a>
-        <div>
-        <button id="toggle-btn" class="langue button">
-          <div class="item">
-           L
-          </div>
+      
+      <div>
+        <button id="langue" class="langue button">
+          <div class="item">L</div>
         </button>
-        <div class="langue-modal-overlay">
-           <div class="modal">
-   <div class="modal-content-langue">
-              <div class="modal-name">
-              <div class="button-primary">
-         <svg role="img" viewBox="0 0 294 50" preserveAspectRatio="xMinYMin meet" fill="none"
-          xmlns="http://www.w3.org/2000/svg">
-          <path d="M21 1H273L281 9V41L273 49H21L13 40.5V9L21 1Z" fill="var(--color-bg)" stroke="var(--color-primary)"
-            stroke-width="var(--border-size)"></path>
-          <rect x="2" y="25" width="15.5563" height="15.5563" transform="rotate(-45 2 25)" fill="var(--color-bg)"
-            stroke="var(--color-primary)" stroke-width="var(--border-size)"></rect>
-          <rect x="10" y="25" width="4.24264" height="4.24264" transform="rotate(-45 10 25)" fill="#fff"></rect>
-          <rect x="270" y="25" width="15.5563" height="15.5563" transform="rotate(-45 270 25)" fill="var(--color-bg)"
-            stroke="var(--color-primary)" stroke-width="var(--border-size)"></rect>
-          <rect x="278" y="25" width="4.24264" height="4.24264" transform="rotate(-45 278 25)" fill="#fff"></rect>
-        </svg>
-<div class="chapitre-name-overflow">
-  <p  class="">You selected...</p>
-</div>
-
-
-      </div>
-            </div>
-              <h4 class="modal-h1">Choisis ta langue</h4>
-            <div class="lanngue-grid">
-              
-              <button class="secondary-button">
-          <p>
-             Francais
-          </p>
-          <svg  class="btn-svg" width="288" height="62" viewBox="0 0 288 62" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path class="bg-hover" d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z" fill="#57280F" />
-  <path d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z" fill="#" stroke="#EB7333" stroke-width="var(--border-size)"/>
-  </svg>
-  
-        </button>
-              <button class="secondary-button">
-          <p>
-             Francais
-          </p>
-          <svg  class="btn-svg" width="288" height="62" viewBox="0 0 288 62" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path class="bg-hover" d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z" fill="#57280F" />
-  <path d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z" fill="#" stroke="#EB7333" stroke-width="var(--border-size)"/>
-  </svg>
-  
-        </button>
-              <button class="secondary-button">
-          <p>
-             Francais
-          </p>
-          <svg  class="btn-svg" width="288" height="62" viewBox="0 0 288 62" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path class="bg-hover" d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z" fill="#57280F" />
-  <path d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z" fill="#" stroke="#EB7333" stroke-width="var(--border-size)"/>
-  </svg>
-  
-        </button>
-              <button class="secondary-button">
-          <p>
-             Francais
-          </p>
-          <svg  class="btn-svg" width="288" height="62" viewBox="0 0 288 62" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path class="bg-hover" d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z" fill="#57280F" />
-  <path d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z" fill="#" stroke="#EB7333" stroke-width="var(--border-size)"/>
-  </svg>
-  
-        </button>
-              <button class="secondary-button">
-          <p>
-             Francais
-          </p>
-          <svg  class="btn-svg" width="288" height="62" viewBox="0 0 288 62" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path class="bg-hover" d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z" fill="#57280F" />
-  <path d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z" fill="#" stroke="#EB7333" stroke-width="var(--border-size)"/>
-  </svg>
-  
-        </button>
-              <button class="secondary-button">
-          <p>
-             Francais
-          </p>
-          <svg  class="btn-svg" width="288" height="62" viewBox="0 0 288 62" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path class="bg-hover" d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z" fill="#57280F" />
-  <path d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z" fill="#" stroke="#EB7333" stroke-width="var(--border-size)"/>
-  </svg>
-  
-        </button>
-            </div>
-             
-            </div>
-             <button class="button close-modal">
-              <div class="item">
-              <svg width="16" height="16" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M0.707031 0.707031L5.27539 5.27539M9.84375 9.84375L5.27539 5.27539M5.27539 5.27539L0.707031 9.84375L9.84375 0.707031" stroke="#EB7333" stroke-width="var(--border-size)"/>
-</svg>
-</div>
-            </button>
-             </div>
-        </div>
+       
       </div>
     </nav>
+    
     <div class="nav-chapitre-wrapper">
-
-    <div class="chapitre-name-animation">
-
-
-      <div class="button-primary">
-        <svg role="img" viewBox="0 0 294 50" preserveAspectRatio="xMinYMin meet" fill="none"
-          xmlns="http://www.w3.org/2000/svg">
-          <path d="M21 1H273L281 9V41L273 49H21L13 40.5V9L21 1Z" fill="var(--color-bg)" stroke="var(--color-primary)"
-            stroke-width="var(--border-size)"></path>
-          <rect x="2" y="25" width="15.5563" height="15.5563" transform="rotate(-45 2 25)" fill="var(--color-bg)"
-            stroke="var(--color-primary)" stroke-width="var(--border-size)"></rect>
-          <rect x="10" y="25" width="4.24264" height="4.24264" transform="rotate(-45 10 25)" fill="#fff"></rect>
-          <rect x="270" y="25" width="15.5563" height="15.5563" transform="rotate(-45 270 25)" fill="var(--color-bg)"
-            stroke="var(--color-primary)" stroke-width="var(--border-size)"></rect>
-          <rect x="278" y="25" width="4.24264" height="4.24264" transform="rotate(-45 278 25)" fill="#fff"></rect>
-        </svg>
-<div class="chapitre-name-overflow">
-  <p id="chapitre-name" class="">You selected...</p>
-</div>    </div>
-
-
+      <div class="chapitre-name-animation">
+        <div class="button-primary">
+          <svg role="img" viewBox="0 0 294 50" preserveAspectRatio="xMinYMin meet" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 1H273L281 9V41L273 49H21L13 40.5V9L21 1Z" fill="var(--color-bg)" stroke="var(--color-primary)"
+              stroke-width="var(--border-size)"></path>
+            <rect x="2" y="25" width="15.5563" height="15.5563" transform="rotate(-45 2 25)" fill="var(--color-bg)"
+              stroke="var(--color-primary)" stroke-width="var(--border-size)"></rect>
+            <rect x="10" y="25" width="4.24264" height="4.24264" transform="rotate(-45 10 25)" fill="#fff"></rect>
+            <rect x="270" y="25" width="15.5563" height="15.5563" transform="rotate(-45 270 25)" fill="var(--color-bg)"
+              stroke="var(--color-primary)" stroke-width="var(--border-size)"></rect>
+            <rect x="278" y="25" width="4.24264" height="4.24264" transform="rotate(-45 278 25)" fill="#fff"></rect>
+          </svg>
+          <div class="chapitre-name-overflow">
+            <p id="chapitre-name" class="">You selected...</p>
+          </div>
+        </div>
       </div>
+      
       <nav class="nav-chapitre">
         <svg class="arrow" height="24" viewBox="0 0 120 18" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
@@ -195,26 +169,25 @@
           <div class="selected octogone pulse">
             <p>1</p>
             <svg viewBox="0 0 89 102" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-width="0" class="oct-bg"
+              <path stroke-width="0" fill="var(--color-bg)" class="oct-bg"
                 d="M86.6631 26.4453V75.5283L44.1562 100.069L1.64941 75.5283V26.4453L44.1562 1.9043L86.6631 26.4453Z" />
-              <!-- Contour -->
               <path class="oct-stroke"
                 d="M86.6631 26.4453V75.5283L44.1562 100.069L1.64941 75.5283V26.4453L44.1562 1.9043L86.6631 26.4453Z"
-                fill="none" stroke="#EB7333" stroke-width="2" />
+                stroke="#EB7333" stroke-width="2" />
             </svg>
           </div>
           <div class="octogone pulse">
             <p>2</p>
             <svg viewBox="0 0 89 102" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-width="0" class="oct-bg"
+              <path stroke-width="0" fill="var(--color-bg)" class="oct-bg"
                 d="M86.6631 26.4453V75.5283L44.1562 100.069L1.64941 75.5283V26.4453L44.1562 1.9043L86.6631 26.4453Z" />
-              <!-- Contour -->
               <path class="oct-stroke"
                 d="M86.6631 26.4453V75.5283L44.1562 100.069L1.64941 75.5283V26.4453L44.1562 1.9043L86.6631 26.4453Z"
-                fill="none" stroke="#EB7333" stroke-width="2" />
+                stroke="#EB7333" stroke-width="2" />
             </svg>
           </div>
         </div>
+        
         <svg class="arrow" height="24" viewBox="0 0 120 18" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M0 8.70312L8.70312 17.4072L16.416 9.69434L119.686 8.70312L16.416 7.71094L8.70312 0L0 8.70312ZM14.5781 8.70312L8.70312 14.5781L2.82812 8.70312L8.70312 2.82812L14.5781 8.70312ZM6.89258 8.94043L8.9209 10.9697L10.9502 8.94043L8.9209 6.91211L6.89258 8.94043Z"
@@ -222,14 +195,15 @@
         </svg>
       </nav>
     </div>
-
   </section>
 
   <div class="illustration-list">
     <div class="meandre-wrapper">
       <div class="meandre"></div>
     </div>
+    
     <div class="all-chapitre">
+      <!-- CHAPITRE 1 -->
       <div class="chapitre-frame">
         <h1 class="chapitre-title">
           L'enfant de <br />
@@ -250,14 +224,16 @@
       <div class="frame-space">
         <div class="frame frame-texte right">
           <p>
-            On m’a raconté que mes grands-parents, Gaïa et Ouranos, avaient créé les Titans.
+            On m'a raconté que mes grands-parents, 
+            <button id="Gaia" class="text-modal">Gaïa</button> et 
+            <button id="Ouranos" class="text-modal">Ouranos</button>, 
+            avaient créé les <button id="Titans" class="text-modal">Titans</button>.
             <br><br>
-            Un jour, il a décidé que son père était de trop et l’a renversé pour prendre sa place. Voilà. Ambiance
+            Un jour, il a décidé que son père était de trop et l'a renversé pour prendre sa place. Voilà. Ambiance
             familiale sympa, hein ?
           </p>
         </div>
       </div>
-    
 
       <div id="gaia-talk" class="frame illustration">
         <div id="gaia-interaction" class="interaction-bouton">
@@ -286,7 +262,8 @@
             </svg>
           </div>
         </div>
-        <div class="bulle">
+       
+        <div id="gaia-talk-bulle" class="bulle-gai-talk">
           <p>
             Un de tes enfants sera plus fort que toi.
           </p>
@@ -302,21 +279,22 @@
               d="M277.492 125L279.492 125V125H277.492ZM4 129L3.99999 131H4V129ZM0 4L-2 4V4H0ZM273.492 0V2C274.597 2 275.492 2.89543 275.492 4H277.492H279.492C279.492 0.686292 276.806 -2 273.492 -2V0ZM277.492 4H275.492V125H277.492H279.492V4H277.492ZM277.492 125L275.492 125C275.492 126.105 274.597 127 273.492 127V129V131C276.806 131 279.492 128.314 279.492 125L277.492 125ZM273.492 129V127H4V129V131H273.492V129ZM4 129L4.00001 127C2.89543 127 2 126.105 2 125H0H-2C-2 128.314 0.686303 131 3.99999 131L4 129ZM0 125H2V4H0H-2V125H0ZM0 4L2 4C2 2.89543 2.89543 2 4 2V0V-2C0.686291 -2 -2 0.686293 -2 4L0 4ZM4 0V2H273.492V0V-2H4V0Z"
               fill="#EB7333" mask="url(#path-1-inside-1_1120_8132)" />
           </svg>
-
-
-
         </div>
-        <img src="./cronos.png" alt="" />
-        <div class="text-parallax frame frame-texte">
+       <div class="gaia-talk-to-chronos">
+        <img src="./public/img/Zeus/Chapitre-1/cronos-agenouiller.svg" alt="">
+        <img src="./public/img/Zeus/Chapitre-1/Gaia-talk.svg" alt="">
+       </div>
+        <div class="gaia-text-parallax text-parallax frame frame-texte">
           <p>
-            Mais juste après ça, Gaïa lui a lancé la phrase qui a gâché toutes ses nuits :
+            Mais juste après ça, <button id="Gaia" class="text-modal">Gaïa</button> lui a lancé la phrase qui a gâché toutes ses nuits :
           </p>
         </div>
       </div>
+      
       <div class="frame-space">
         <div class="frame frame-texte right">
           <p>
-            Et là, croyez-moi, mon père n’a plus pensé à rien d’autre. Pas aux bisous, pas aux anniversaires… Juste à sa
+            Et là, croyez-moi, mon père n'a plus pensé à rien d'autre. Pas aux bisous, pas aux anniversaires… Juste à sa
             future défaite.
           </p>
         </div>
@@ -327,16 +305,59 @@
         <div class="text-parallax frame frame-texte">
           <p>
             Mes frères et sœurs naissaient, et mon père les faisait disparaître aussitôt. Un, deux, trois, quatre, cinq.
-            Ma mère pleurait, mais se taisait.
+            Ma mère <button id="Rhea" class="text-modal">Rhéa</button> pleurait, mais se taisait.
           </p>
         </div>
       </div>
 
-      <div class="frame illustration">
+      <div  id="gaia-bebe-frame" class="frame illustration">
+         <div id="gaia-bebe-talk" class="bulle">
+          <p>
+          Plus jamais. 
+          </p>
+          <svg width="278" height="129" viewBox="0 0 278 129" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <mask id="path-1-inside-1_1120_8132" fill="white">
+              <path
+                d="M273.492 0C275.701 0 277.492 1.79086 277.492 4V125C277.492 127.209 275.701 129 273.492 129H4C1.79087 129 0 127.209 0 125V4C1.03083e-06 1.79086 1.79086 0 4 0H273.492Z" />
+            </mask>
+            <path
+              d="M273.492 0C275.701 0 277.492 1.79086 277.492 4V125C277.492 127.209 275.701 129 273.492 129H4C1.79087 129 0 127.209 0 125V4C1.03083e-06 1.79086 1.79086 0 4 0H273.492Z"
+              fill="#190901" />
+            <path
+              d="M277.492 125L279.492 125V125H277.492ZM4 129L3.99999 131H4V129ZM0 4L-2 4V4H0ZM273.492 0V2C274.597 2 275.492 2.89543 275.492 4H277.492H279.492C279.492 0.686292 276.806 -2 273.492 -2V0ZM277.492 4H275.492V125H277.492H279.492V4H277.492ZM277.492 125L275.492 125C275.492 126.105 274.597 127 273.492 127V129V131C276.806 131 279.492 128.314 279.492 125L277.492 125ZM273.492 129V127H4V129V131H273.492V129ZM4 129L4.00001 127C2.89543 127 2 126.105 2 125H0H-2C-2 128.314 0.686303 131 3.99999 131L4 129ZM0 125H2V4H0H-2V125H0ZM0 4L2 4C2 2.89543 2.89543 2 4 2V0V-2C0.686291 -2 -2 0.686293 -2 4L0 4ZM4 0V2H273.492V0V-2H4V0Z"
+              fill="#EB7333" mask="url(#path-1-inside-1_1120_8132)" />
+          </svg>
+        </div>
+         <div id="gaia-bebe-interaction" class="interaction-bouton">
+          <div class="spin-wrapper">
+            <svg class="spin" xmlns="http://www.w3.org/2000/svg" width="76" height="76" viewBox="0 0 76 88" fill="none">
+              <path d="M73.9688 22.6514V64.4912L37.7344 85.4111L1.5 64.4912V22.6514L37.7344 1.73145L73.9688 22.6514Z"
+                stroke="#FFFF9E" stroke-width="3" />
+            </svg>
+          </div>
+          <div class="spin-wrapper">
+            <svg class="spin" xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 76 88" fill="none">
+              <path d="M73.9688 22.6514V64.4912L37.7344 85.4111L1.5 64.4912V22.6514L37.7344 1.73145L73.9688 22.6514Z"
+                stroke="#FFFF9E" stroke-width="5" />
+            </svg>
+          </div>
+          <div class="spin-wrapper">
+            <svg class="spin" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 76 88" fill="none">
+              <path d="M73.9688 22.6514V64.4912L37.7344 85.4111L1.5 64.4912V22.6514L37.7344 1.73145L73.9688 22.6514Z"
+                stroke="#FFFF9E" stroke-width="7" />
+            </svg>
+          </div>
+          <div class="spin-wrapper">
+            <svg class="spin" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 76 88" fill="none">
+              <path d="M73.9688 22.6514V64.4912L37.7344 85.4111L1.5 64.4912V22.6514L37.7344 1.73145L73.9688 22.6514Z"
+                stroke="#FFFF9E" stroke-width="12" />
+            </svg>
+          </div>
+        </div>
         <img src="./public/img/Zeus/Chapitre-1/Rhéa-avec-zeus.png" alt="" />
         <div class="text-parallax frame frame-texte">
           <p>
-            Mais quand je suis arrivé, elle a dit :
+            Mais quand je suis arrivé, elle a dit : 
           </p>
         </div>
       </div>
@@ -345,10 +366,14 @@
         <img src="./public/img/Zeus/Chapitre-1/Rhea-donne-zeus-Amalthé.png" alt="" />
         <div class="text-parallax frame frame-texte">
           <p>
-            Je suis né dans une grotte sombre de Crète. Avec une chèvre sacrée pour nounou, Amalthé
+            Je suis né dans une grotte sombre de <button id="Crete" class="text-modal">Crète</button>. 
+            Avec une chèvre sacrée pour nounou, <button id="Amalthee" class="text-modal">Amalthée</button>, 
+            et des guerriers, les <button id="Curete" class="text-modal">Curètes</button>, 
+            qui frappaient leurs boucliers pour couvrir mes pleurs.
           </p>
         </div>
       </div>
+      
       <div class="frame-space">
         <div class="frame frame-texte right">
           <p>
@@ -359,18 +384,9 @@
           </p>
         </div>
       </div>
-      <!-- <div class="frame-space">
-          <div class="text-parallax frame frame-texte">
-            <p>
-              Pendant ce temps, ma mère tendait à
-              <button id="Cronos" class="text-modal">Cronos</button> une pierre
-              enveloppée dans un linge pour lui faire croire que c'était moi. Il
-              y crut. Grâce à cette ruse, je pus grandir en sécurité.
-            </p>
-          </div>
-        </div> -->
     </div>
 
+    <!-- CHAPITRE 2 -->
     <div class="all-chapitre">
       <div class="chapitre-frame">
         <h1 class="chapitre-title">Le choc des Titans</h1>
@@ -378,63 +394,88 @@
         <img class="cronosTitan" src="./public/img/Zeus/Chapitre-2/Chronos-Confrontation.svg" alt="">
       </div>
 
-
-  <div class="frame-space">
+      <div class="frame-space">
         <div class="frame frame-texte right">
           <p>
-          En grandissant, je me suis dit :« Ok, Zeus, il est temps d’agir. »<br /><br />
+            En grandissant, je me suis dit : « Ok, <button id="Zeus" class="text-modal">Zeus</button>, il est temps d'agir. »<br /><br />
+            J'ai retrouvé <button id="Metis" class="text-modal">Métis</button>, l'océanide la plus rusée de toutes.
           </p>
         </div>
       </div>
 
-  <div class="frame-space">
+      <div class="frame-space">
         <div class="frame frame-texte right">
           <p>
-           Métis m’a donné une potion qui ferait vomir un géant.
- Je me suis déguisé en serviteur et je l’ai servie à Cronos.
+            <button id="Metis" class="text-modal">Métis</button> m'a donné une potion qui ferait vomir un géant.
+            Je me suis déguisé en serviteur et je l'ai servie à <button id="Cronos" class="text-modal">Cronos</button>.
           </p>
         </div>
       </div>
-  <div class="frame-space">
+      
+      <div class="frame-space">
         <div class="frame frame-texte right">
           <p>
-Mais nous avions pas encore la force de vaincre les Titans.
+            Il recracha mes frères et sœurs : <button id="Hestia" class="text-modal">Hestia</button>, 
+            <button id="Demeter" class="text-modal">Déméter</button>, 
+            <button id="Hera" class="text-modal">Héra</button>, 
+            <button id="Hades" class="text-modal">Hadès</button> et 
+            <button id="Poseidon" class="text-modal">Poséidon</button>.<br /><br />
+            Mais nous n'avions pas encore la force de vaincre les <button id="Titans" class="text-modal">Titans</button>.
           </p>
         </div>
       </div>
-  
 
       <div class="frame illustration-large">
         <img src="./public/img/Zeus/Chapitre-2/Zeus-tartare.png" alt="" />
-        <!-- <div class="text-parallax frame frame-texte">
+      </div>
+
+      <div id="tartare-door" class="frame illustration-large">
+        <img src="./public/img/Zeus/Chapitre-2/Porte-tartare.png" alt="" />
+      </div>
+      
+      <div class="frame-space">
+        <div class="frame frame-texte right">
           <p>
             Sur les conseils de <button id="Gaia" class="text-modal">Gaïa</button>, 
             je descendis dans le <button id="Tartare" class="text-modal">Tartare</button>, 
             là où <button id="Cronos" class="text-modal">Cronos</button> avait enfermé les 
             <button id="Cyclopes" class="text-modal">Cyclopes</button> et les 
-            <button id="Hecatonchires" class="text-modal">Hécatonchires</button>.
+            <button id="Hecatonchires" class="text-modal">Hécatonchires</button>.<br /><br />
+            Je brisai leurs chaînes, et en échange...
           </p>
-        </div> -->
-      </div>
-
-      
-      <div id="tartare-door" class="frame illustration-large">
-        <img src="./public/img/Zeus/Chapitre-2/Porte-tartare.png" alt="" />
-      </div>
-<div class="frame-space">
-        <div class="frame frame-texte right">
-          <p>
-Je brisai leurs chaînes, et en échange...          </p>
         </div>
       </div>
       
-        <div class="frame illustration">
+      <div class="frame illustration">
         <img class="fire" src="./public/img/Zeus/Chapitre-2/fire.svg" alt="" />
         <img class="zindex" src="./public/img/Zeus/Chapitre-2/Cyclope-forgeron.svg" alt="" />
-       
       </div>
+      
+      <div class="frame-space">
+        <div class="frame frame-texte right">
+          <p>
+            Les <button id="Cyclopes" class="text-modal">Cyclopes</button> me forgèrent la foudre, 
+            donnèrent le trident à <button id="Poseidon" class="text-modal">Poséidon</button> 
+            et le casque d'invisibilité à <button id="Hades" class="text-modal">Hadès</button>.<br /><br />
+            Avec les <button id="Hecatonchires" class="text-modal">Hécatonchires</button> à nos côtés, 
+            nous avons vaincu les <button id="Titans" class="text-modal">Titans</button>. 
+            Nous les avons enfermés dans le <button id="Tartare" class="text-modal">Tartare</button> 
+            pour l'éternité.
+          </p>
+        </div>
+      </div>
+      
       <div id="tartare-door" class="frame illustration-large">
         <img src="./public/img/Zeus/Chapitre-2/cronos-enfermer.svg" alt="" />
+      </div>
+      
+      <div class="frame-space">
+        <div class="frame frame-texte right">
+          <p>
+            Et c'est ainsi que nous, les Olympiens, avons pris le pouvoir. 
+            Le monde était enfin à nous.
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -448,6 +489,9 @@ Je brisai leurs chaînes, et en échange...          </p>
   <script src="script.js"></script>
   <script src="ss.js"></script>
   <script src="zeusElementAnimation.js"></script>
+  <script src="langue-modal.js"></script>
+  <script src="next-frame-navigation.js"></script> <!-- NOUVEAU -->
+
 </body>
 
 </html>

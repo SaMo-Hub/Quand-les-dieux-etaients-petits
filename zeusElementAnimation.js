@@ -346,99 +346,154 @@ ease: "expo.inOut",
 // ===== REMPLACER LA SECTION "ANIMATION PAR-MOT AU SCROLL" dans zeusElementAnimation.js =====
 
 // Animation par mot au scroll - ADAPTÉE POUR SCROLL HORIZONTAL
-// if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-//   gsap.registerPlugin(ScrollTrigger);
+// ===== ANIMATION PAR-MOT AU SCROLL - VERSION CORRIGÉE =====
 
-//   const animateParagraphWords = (rootSelector = '.frame-texte p, .explication, .text-parallax p') => {
-//     const elems = document.querySelectorAll(rootSelector);
+if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+
+  const animateParagraphWords = (rootSelector = '.frame-texte p, .explication, .text-parallax p') => {
+    const elems = document.querySelectorAll(rootSelector);
     
-//     elems.forEach(p => {
-//       // Éviter le double-split
-//       if (p.dataset._wordsSplit) return;
+    elems.forEach(p => {
+      // Éviter le double-split
+      if (p.dataset._wordsSplit) return;
 
-//       // Garder les espaces blancs en splittant avec capture
-//       const tokens = p.textContent.split(/(\s+)/);
-//       p.innerHTML = '';
+      // Fonction récursive pour splitter le texte en préservant les éléments HTML
+      function splitTextNodes(node) {
+        const fragment = document.createDocumentFragment();
+        
+        node.childNodes.forEach(child => {
+          if (child.nodeType === Node.TEXT_NODE) {
+            // C'est un nœud texte : on le split en mots
+            const text = child.textContent;
+            const tokens = text.split(/(\s+)/);
+            
+            tokens.forEach(token => {
+              if (/^\s+$/.test(token)) {
+                // Espace : garder tel quel
+                fragment.appendChild(document.createTextNode(token));
+              } else if (token.length > 0) {
+                // Mot : wrapper dans un span
+                const span = document.createElement('span');
+                span.className = 'word';
+                span.textContent = token;
+                span.style.display = 'inline-block';
+                span.style.verticalAlign = 'bottom';
+                span.style.marginRight = '0.06em';
+                fragment.appendChild(span);
+              }
+            });
+          } else if (child.nodeType === Node.ELEMENT_NODE) {
+            // C'est un élément HTML (comme un bouton) : le garder et splitter son texte
+            const clonedChild = child.cloneNode(false);
+            
+            // Copier tous les attributs (id, class, etc.) pour garder les event listeners
+            Array.from(child.attributes).forEach(attr => {
+              clonedChild.setAttribute(attr.name, attr.value);
+            });
+            
+            // Splitter le texte à l'intérieur du bouton aussi
+            child.childNodes.forEach(subChild => {
+              if (subChild.nodeType === Node.TEXT_NODE) {
+                const text = subChild.textContent;
+                const tokens = text.split(/(\s+)/);
+                
+                tokens.forEach(token => {
+                  if (/^\s+$/.test(token)) {
+                    clonedChild.appendChild(document.createTextNode(token));
+                  } else if (token.length > 0) {
+                    const span = document.createElement('span');
+                    span.className = 'word';
+                    span.textContent = token;
+                    span.style.display = 'inline-block';
+                    span.style.verticalAlign = 'bottom';
+                    clonedChild.appendChild(span);
+                  }
+                });
+              } else {
+                clonedChild.appendChild(subChild.cloneNode(true));
+              }
+            });
+            
+            fragment.appendChild(clonedChild);
+          }
+        });
+        
+        return fragment;
+      }
 
-//       tokens.forEach(token => {
-//         if (/^\s+$/.test(token)) {
-//           // Ajouter l'espace comme nœud texte
-//           p.appendChild(document.createTextNode(token));
-//         } else if (token.length > 0) {
-//           const span = document.createElement('span');
-//           span.className = 'word';
-//           span.textContent = token;
-//           span.style.display = 'inline-block';
-//           span.style.verticalAlign = 'bottom';
-//           span.style.marginRight = '0.06em';
-//           p.appendChild(span);
-//         }
-//       });
-
-//       p.dataset._wordsSplit = '1';
-
-//       const words = p.querySelectorAll('.word');
-//       if (words.length === 0) return;
-
-//       // Cacher les mots initialement
-//       gsap.set(words, { y: 24, opacity: 0 });
-
-//       // IMPORTANT : Calculer la position du paragraphe dans le scroll horizontal
-//       const illustrationList = document.querySelector('.illustration-list');
-//       const illustrationListRect = illustrationList.getBoundingClientRect();
-//       const pRect = p.getBoundingClientRect();
+      // Créer un conteneur temporaire avec le contenu original
+      const tempContainer = document.createElement('div');
+      tempContainer.appendChild(p.cloneNode(true));
       
-//       // Position absolue du paragraphe dans .illustration-list
-//       const pAbsoluteLeft = pRect.left - illustrationListRect.left + illustrationList.scrollLeft;
+      // Splitter le contenu
+      const splitContent = splitTextNodes(tempContainer.firstChild);
       
-//       // DÉLAI AJUSTÉ : Le paragraphe entre dans le viewport plus tard
-//       // Augmente le décalage pour déclencher l'animation plus tard
-//       const TRIGGER_OFFSET = 400; // Ajuste cette valeur (plus c'est grand, plus c'est tard)
-//       const triggerStart = pAbsoluteLeft - window.innerWidth + TRIGGER_OFFSET;
+      // Remplacer le contenu du paragraphe
+      p.innerHTML = '';
+      p.appendChild(splitContent);
       
-//       // Créer une timeline pausée
-//       const tl = gsap.timeline({ paused: true });
+      p.dataset._wordsSplit = '1';
 
-//       tl.to(words, {
-//         y: 0,
-//         opacity: 1,
-//         duration: 0.6,
-//         ease: 'power2.out',
-//         stagger: 0.015,
-//         immediateRender: false
-//       });
+      // Récupérer TOUS les mots (y compris ceux dans les boutons)
+      const words = p.querySelectorAll('.word');
+      if (words.length === 0) return;
 
-//       // Utiliser ScrollTrigger avec le scroll vertical (qui contrôle le scroll horizontal)
-//       ScrollTrigger.create({
-//         trigger: "body",
-//         start: () => `top top-=${Math.max(0, triggerStart)}`,
-//         end: () => `top top-=${triggerStart + 500}`, // 500px de marge
-//         onEnter: () => {
-//           if (!tl.isActive() && tl.progress() === 0) {
-//             tl.play();
-//           }
-//         },
-//         once: true,
-//         // markers: true, // Décommenter pour debug
-//         invalidateOnRefresh: true
-//       });
-//     });
-//   };
+      // Cacher les mots initialement
+      gsap.set(words, { y: 24, opacity: 0 });
 
-//   // Attendre que le scroll horizontal soit bien initialisé
-//   window.addEventListener('load', () => {
-//     setTimeout(() => {
-//       animateParagraphWords();
-//       ScrollTrigger.refresh();
-//     }, 500); // Petit délai pour s'assurer que tout est chargé
-//   });
+      // Calculer la position du paragraphe dans le scroll horizontal
+      const illustrationList = document.querySelector('.illustration-list');
+      const illustrationListRect = illustrationList.getBoundingClientRect();
+      const pRect = p.getBoundingClientRect();
+      
+      const pAbsoluteLeft = pRect.left - illustrationListRect.left + illustrationList.scrollLeft;
+      
+      const TRIGGER_OFFSET = 200;
+      const triggerStart = pAbsoluteLeft - window.innerWidth + TRIGGER_OFFSET;
+      
+      // Créer une timeline pausée
+      const tl = gsap.timeline({ paused: true });
 
-//   // Re-run au resize
-//   let resizeTimer;
-//   window.addEventListener('resize', () => {
-//     clearTimeout(resizeTimer);
-//     resizeTimer = setTimeout(() => {
-//       ScrollTrigger.refresh();
-//     }, 150);
-//   });
-// }
+      tl.to(words, {
+        y: 0,
+        opacity: 1,
+        duration: 0.6,
+        ease: 'power2.out',
+        stagger: 0.015,
+        immediateRender: false
+      });
+
+      // Utiliser ScrollTrigger
+      ScrollTrigger.create({
+        trigger: "body",
+        start: () => `top top-=${Math.max(0, triggerStart)}`,
+        end: () => `top top-=${triggerStart + 500}`,
+        onEnter: () => {
+          if (!tl.isActive() && tl.progress() === 0) {
+            tl.play();
+          }
+        },
+        once: true,
+        invalidateOnRefresh: true
+      });
+    });
+  };
+
+  // Attendre que le scroll horizontal soit bien initialisé
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      animateParagraphWords();
+      ScrollTrigger.refresh();
+    }, 500);
+  });
+
+  // Re-run au resize
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 150);
+  });
+}

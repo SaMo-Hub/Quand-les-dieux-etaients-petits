@@ -226,8 +226,9 @@ overflow: hidden;
 .frame-texte p {
   /* width: 40%; */
   width: 300px;
-  font-size: 20px;
+  font-size: 28px;
   text-align: center;
+  line-height: 35px;
 }
 
 /* .illustration-list .frame {
@@ -611,8 +612,7 @@ body.scroll-blocked::after {
 
 
 .bulle {
-  top: 45%;
-  left: 24%;
+
   position: absolute;
   /* flex-shrink: 0; */
   display: flex;
@@ -672,7 +672,7 @@ body.scroll-blocked::after {
 .fire {
     position: absolute;
     bottom: -120%;
-left:229%;
+left:200%;
 }
 
 .zindex{
@@ -699,9 +699,10 @@ grid-template-rows: repeat(3, 1fr);
 grid-column-gap: 12px;
 grid-row-gap: 12px;
 }
+.modal {
 
+}
 .modal-content-langue{
-  position: absolute;
   background: var(--color-bg);
   /* background: linear-gradient(135deg, #1a0200 0%, #2d0400 100%); */
   border: var(--border-size) solid var(--color-primary);
@@ -711,7 +712,6 @@ grid-row-gap: 12px;
   justify-content: center;
   align-items: center;
   padding: 40px;
-  top: 50px;
   left: 90px;
   z-index: 400;
 }
@@ -743,3 +743,29 @@ grid-row-gap: 12px;
   z-index: 100;
 }
 
+
+.gaia-talk-to-chronos{
+  display: flex;
+  gap: 300px;
+
+  align-items: end;
+  justify-items: center;
+}
+
+.text-parallax{
+  position: absolute;
+}
+
+.gaia-text-parallax{
+  right:50%;
+}
+
+#gaia-bebe-talk{
+  top: 10%;
+  
+}
+#gaia-bebe-interaction{
+  top: 0%;
+  right: 28%;
+  scale: 1.5;
+}
