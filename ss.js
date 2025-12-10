@@ -2,8 +2,8 @@
 
 // Variables pour suivre l'état du déblocage
 let currentBlockIndex = 0; // Index du blocage actuel (0 = premier blocage, 1 = second blocage)
-let isFullyUnlocked = false; // Scroll complètement débloqué
-let isChapitreNavigation = false; // Flag pour la navigation entre chapitres
+let isFullyUnlocked = true; // Scroll complètement débloqué
+let isChapitreNavigation = true; // Flag pour la navigation entre chapitres
 
 // Configuration des points de blocage
 const blockPoints = [
