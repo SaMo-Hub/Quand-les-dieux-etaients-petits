@@ -64,7 +64,27 @@ gsap.to('.meandre', {
   }
 });
 gsap.to('.fire', {
-  x: () => -illustrationList.scrollWidth * 0.2,
+  x: () => -illustrationList.scrollWidth * 0.4,
+  ease: "none",
+  scrollTrigger: {
+    trigger: "body",
+    start: "top top",
+    end: () => "+=" + (illustrationList.scrollWidth - window.innerWidth),
+    scrub: 0.2
+  }
+});
+gsap.to('.eclair', {
+  x: () => -illustrationList.scrollWidth * 0.4,
+  ease: "none",
+  scrollTrigger: {
+    trigger: "body",
+    start: "top top",
+    end: () => "+=" + (illustrationList.scrollWidth - window.innerWidth),
+    scrub: 0.2
+  }
+});
+gsap.to('.poseidon', {
+  x: () => -illustrationList.scrollWidth * 0.4,
   ease: "none",
   scrollTrigger: {
     trigger: "body",
@@ -303,37 +323,37 @@ window.addEventListener('load', () => {
 // ===== AJUSTER LA TAILLE DU MÉANDRE =====
 // À ajouter au début de chapitre-navigation.js, après les imports GSAP
 
-function updateMeandreWidth() {
-  const meandre = document.querySelector('.meandre');
-  const illustrationList = document.querySelector('.illustration-list');
+// function updateMeandreWidth() {
+//   const meandre = document.querySelector('.meandre');
+//   const illustrationList = document.querySelector('.illustration-list');
   
-  if (meandre && illustrationList) {
-    // Calculer la largeur totale de tous les chapitres
-    const totalWidth = illustrationList.scrollWidth;
+//   if (meandre && illustrationList) {
+//     // Calculer la largeur totale de tous les chapitres
+//     const totalWidth = illustrationList.scrollWidth;
     
-    // Appliquer la largeur au méandre
-    meandre.style.width = `${totalWidth}px`;
+//     // Appliquer la largeur au méandre
+//     meandre.style.width = `${totalWidth}px`;
     
-    console.log('Méandre width updated:', totalWidth + 'px');
-  }
-}
+//     console.log('Méandre width updated:', totalWidth + 'px');
+//   }
+// }
 
-// Mettre à jour au chargement
-window.addEventListener('load', () => {
-  updateMeandreWidth();
+// // Mettre à jour au chargement
+// window.addEventListener('load', () => {
+//   updateMeandreWidth();
   
-  // Attendre un peu pour que tout soit bien chargé
-  setTimeout(updateMeandreWidth, 100);
-  setTimeout(updateMeandreWidth, 500);
-});
+//   // Attendre un peu pour que tout soit bien chargé
+//   setTimeout(updateMeandreWidth, 100);
+//   setTimeout(updateMeandreWidth, 500);
+// });
 
-// Mettre à jour au resize
-window.addEventListener('resize', () => {
-  updateMeandreWidth();
-});
+// // Mettre à jour au resize
+// window.addEventListener('resize', () => {
+//   updateMeandreWidth();
+// });
 
-// Mettre à jour quand ScrollTrigger refresh
-ScrollTrigger.addEventListener('refresh', updateMeandreWidth);
+// // Mettre à jour quand ScrollTrigger refresh
+// ScrollTrigger.addEventListener('refresh', updateMeandreWidth);
 
-// Appel initial
-updateMeandreWidth();
+// // Appel initial
+// updateMeandreWidth();

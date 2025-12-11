@@ -52,7 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // ========== ANIMATION DU BUTTON-PRIMARY ==========
   const buttonPrimary = document.querySelector('.chapitre-name-animation');
-  console.log(buttonPrimary);
   
   if (buttonPrimary) {
     // Animation du bouton depuis le haut
@@ -201,12 +200,7 @@ ease: "expo.inOut",
     const star = document.querySelector('.star');
     const baby = document.querySelector('.baby');
     const title = document.querySelector('.chapitre-title');
-     gsap.to(title, {
-         
-          opacity: 1,
-          duration: 0,
-         
-        });
+  
     // État initial : cacher tous les éléments
     gsap.set(chapitreImg, {
       y: 520,
@@ -235,7 +229,12 @@ ease: "expo.inOut",
     if (titleWords.length) {
       gsap.set(titleWords, { y: 110 });
     }
-
+   gsap.to(title, {
+         
+          opacity: 1,
+          duration: 0,
+         
+        });
     // Retirer la classe preload après avoir défini les états initiaux
     if (document.body.classList.contains('preload')) {
       document.body.classList.remove('preload');
@@ -346,12 +345,13 @@ ease: "expo.inOut",
 // ===== REMPLACER LA SECTION "ANIMATION PAR-MOT AU SCROLL" dans zeusElementAnimation.js =====
 
 // Animation par mot au scroll - ADAPTÉE POUR SCROLL HORIZONTAL
+const chapitretitle = document.querySelector('.text-animate')
 // ===== ANIMATION PAR-MOT AU SCROLL - VERSION CORRIGÉE =====
-
+ 
 if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 
-  const animateParagraphWords = (rootSelector = '.frame-texte p, .explication, .text-parallax p') => {
+  const animateParagraphWords = (rootSelector = '.frame-texte p, .explication, .text-parallax p, .text-animate') => {
     const elems = document.querySelectorAll(rootSelector);
     
     elems.forEach(p => {
@@ -455,7 +455,7 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
       // Créer une timeline pausée
       const tl = gsap.timeline({ paused: true });
 
-      tl.to(words, {
+     tl.to(words, {
         y: 0,
         opacity: 1,
         duration: 0.6,

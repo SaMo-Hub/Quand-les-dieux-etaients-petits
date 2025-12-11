@@ -170,6 +170,9 @@ h1 {
   opacity: 0;
 }
 
+.text-overflow {
+  overflow: hidden;
+}
 
 .chapitre-title {
   font-family: var(--font-title);
@@ -182,8 +185,14 @@ h1 {
 overflow: hidden;
 opacity: 0;
 }
+/* .chapitre-title {
+ transform: translateY(210px);
+  opacity: 1;
+
+} */
 .chapitre-title span {
  transform: translateY(500px);
+  opacity: 0;
 
 }
 
@@ -313,8 +322,6 @@ body.scroll-blocked::after {
   bottom: -5px;
   /* background: #2e5cd6; */
   flex-shrink: 0;
-  position: relative;
-  left: -5px;
 }
 
 
@@ -470,145 +477,6 @@ body.scroll-blocked::after {
 }
 
 
-.modal {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 24px;
-}
-
-/* Overlay de la modal */
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(20, 1, 0, 0.822);
-  /* backdrop-filter: blur(5px); */
-  z-index: 9999;
-  display: none;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  justify-content: center;
-  align-items: center;
-
-}
-
-.modal-overlay.active {
-  display: flex;
-  opacity: 1;
-}
-
-/* Contenu de la modal */
-.modal-content {
-  position: relative;
-  background: var(--color-bg);
-  /* background: linear-gradient(135deg, #1a0200 0%, #2d0400 100%); */
-  border: var(--border-size) solid var(--color-primary);
-  /* border-radius: 20px; */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 40px;
-  max-width: 500px;
-  width: 90%;
-  max-height: 80vh;
-  /* overflow-y: auto; */
-  /* box-shadow: 
-    0 20px 60px rgba(235, 115, 51, 0.3),
-    0 0 40px rgba(235, 115, 51, 0.2); */
-}
-
-/* Bouton de fermeture */
-
-
-
-
-/* Titre de la modal */
-.modal-name {
-  position: absolute;
-  top: -26px;
-}
-
-.modal-h1 {
-  font-family: var(--font-title);
-  font-size: 36px;
-  /* color: var(--color-primary); */
-  margin: 0 0 20px 0;
-  text-align: left;
-  font-weight: 100;
-}
-
-/* Texte de la modal */
-.modal-paragraphe {
-  font-family: var(--font-primary);
-  font-size: 16px;
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.9);
-  margin: 0 0 30px 0;
-  text-align: justify;
-}
-
-/* Bouton "En savoir plus" */
-/* ===== BOUTON MODAL ===== */
-.modal-button {
-  display: inline-block;
-  background: var(--color-primary);
-  color: #140100;
-  font-family: var(--font-primary);
-  font-size: 16px;
-  font-weight: bold;
-  padding: 12px 30px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(235, 115, 51, 0.3);
-  position: relative;
-  overflow: hidden;
-}
-
-.modal-button::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  transition: width 0.6s ease, height 0.6s ease;
-}
-
-.modal-button:hover {
-  background: #ff8f5c;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(235, 115, 51, 0.5);
-}
-
-.modal-button:hover::before {
-  width: 300px;
-  height: 300px;
-}
-
-.modal-button:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 10px rgba(235, 115, 51, 0.3);
-}
-
-/* ===== BOUTON FERMER MODAL ===== */
-.close-modal {
-  cursor: pointer;
-  transition: all 0.3s ease;
-  transform: scale(0);
-
-  opacity: 0;
-
-}
 
 /* 
 .close-modal:hover {
@@ -687,7 +555,7 @@ body.scroll-blocked::after {
 .fire {
     position: absolute;
     bottom: -120%;
-left:200%;
+left:580%;
 }
 
 .zindex{
@@ -754,6 +622,8 @@ grid-row-gap: 12px;
   opacity: 1;
 }
 
+
+
 .langue {
   z-index: 100;
 }
@@ -814,8 +684,37 @@ top: -40%;
 .eclair {
   position: absolute;
   top: -30%;
+  left: 800%;
+}
+.vague {
+  position: absolute;
+  right: 0;
+  height: 110%;
+
 }
 
 #ZeusQuiLanceEclairIllustration .text-parallax{
-left: -20%;
+left: 120%;
+}
+
+#poseidon-vague{
+  width: 1400px;
+}
+
+.poseidon{
+  position: relative;
+left: 840%;
+}
+
+.poseidon-text{
+  left: 120%;
+
+}
+
+html {
+    scrollbar-width: none; /* Firefox */
+}
+
+html::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
 }

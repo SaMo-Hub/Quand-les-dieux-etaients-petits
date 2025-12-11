@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalContent = langueModalOverlay.querySelector('.modal-content-langue');
 
   // Fonction pour ouvrir la modal langue
-  function openLangueModal() {
+  function openModal() {
     langueModalOverlay.classList.add('active');
     
     // Animation d'ouverture avec GSAP
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
     langueButton.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
-      openLangueModal();
+      openModal();
     });
   }
 
