@@ -1,0 +1,189 @@
+/* language-styles.css - Styles spécifiques pour chaque langue */
+
+/* ===== TYPOGRAPHIE GRECQUE ===== */
+.lang-el h1,
+.lang-el .chapitre-title,
+.lang-el .modal-h1,
+.lang-el .button-primary p {
+  font-family: spartacus, serif !important;
+  letter-spacing: 0.05em;
+}
+
+.lang-el .octogone p,
+.lang-el .octogone.selected p {
+  font-family: spartacus, serif !important;
+}
+
+/* Ajustements pour le grec */
+.lang-el h1 {
+  font-size: 1.1em; /* Légèrement plus grand pour compenser */
+}
+
+/* ===== TYPOGRAPHIE ARABE ===== */
+.lang-ar {
+  direction: rtl;
+  text-align: right;
+}
+
+.lang-ar h1,
+.lang-ar .chapitre-title,
+.lang-ar .modal-h1 {
+  font-family: 'Arial', 'Tahoma', sans-serif;
+  font-weight: bold;
+}
+
+.lang-ar p,
+.lang-ar .frame-texte {
+  font-family: 'Arial', 'Tahoma', sans-serif;
+  line-height: 2;
+}
+
+/* Inverser certains éléments pour l'arabe */
+.lang-ar .frame.right {
+  text-align: left;
+}
+
+.lang-ar .nav-button {
+  left: auto;
+  right: 29px;
+}
+
+/* ===== TYPOGRAPHIE CHINOISE ===== */
+.lang-zh h1,
+.lang-zh .chapitre-title,
+.lang-zh .modal-h1 {
+  font-family: 'Microsoft YaHei', 'SimHei', 'PingFang SC', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+
+.lang-zh p,
+.lang-zh .frame-texte {
+  font-family: 'Microsoft YaHei', 'SimHei', 'PingFang SC', sans-serif;
+  line-height: 1.8;
+}
+
+/* ===== TYPOGRAPHIE ESPAGNOLE ===== */
+.lang-es h1,
+.lang-es .chapitre-title,
+.lang-es .modal-h1,
+.lang-es .button-primary p {
+  font-family: Archides, serif;
+}
+
+/* ===== TYPOGRAPHIE ANGLAISE ===== */
+.lang-en h1,
+.lang-en .chapitre-title,
+.lang-en .modal-h1,
+.lang-en .button-primary p {
+  font-family: Archides, serif;
+}
+
+/* ===== TYPOGRAPHIE FRANÇAISE (par défaut) ===== */
+.lang-fr h1,
+.lang-fr .chapitre-title,
+.lang-fr .modal-h1,
+.lang-fr .button-primary p {
+  font-family: Archides, serif;
+}
+
+/* ===== AJUSTEMENTS DES BULLES DE DIALOGUE ===== */
+.lang-ar .bulle,
+.lang-ar .bulle-gai-talk {
+  direction: rtl;
+  text-align: right;
+}
+
+.lang-ar .bulle p,
+.lang-ar .bulle-gai-talk p {
+  text-align: right;
+  padding-right: 20px;
+  padding-left: 10px;
+}
+
+/* ===== AJUSTEMENTS DES MODALES ===== */
+.lang-ar .modal-content {
+  text-align: right;
+}
+
+.lang-ar .modal-paragraphe {
+  text-align: right;
+}
+
+/* ===== TRANSITIONS DE LANGUE ===== */
+[data-translate] {
+  transition: opacity 0.3s ease;
+}
+
+body.changing-language [data-translate] {
+  opacity: 0.5;
+}
+
+/* ===== AJUSTEMENTS RESPONSIFS ===== */
+@media (max-width: 768px) {
+  .lang-el h1 {
+    font-size: 1em;
+  }
+  
+  .lang-zh h1 {
+    font-size: 1.2em;
+  }
+  
+  .lang-ar .nav-button {
+    right: 15px;
+  }
+}
+
+/* ===== SUPPORT FONTS VARIABLES ===== */
+@supports (font-variation-settings: normal) {
+  .lang-zh h1,
+  .lang-zh .chapitre-title {
+    font-variation-settings: 'wght' 600;
+  }
+}
+
+/* ===== FALLBACKS POUR LANGUES SANS SUPPORT ===== */
+@font-face {
+  font-family: 'Greek Fallback';
+  src: local('Times New Roman'), local('Georgia');
+  unicode-range: U+0370-03FF, U+1F00-1FFF;
+}
+
+.lang-el {
+  font-family: spartacus, 'Greek Fallback', serif;
+}
+
+/* ===== ANIMATIONS DE CHANGEMENT DE LANGUE ===== */
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body.language-changed [data-translate] {
+  animation: fadeInText 0.5s ease forwards;
+}
+
+/* ===== AJUSTEMENTS POUR NOMS DE PERSONNAGES ===== */
+.text-modal {
+  transition: font-family 0.3s ease;
+}
+
+.lang-el .text-modal {
+  font-family: spartacus, serif;
+}
+
+.lang-ar .text-modal {
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+}
+
+.lang-zh .text-modal {
+  font-family: 'Microsoft YaHei', sans-serif;
+  font-weight: 500;
+}

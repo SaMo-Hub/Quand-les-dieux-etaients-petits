@@ -5,6 +5,12 @@
   src: url("./public/font/archides.otf");
   /* url of the font */
 }
+@font-face {
+  font-family: spartacus;
+  /* set name */
+  src: url("./public/font/spartacus.otf");
+  /* url of the font */
+}
 
 :root {
   /* ===== COULEURS PRIMAIRES ===== */
@@ -22,6 +28,7 @@
   /* ===== FONTS ===== */
   --font-primary: "futura-100-greek-book";
   --font-title: Archides;
+  --font-title-greek :
   --font-mono: "JetBrains Mono", "Fira Code", monospace;
 
   --border-size: 2px;

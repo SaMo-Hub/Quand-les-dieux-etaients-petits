@@ -1,6 +1,6 @@
 let personnagesData = {};
 
-fetch('../personageLieuxData.json')
+fetch('./personageLieuxData.json')
   .then(response => response.json())
   .then(data => {
     personnagesData = data;
