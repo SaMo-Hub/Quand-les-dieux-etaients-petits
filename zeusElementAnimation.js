@@ -497,3 +497,123 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
     }, 150);
   });
 }
+
+// Animation de sortie pour la page Zeus
+(function(){
+  
+  function exitAnimation(){
+    return new Promise(resolve => {
+      const tl = gsap.timeline({ onComplete: resolve });
+      
+      // 1. Fade out de l'illustration-list (tout le contenu scrollable)
+      tl.to('.illustration-list', { 
+        opacity: 0, 
+        duration: 0.5, 
+        ease: 'power2.in' 
+      }, 0);
+      
+      // 2. Les octogones disparaissent (inverse de l'entrée)
+      const octogones = document.querySelectorAll('.octogone');
+      tl.to(octogones, {
+        scale: 0.1,
+        opacity: 0,
+        duration: 0.5,
+        stagger: 0.08,
+        ease: "back.in(1.5)"
+      }, 0.1);
+      
+      // 3. Les flèches disparaissent (inverse de l'entrée)
+      const arrows = document.querySelectorAll('.arrow');
+      arrows.forEach((arrow, index) => {
+        tl.to(arrow, {
+          opacity: 0,
+          x: index === 0 ? -30 : 30,
+          duration: 0.4,
+          ease: "expo.in"
+        }, 0.15 + (index * 0.1));
+      });
+      
+      // 4. Le bouton chapitre-name remonte (inverse de l'entrée)
+      const buttonPrimary = document.querySelector('.chapitre-name-animation');
+      if (buttonPrimary) {
+        const buttonText = buttonPrimary.querySelector('p');
+        const buttonLetterSpans = buttonText ? buttonText.querySelectorAll('span') : [];
+        
+        // Faire disparaître les lettres d'abord
+        if (buttonLetterSpans.length > 0) {
+          tl.to(buttonLetterSpans, {
+            y: -15,
+            opacity: 0,
+            duration: 0.3,
+            stagger: 0.01,
+            ease: "power2.in"
+          }, 0.2);
+        }
+        
+        // Puis le bouton lui-même
+        tl.to(buttonPrimary, {
+          y: -100,
+          opacity: 0,
+          duration: 0.4,
+          ease: "power2.in"
+        }, 0.3);
+      }
+      
+ 
+      // Petit délai pour s'assurer que l'animation est visible
+      tl.to({}, { duration: 0.1 });
+    });
+  }
+  
+  // Fonction pour initialiser l'animation de sortie
+  function initExitAnimation() {
+    // Intercepter tous les liens de navigation
+    document.querySelectorAll('a[href]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const href = a.getAttribute('href');
+        // Ignorer les ancres, mailto, et liens javascript
+        if(!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('javascript:')) return;
+        
+        e.preventDefault();
+        
+        // Désactiver tous les liens pour éviter les clics multiples
+        document.querySelectorAll('a[href], button').forEach(el => {
+          el.style.pointerEvents = 'none';
+        });
+        
+        exitAnimation().then(() => {
+          window.location.href = href;
+        });
+      });
+    });
+    
+    // Intercepter aussi les boutons avec des redirections spécifiques
+    // Par exemple si vous avez des boutons qui changent de page
+    const navigationButtons = document.querySelectorAll('[data-redirect]');
+    navigationButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const redirectUrl = btn.getAttribute('data-redirect');
+        
+        if (redirectUrl) {
+          document.querySelectorAll('a[href], button').forEach(el => {
+            el.style.pointerEvents = 'none';
+          });
+          
+          exitAnimation().then(() => {
+            window.location.href = redirectUrl;
+          });
+        }
+      });
+    });
+  }
+  
+  // Attendre que le DOM soit chargé et que les animations d'entrée soient terminées
+  document.addEventListener('DOMContentLoaded', () => {
+    // Attendre un peu que les animations d'entrée se terminent
+    setTimeout(() => {
+      initExitAnimation();
+    }, 3000); // Ajuster ce délai selon la durée de vos animations d'entrée
+  });
+  
+})();

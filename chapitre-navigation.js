@@ -22,9 +22,13 @@ const getChapitrePositions = () => {
   const positions = [];
   let cumulativeWidth = 0;
   
-  allChapitres.forEach((chapitre) => {
+  allChapitres.forEach((chapitre, index) => {
     positions.push(cumulativeWidth);
-    cumulativeWidth += chapitre.offsetWidth ; // +24 pour le gap
+    // Utiliser scrollWidth pour obtenir la largeur réelle du contenu
+    const realWidth = chapitre.scrollWidth;
+    cumulativeWidth += realWidth;
+    
+    console.log(`Chapitre ${index + 1} - Position: ${positions[index]}px, Largeur: ${realWidth}px`);
   });
   
   return positions;
@@ -52,39 +56,9 @@ gsap.to(illustrationList, {
   }
 });
 
-// Animation du méandre (défilement parallaxe)
+// Animation du méandre
 gsap.to('.meandre', {
   x: () => -illustrationList.scrollWidth * 0.5,
-  ease: "none",
-  scrollTrigger: {
-    trigger: "body",
-    start: "top top",
-    end: () => "+=" + (illustrationList.scrollWidth - window.innerWidth),
-    scrub: 0.2
-  }
-});
-gsap.to('.fire', {
-  x: () => -illustrationList.scrollWidth * 0.4,
-  ease: "none",
-  scrollTrigger: {
-    trigger: "body",
-    start: "top top",
-    end: () => "+=" + (illustrationList.scrollWidth - window.innerWidth),
-    scrub: 0.2
-  }
-});
-gsap.to('.eclair', {
-  x: () => -illustrationList.scrollWidth * 0.4,
-  ease: "none",
-  scrollTrigger: {
-    trigger: "body",
-    start: "top top",
-    end: () => "+=" + (illustrationList.scrollWidth - window.innerWidth),
-    scrub: 0.2
-  }
-});
-gsap.to('.poseidon', {
-  x: () => -illustrationList.scrollWidth * 0.4,
   ease: "none",
   scrollTrigger: {
     trigger: "body",
@@ -173,27 +147,52 @@ function animateSortie(oldText, newText) {
   tl.add(() => animateEntree(newText));
 }
 
-// Créer des ScrollTriggers pour chaque chapitre
-
-let isClickScrolling = false; // NOUVEAU FLAG
-
-// ... (reste du code identique)
+let isClickScrolling = false;
 
 // Créer des ScrollTriggers pour chaque chapitre
 const chapitrePositions = getChapitrePositions();
 
+// ===== SYSTÈME DE PROGRESSION DES CHAPITRES =====
 allChapitres.forEach((chapitre, index) => {
   const startPosition = chapitrePositions[index];
+  // Utiliser scrollWidth pour obtenir la largeur réelle du contenu
   const endPosition = index < allChapitres.length - 1 
     ? chapitrePositions[index + 1] 
-    : getScrollAmount();
+    : startPosition + chapitre.scrollWidth;
+  
+  const chapitreWidth = endPosition - startPosition;
+  
+  console.log(`Chapitre ${index + 1} - Start: ${startPosition}px, End: ${endPosition}px, Width: ${chapitreWidth}px`);
+  
+  // Récupérer l'élément de remplissage pour ce chapitre
+  const octBgPourcentage = octogones[index]?.querySelector('.oct-bg-pourcentage');
+  
+  if (octBgPourcentage) {
+    // Créer un ScrollTrigger pour la progression
+    ScrollTrigger.create({
+      trigger: "body",
+      start: () => `top top-=${startPosition}`,
+      end: () => `top top-=${endPosition}`,
+      scrub: 0.5,
+      id: `progress-chapitre-${index + 1}`,
+      onUpdate: (self) => {
+        // Calculer le pourcentage de progression dans ce chapitre
+        const progress = self.progress;
+        const percentage = Math.round(progress * 100);
+        
+        // Animer le clip-path de droite à gauche (0% = caché, 100% = visible)
+        const clipValue = 100 - (progress * 100);
+        octBgPourcentage.style.clipPath = `inset(0 ${clipValue}% 0 0)`;
+      }
+    });
+  }
 
+  // ScrollTrigger pour le changement de chapitre actif
   ScrollTrigger.create({
     trigger: "body",
     start: () => `top top-=${startPosition}`,
     end: () => `top top-=${endPosition}`,
     onEnter: () => {
-      // Ignorer si on est en train de scroller via un clic
       if (isClickScrolling) return;
       
       octogones.forEach(oct => oct.classList.remove('selected'));
@@ -208,7 +207,6 @@ allChapitres.forEach((chapitre, index) => {
       }
     },
     onEnterBack: () => {
-      // Ignorer si on est en train de scroller via un clic
       if (isClickScrolling) return;
       
       octogones.forEach(oct => oct.classList.remove('selected'));
@@ -229,33 +227,21 @@ allChapitres.forEach((chapitre, index) => {
 octogones.forEach((octogone, index) => {
   octogone.style.cursor = 'pointer';
   octogone.addEventListener('click', () => {
-    // Si une animation est en cours, ignore le clic
     if (isAnimating) return;
-
-    // Si on clique sur le même chapitre, ne rien faire
     if (index === currentChapitreIndex) return;
 
-    // Set les flags
     isAnimating = true;
-    isClickScrolling = true; // ACTIVER LE FLAG
+    isClickScrolling = true;
 
-    // Récupérer les positions actuelles
     const positions = getChapitrePositions();
     const targetPosition = positions[index];
     
-    // Retire l'ancien selected
     document.querySelector('.octogone.selected')?.classList.remove('selected');
-
-    // Mets le nouveau
     octogone.classList.add('selected');
 
-    // Lance l'animation du texte
     animateSortie(chapitreNames[currentChapitreIndex], chapitreNames[index]);
-
-    // Met à jour l'index
     currentChapitreIndex = index;
     
-    // Anime le scroll window
     gsap.to(window, {
       scrollTo: {
         y: targetPosition,
@@ -264,16 +250,16 @@ octogones.forEach((octogone, index) => {
       duration: 1,
       ease: "power2.inOut",
       onComplete: () => {
-        // Désactiver le flag quand le scroll est terminé
         isClickScrolling = false;
       }
     });
   });
 });
+
+// Animation parallaxe des textes
 const sections = gsap.utils.toArray('.all-chapitre');
 sections.forEach((chapitre, index) => {
   const texts = chapitre.querySelectorAll('.text-parallax');
-  console.log(`Chapitre ${index}:`, texts.length, 'text-parallax trouvés');
 
   if (texts.length === 0) return;
 
@@ -283,14 +269,11 @@ sections.forEach((chapitre, index) => {
     : getScrollAmount();
 
   texts.forEach((text) => {
-    // Calculer la position absolue du texte dans .illustration-list
     const illustrationListRect = illustrationList.getBoundingClientRect();
     const textRect = text.getBoundingClientRect();
     const textAbsoluteLeft = textRect.left - illustrationListRect.left + illustrationList.scrollLeft;
     
-    // L'animation commence quand le texte entre dans le viewport (à droite de l'écran)
     const textStart = textAbsoluteLeft - window.innerWidth;
-    // Continue jusqu'à la fin du chapitre
     const textEnd = endPosition;
 
     gsap.to(text, {
@@ -301,7 +284,6 @@ sections.forEach((chapitre, index) => {
         start: () => `top top-=${Math.max(0, textStart)}`,
         end: () => `top top-=${textEnd}`,
         scrub: 1,
-        markers: true,
         invalidateOnRefresh: true
       }
     });
@@ -319,41 +301,3 @@ window.addEventListener('load', () => {
   window.scrollTo(0, 0);
   ScrollTrigger.refresh();
 });
-
-// ===== AJUSTER LA TAILLE DU MÉANDRE =====
-// À ajouter au début de chapitre-navigation.js, après les imports GSAP
-
-// function updateMeandreWidth() {
-//   const meandre = document.querySelector('.meandre');
-//   const illustrationList = document.querySelector('.illustration-list');
-  
-//   if (meandre && illustrationList) {
-//     // Calculer la largeur totale de tous les chapitres
-//     const totalWidth = illustrationList.scrollWidth;
-    
-//     // Appliquer la largeur au méandre
-//     meandre.style.width = `${totalWidth}px`;
-    
-//     console.log('Méandre width updated:', totalWidth + 'px');
-//   }
-// }
-
-// // Mettre à jour au chargement
-// window.addEventListener('load', () => {
-//   updateMeandreWidth();
-  
-//   // Attendre un peu pour que tout soit bien chargé
-//   setTimeout(updateMeandreWidth, 100);
-//   setTimeout(updateMeandreWidth, 500);
-// });
-
-// // Mettre à jour au resize
-// window.addEventListener('resize', () => {
-//   updateMeandreWidth();
-// });
-
-// // Mettre à jour quand ScrollTrigger refresh
-// ScrollTrigger.addEventListener('refresh', updateMeandreWidth);
-
-// // Appel initial
-// updateMeandreWidth();

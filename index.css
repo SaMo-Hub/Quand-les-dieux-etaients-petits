@@ -140,48 +140,6 @@ grid-row-gap: 12px;
   height: 100%;
 }
 
-.modal-content-help{
-  background: var(--color-bg);
-  /* background: linear-gradient(135deg, #1a0200 0%, #2d0400 100%); */
-  border: var(--border-size) solid var(--color-primary);
-  /* border-radius: 20px; */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 40px;
-  left: 90px;
-  z-index: 400;
-}
-
-
-
-.help-modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(20, 1, 0, 0.822);
-  /* backdrop-filter: blur(5px); */
-  z-index: 9999;
-  display: none;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  justify-content: center;
-  align-items: center;
-}
-
-.help-modal-overlay.active {
-  display: flex;
-  opacity: 1;
-}
-
-.help{
-  position: absolute;
-right: 29px;
-bottom: 89px;
-}
 
 html {
     scrollbar-width: none; /* Firefox */

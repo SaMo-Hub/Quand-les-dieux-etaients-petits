@@ -16,6 +16,38 @@
 
 <body class="chapitre-list">
   <section class="window">
+    <div class="help-modal-overlay">
+      <div class="modal">
+        <div class="modal-content-help">
+       
+          <h4 class="modal-h1">Comment naviguer ?</h4>
+          <div class="lanngue-grid">
+            <p>
+              Utilisez la molette de la souris ou le trackpad pour naviguer de gauche à droite dans l'histoire.</p>
+            <button class="secondary-button">
+              <p>J'ai compris !</p>
+              <svg class="btn-svg" width="288" height="62" viewBox="0 0 288 62" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path class="bg-hover" d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z"
+                  fill="#57280F" />
+                <path d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z" fill="#"
+                  stroke="#EB7333" stroke-width="var(--border-size)" />
+              </svg>
+            </button>
+
+          </div>
+        </div>
+        <button class="button close-modal">
+          <div class="item">
+            <svg width="16" height="16" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M0.707031 0.707031L5.27539 5.27539M9.84375 9.84375L5.27539 5.27539M5.27539 5.27539L0.707031 9.84375L9.84375 0.707031"
+                stroke="#EB7333" stroke-width="var(--border-size)" />
+            </svg>
+          </div>
+        </button>
+      </div>
+    </div>
     <div class="next-frame">
       <button id="toggle-btn" class="button">
         <div class="item">
@@ -25,6 +57,7 @@
         </div>
       </button>
     </div>
+    
      <div class="langue-modal-overlay">
           <div class="modal">
             <div class="modal-content-langue">
@@ -103,6 +136,7 @@
           </div>
         </div>
     <nav class="nav-button">
+     
       <button id="toggle-btn" class="button">
         <div class="item">
           <svg id="sound on" class="sound on" width="28" height="28" viewBox="0 0 64 64" fill="none"
@@ -119,7 +153,7 @@
           </svg>
         </div>
       </button>
-      
+
       <a href="./homePage.html">
         <button class="button">
           <div class="item">
@@ -131,13 +165,43 @@
           </div>
         </button>
       </a>
-      
-      <div>
-        <button id="langue" class="langue button">
-          <div class="item">L</div>
+         <div>
+        <button id="langue" class="home-nav langue button">
+          <div class="item">
+            <p>
+              L
+            </p>
+          </div>
         </button>
        
       </div>
+        <div class="help-button ">
+      <button id="toggle-btn" class="home-nav button">
+        <div class="item">
+          <p>
+            ?
+          </p>
+        </div>
+      </button>
+    </div>
+      <a href="./zeusPage.html">
+        <button class="button home-nav ">
+          <div class="item">
+            <svg width="32" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_1230_9555)">
+                <path
+                  d="M33.039 9.63574L27.5586 29.0098H45.8506L21.7793 53.0811L20.9932 52.4775L31.6924 33.9453H17.8672L18.3008 33.1953L32.125 9.25L33.039 9.63574Z"
+                  fill="white" stroke="white" />
+              </g>
+              <defs>
+                <clipPath id="clip0_1230_9555">
+                  <rect width="31" height="45" fill="white" transform="translate(17 9)" />
+                </clipPath>
+              </defs>
+            </svg>
+          </div>
+        </button>
+      </a>
     </nav>
     
     <div class="nav-chapitre-wrapper">
@@ -147,6 +211,7 @@
             xmlns="http://www.w3.org/2000/svg">
             <path d="M21 1H273L281 9V41L273 49H21L13 40.5V9L21 1Z" fill="var(--color-bg)" stroke="var(--color-primary)"
               stroke-width="var(--border-size)"></path>
+           
             <rect x="2" y="25" width="15.5563" height="15.5563" transform="rotate(-45 2 25)" fill="var(--color-bg)"
               stroke="var(--color-primary)" stroke-width="var(--border-size)"></rect>
             <rect x="10" y="25" width="4.24264" height="4.24264" transform="rotate(-45 10 25)" fill="#fff"></rect>
@@ -171,21 +236,30 @@
           <div class="selected octogone pulse">
             <p>1</p>
             <svg viewBox="0 0 89 102" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-width="0" fill="var(--color-bg)" class="oct-bg"
-                d="M86.6631 26.4453V75.5283L44.1562 100.069L1.64941 75.5283V26.4453L44.1562 1.9043L86.6631 26.4453Z" />
+              <!-- <path stroke-width="0" fill="var(--color-bg)" class="oct-bg"
+              d="M86.6631 26.4453V75.5283L44.1562 100.069L1.64941 75.5283V26.4453L44.1562 1.9043L86.6631 26.4453Z" /> -->
+              
               <path class="oct-stroke"
-                d="M86.6631 26.4453V75.5283L44.1562 100.069L1.64941 75.5283V26.4453L44.1562 1.9043L86.6631 26.4453Z"
-                stroke="#EB7333" stroke-width="2" />
+              d="M86.6631 26.4453V75.5283L44.1562 100.069L1.64941 75.5283V26.4453L44.1562 1.9043L86.6631 26.4453Z"
+              stroke="#EB7333" stroke-width="2" />
+              <path stroke-width="0" fill="var(--color-primary)" class="oct-bg-pourcentage"
+              d="M86.6631 26.4453V75.5283L44.1562 100.069L1.64941 75.5283V26.4453L44.1562 1.9043L86.6631 26.4453Z" />
+              <path class="oct-stroke" fill="none"
+              d="M86.6631 26.4453V75.5283L44.1562 100.069L1.64941 75.5283V26.4453L44.1562 1.9043L86.6631 26.4453Z"
+              stroke="#EB7333" stroke-width="2" />
             </svg>
           </div>
           <div class="octogone pulse">
             <p>2</p>
             <svg viewBox="0 0 89 102" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-width="0" fill="var(--color-bg)" class="oct-bg"
-                d="M86.6631 26.4453V75.5283L44.1562 100.069L1.64941 75.5283V26.4453L44.1562 1.9043L86.6631 26.4453Z" />
-              <path class="oct-stroke"
-                d="M86.6631 26.4453V75.5283L44.1562 100.069L1.64941 75.5283V26.4453L44.1562 1.9043L86.6631 26.4453Z"
-                stroke="#EB7333" stroke-width="2" />
+             <path class="oct-stroke"
+              d="M86.6631 26.4453V75.5283L44.1562 100.069L1.64941 75.5283V26.4453L44.1562 1.9043L86.6631 26.4453Z"
+              stroke="#EB7333" stroke-width="2" />
+              <path stroke-width="0" fill="var(--color-primary)" class="oct-bg-pourcentage"
+              d="M86.6631 26.4453V75.5283L44.1562 100.069L1.64941 75.5283V26.4453L44.1562 1.9043L86.6631 26.4453Z" />
+              <path class="oct-stroke" fill="none"
+              d="M86.6631 26.4453V75.5283L44.1562 100.069L1.64941 75.5283V26.4453L44.1562 1.9043L86.6631 26.4453Z"
+              stroke="#EB7333" stroke-width="2" />
             </svg>
           </div>
         </div>
@@ -466,7 +540,7 @@
       </div>
 
       <div class="frame illustration">
-        <div class="text-parallax poseidon-text frame frame-texte">
+        <div class="text-parallax zindex2 poseidon-text frame frame-texte">
        <p>
 ils nous ont offert trois armes incroyables :
 
@@ -479,18 +553,27 @@ le casque d’ombre.          </p>
         <img class="fire" src="./public/img/Zeus/Chapitre-2/fire.svg" alt="" />
         <img class="zindex" src="./public/img/Zeus/Chapitre-2/Cyclope-forgeron.svg" alt="" />
       </div>
-      
+         <div class="frame-space">
+        <div class="frame frame-texte right">
+          <p>
+         Quand la bataille prit fin, les Titans étaient à genoux.
+<br><br>
+On ne voulait plus qu’ils puissent refaire du mal à qui que ce soit.
+ <br>Alors on les a enchaînés et envoyés tout au fond du Tartare
+          </p>
+        </div>
+      </div>
       <div id="ZeusQuiLanceEclairIllustration" class="frame illustration-large">
         <img class="zindex ZeusQuiLanceEclair" src="./public/img/Zeus/Chapitre-2/ZeusQuiLanceEclair.svg" alt="" />
         <img class="eclair" src="./public/img/Zeus/Chapitre-2/Eclair.svg" alt="" />
-          <div class="text-parallax frame frame-texte">
+          <div class="text-parallax zindex2 frame frame-texte">
            <p>
           Je lançais mes éclairs,
           </p>
         </div>
       </div>
       <div id="poseidon-vague" class="frame illustration-large">
-        <div class="text-parallax frame frame-texte">
+        <div class="text-parallax zindex2 frame frame-texte">
            <p>
         dfgdfgdfgdg
           </p>

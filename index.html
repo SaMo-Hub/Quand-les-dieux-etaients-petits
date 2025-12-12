@@ -1,65 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-   <link rel="stylesheet" href="style.css" />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="bouton.css" />
   <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" href="./abregénaologique.css" />
-    <link rel="stylesheet" href="https://use.typekit.net/ihj8hvi.css" />
-  </head>
-  <body>
-    <section class="window">
-      <div>
+  <link rel="stylesheet" href="./abregénaologique.css" />
+  <link rel="stylesheet" href="https://use.typekit.net/ihj8hvi.css" />
+</head>
 
-          <nav class="nav-button">
-      <button id="toggle-btn" class="button open">
-        <div class="item">
-          <svg id="sound on" class="sound on" width="28" height="28" viewBox="0 0 64 64" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M34.3423 55.0938L16.5386 41.0488H7.51904V22.9521H16.5386L34.3423 8.90625V55.0938ZM56.019 31.0186L56.5728 32.001L56.019 32.9834L48.2554 46.749L44.771 44.7842L51.98 32L44.771 19.2168L48.2554 17.252L56.019 31.0186ZM47.7524 31.0117L48.3149 32L47.7524 32.9893L44.1724 39.2842L42.4341 38.2959L40.6958 37.3066L43.7124 32L40.6958 26.6934L44.1724 24.7168L47.7524 31.0117Z"
-              fill="white" />
-          </svg>
-          <svg id="sound-off" class="sound off" width="28" height="28" viewBox="0 0 64 64" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M34.3315 55.0938L16.5278 41.0488H7.5083V22.9521H16.5278L34.3315 8.90625V55.0938ZM49.314 29.0342L54.7925 23.5557L57.6206 26.3838L52.1421 31.8613L57.9653 37.6846L56.5513 39.0996L55.1372 40.5137L49.314 34.6904L43.2153 40.7891L40.3872 37.9609L46.4858 31.8623L40.6626 26.0391L43.4907 23.2109L49.314 29.0342Z"
-              fill="white" />
-          </svg>
-        </div>
-      </button>
-      <a href="./">
-        <button class="button">
+<body>
+  <!-- <div class="screen-small">
+    <div class="screen-small-modal">
+      <h2>Votre ecran n’est pas a la bonne taille</h2>
+      <div class="p-svg">
+        <p>
+          Pssst! Rotate your device to landscape.
+        </p>
+        <svg width="106" height="95" viewBox="0 0 106 95" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="42.9727" y="1.5" width="61.5273" height="30.1777" fill="#170800" stroke="#EB7333" stroke-width="3" />
+          <rect x="1.5" y="30.6777" width="103" height="62" fill="#170800" />
+          <rect x="1.5" y="30.6777" width="103" height="62" stroke="#EB7333" stroke-width="3" />
+          <path
+            d="M71.8824 82.4282L83.9995 66.3872L65.8203 43.9277L49.7788 51.057L44.4329 66.3872M44.4329 66.3872L36.6367 52.8837M44.4329 66.3872L58.0452 58.5281"
+            stroke="#EB7333" stroke-width="3" />
+        </svg>
+
+      </div>
+      <div class="p-svg">
+        <p>
+          Or resize your window so it's more wide than tall. </p>
+        <svg width="107" height="65" viewBox="0 0 107 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="32.5" y="1.5" width="73" height="62" fill="#170800" />
+          <rect x="32.5" y="1.5" width="73" height="62" stroke="#EB7333" stroke-width="3" />
+          <rect x="1.5" y="1.5" width="69" height="62" fill="#170800" />
+          <rect x="1.5" y="1.5" width="69" height="62" stroke="#EB7333" stroke-width="3" />
+          <path d="M59.0156 33.3909H89.3242M89.3242 33.3909L78.4489 22.5156M89.3242 33.3909L79.8749 42.8403"
+            stroke="#EB7333" stroke-width="3" />
+        </svg>
+
+
+      </div>
+    </div>
+  </div> -->
+  <section class="window">
+    <div>
+
+      <nav class="nav-button">
+        <button id="toggle-btn" class="button open">
           <div class="item">
-            <svg width="22" height="14" viewBox="0 0 22 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg id="sound on" class="sound on" width="28" height="28" viewBox="0 0 64 64" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
               <path
-                d="M10 2H6V4H16V2H12V0H22V2H18V6H12V8H20V12H22V14H16V12H18V10H12V12H14V14H8V12H10V10H4V12H6V14H0V12H2V8H10V6H4V2H0V0H10V2Z"
+                d="M34.3423 55.0938L16.5386 41.0488H7.51904V22.9521H16.5386L34.3423 8.90625V55.0938ZM56.019 31.0186L56.5728 32.001L56.019 32.9834L48.2554 46.749L44.771 44.7842L51.98 32L44.771 19.2168L48.2554 17.252L56.019 31.0186ZM47.7524 31.0117L48.3149 32L47.7524 32.9893L44.1724 39.2842L42.4341 38.2959L40.6958 37.3066L43.7124 32L40.6958 26.6934L44.1724 24.7168L47.7524 31.0117Z"
+                fill="white" />
+            </svg>
+            <svg id="sound-off" class="sound off" width="28" height="28" viewBox="0 0 64 64" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M34.3315 55.0938L16.5278 41.0488H7.5083V22.9521H16.5278L34.3315 8.90625V55.0938ZM49.314 29.0342L54.7925 23.5557L57.6206 26.3838L52.1421 31.8613L57.9653 37.6846L56.5513 39.0996L55.1372 40.5137L49.314 34.6904L43.2153 40.7891L40.3872 37.9609L46.4858 31.8623L40.6626 26.0391L43.4907 23.2109L49.314 29.0342Z"
                 fill="white" />
             </svg>
           </div>
         </button>
-      </a>
-    </nav>
-      </div>
-    
-      <h1>Choose your langage</h1>
-      <div id="grid-langage" class="grid-langage">
-       
-     
-      </div>
-      
-        
+        <a href="./">
+          <button class="button">
+            <div class="item">
+              <svg width="22" height="14" viewBox="0 0 22 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M10 2H6V4H16V2H12V0H22V2H18V6H12V8H20V12H22V14H16V12H18V10H12V12H14V14H8V12H10V10H4V12H6V14H0V12H2V8H10V6H4V2H0V0H10V2Z"
+                  fill="white" />
+              </svg>
+            </div>
+          </button>
+        </a>
+      </nav>
+    </div>
 
-      <!-- <button>Enter</button> -->
-    </section>
-    <script src="script.js"></script>
-    <script src="index.js"></script>
-    <script src="text-animation.js"></script>
-    <script src="./components/bouton.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <h1>Choose your langage</h1>
+    <div id="grid-langage" class="grid-langage">
 
-  </body>
+
+    </div>
+
+
+
+    <!-- <button>Enter</button> -->
+  </section>
+  <script src="script.js"></script>
+  <script src="index.js"></script>
+  <script src="indexElementAnimaiton.js"></script>
+  <script src="./components/bouton.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+</body>
+
 </html>
