@@ -1,4 +1,8 @@
-// helpModal.js - Système de modal d'aide (manuel uniquement)
+// helpModal.js - Système de modal d'aide avec détection d'inactivité
+
+let inactivityTimer;
+let hasShownHelp = false;
+const INACTIVITY_DELAY = 5000; // 5 secondes
 
 document.addEventListener('DOMContentLoaded', () => {
   const helpButton = document.querySelector('.help-button .button');
@@ -10,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Fonction pour ouvrir la modal d'aide
   function openHelpModal() {
     helpModalOverlay.classList.add('active');
+    hasShownHelp = true;
     
     // Animation d'ouverture avec GSAP
     const tl = gsap.timeline();
@@ -23,6 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
       { scale: 1, opacity: 1, duration: 0.25, ease: "back.out(1.7)", rotation: -45 },
       "-=0.2"
     );
+    
+    // Réinitialiser le timer
+    resetInactivityTimer();
   }
 
   // Fonction pour fermer la modal d'aide
@@ -45,6 +53,28 @@ document.addEventListener('DOMContentLoaded', () => {
       "-=0.2"
     );
   }
+
+  // Fonction pour réinitialiser le timer d'inactivité
+  function resetInactivityTimer() {
+    clearTimeout(inactivityTimer);
+    
+    // Ne relancer le timer que si on n'a jamais montré l'aide
+    if (!hasShownHelp) {
+      inactivityTimer = setTimeout(() => {
+        openHelpModal();
+      }, INACTIVITY_DELAY);
+    }
+  }
+
+  // Détecter l'activité de l'utilisateur
+  const activityEvents = ['mousedown', 'mousemove', 'keypress', 'scroll', 'touchstart', 'wheel'];
+  
+  activityEvents.forEach(event => {
+    document.addEventListener(event, resetInactivityTimer, { passive: true });
+  });
+
+  // Lancer le timer initial
+  resetInactivityTimer();
 
   // Event listener pour ouvrir la modal via le bouton
   if (helpButton) {
@@ -87,3 +117,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+

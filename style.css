@@ -113,7 +113,8 @@ height: 76px;
   transform: rotate(45deg);
   color: white;
   background: var(--color-bg);
-  cursor: pointer;
+      cursor: url('./public/img/icon/cursor-pointer.svg') 16 16, pointer;
+;
   position: relative;
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -179,7 +180,8 @@ button .item {
   justify-content: center;
   z-index: 20;
   height: 76px;
-  cursor: pointer;
+      cursor: url('./public/img/icon/cursor-pointer.svg') 16 16, pointer;
+;
   transition: transform 0.3s ease;
 }
 
@@ -217,11 +219,12 @@ button .item {
 
 /* ===== BOUTONS SONS ===== */
 .sound.off {
-  display: none;
+    display: block;
+
 }
 
 .sound.on {
-  display: block;
+  display: none;
 }
 
 .button:hover svg {
@@ -541,7 +544,8 @@ mix-blend-mode: difference;
   padding: 12px 30px;
   border: none;
   border-radius: 8px;
-  cursor: pointer;
+      cursor: url('./public/img/icon/cursor-pointer.svg') 16 16, pointer;
+;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(235, 115, 51, 0.3);
   position: relative;
@@ -579,7 +583,8 @@ mix-blend-mode: difference;
 
 /* ===== BOUTON FERMER MODAL ===== */
 .close-modal {
-  cursor: pointer;
+      cursor: url('./public/img/icon/cursor-pointer.svg') 16 16, pointer;
+;
   transition: all 0.3s ease;
   transform: scale(0);
   opacity: 0;
@@ -685,6 +690,7 @@ grid-row-gap: 12px;
 
 
 .modal-content-help{
+  width: 600px;
   background: var(--color-bg);
   /* background: linear-gradient(135deg, #1a0200 0%, #2d0400 100%); */
   border: var(--border-size) solid var(--color-primary);
@@ -697,8 +703,19 @@ grid-row-gap: 12px;
   left: 90px;
   z-index: 400;
 }
-
-
+.flex-text-icon{
+  display: flex;
+gap: 12px;
+justify-content: center;
+  align-items: center;
+}
+.info-column{
+   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
 
 .help-modal-overlay {
   position: fixed;
@@ -729,6 +746,11 @@ bottom: 89px;
 
 .home-nav {
   opacity: 0;
+}
+
+body{
+    cursor: url('./public/img/icon/cursor-normal.svg') 16 16, grab;
+
 }
 
 

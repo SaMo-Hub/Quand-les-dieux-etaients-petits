@@ -14,7 +14,7 @@
 </head>
 
 <body>
- <div class="screen-small">
+ <!-- <div class="screen-small">
     <div class="screen-small-modal">
       <h2>Votre ecran n’est pas a la bonne taille</h2>
       <div class="p-svg">
@@ -46,7 +46,7 @@
 
       </div>
     </div>
-  </div>
+  </div> -->
   <section class="window">
     <div class="contour-window">
     </div>
@@ -113,40 +113,33 @@
     <div class="help-modal-overlay">
       <div class="modal">
         <div class="modal-content-help">
-          <!-- <div class="modal-name">
-                <div class="button-primary">
-                  <svg role="img" viewBox="0 0 294 50" preserveAspectRatio="xMinYMin meet" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M21 1H273L281 9V41L273 49H21L13 40.5V9L21 1Z" fill="var(--color-bg)" stroke="var(--color-primary)"
-                      stroke-width="var(--border-size)"></path>
-                    <rect x="2" y="25" width="15.5563" height="15.5563" transform="rotate(-45 2 25)" fill="var(--color-bg)"
-                      stroke="var(--color-primary)" stroke-width="var(--border-size)"></rect>
-                    <rect x="10" y="25" width="4.24264" height="4.24264" transform="rotate(-45 10 25)" fill="#fff"></rect>
-                    <rect x="270" y="25" width="15.5563" height="15.5563" transform="rotate(-45 270 25)" fill="var(--color-bg)"
-                      stroke="var(--color-primary)" stroke-width="var(--border-size)"></rect>
-                    <rect x="278" y="25" width="4.24264" height="4.24264" transform="rotate(-45 278 25)" fill="#fff"></rect>
-                  </svg>
-                  <div class="chapitre-name-overflow">
-                    <p class="">You selected...</p>
-                  </div>
-                </div>
-              </div> -->
+        
           <h4 class="modal-h1">Comment naviguer ?</h4>
-          <div class="lanngue-grid">
-            <p>
-              Utilisez la molette de la souris ou le trackpad pour naviguer de gauche à droite dans l'histoire.</p>
-            <button class="secondary-button">
-              <p>J'ai compris !</p>
-              <svg class="btn-svg" width="288" height="62" viewBox="0 0 288 62" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path class="bg-hover" d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z"
-                  fill="#57280F" />
-                <path d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z" fill="#"
-                  stroke="#EB7333" stroke-width="var(--border-size)" />
-              </svg>
-            </button>
-
+          <div class="info-column">
+            <div class="flex-text-icon">
+              <p>
+              Cet arbre généalogique est interactif et peut être exploré librement.Pour vous déplacer, cliquez et maintenez le bouton gauche de la souris puis faites-la glisser.
+            </p>
+              <img src="./public/img/icon/grab.svg" alt="">
+            </div>
+            <div class="flex-text-icon">
+              <p>
+              Pour ajuster l’affichage, utilisez la molette de la souris : faites-la rouler vers le haut pour zoomer et vers le bas ️ pour dézoomer .
+            </p>
+              <img src="./public/img/icon/souris.svg" alt="">
+            </div>
+          
           </div>
+          <button class="secondary-button">
+            <p>J'ai compris !</p>
+            <svg class="btn-svg" width="288" height="62" viewBox="0 0 288 62" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path class="bg-hover" d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z"
+                fill="#57280F" />
+              <path d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z" fill="#"
+                stroke="#EB7333" stroke-width="var(--border-size)" />
+            </svg>
+          </button>
         </div>
         <button class="button close-modal">
           <div class="item">
@@ -701,8 +694,9 @@
   <script src="./components/bouton.js"></script>
   <script src="./abregenealogique.js"></script>
     <script src="langue-modal.js"></script>
+    <script src="music.js"></script>
 
-  <script src="helpModal.js"></script>
+  <script src="helpModal5sec.js"></script>
 </body>
 
 </html>

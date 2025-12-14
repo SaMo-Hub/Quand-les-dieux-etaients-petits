@@ -9,7 +9,7 @@ margin-top: 120px;
   justify-content: center;
     overflow: hidden;
       /* overflow-x: auto; */
-  cursor: grab;
+    cursor: url('./public/img/icon/cursor-grab.svg') 16 16, grab;
 
     position: relative;
     opacity: 0;

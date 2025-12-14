@@ -37,7 +37,8 @@ a {
   all: unset;
   -webkit-appearance: none;
   appearance: none;
-  cursor: pointer;
+      cursor: url('./public/img/icon/cursor-pointer.svg') 16 16, pointer;
+;
 }
 
 
@@ -447,17 +448,25 @@ body.scroll-blocked::after {
 
 
 .text-modal {
+    isolation: isolate;
+
   border: none;
   color: var(--color-primary);
   font-family: inherit;
   font-size: inherit;
-  cursor: pointer;
+      cursor: url('./public/img/icon/cursor-pointer.svg') 16 16, pointer;
+;
   transition: all 0.3s ease;
   padding: 0 4px;
   position: relative;
+    background: transparent;
+/* 
   background: var(--color-bg);
+  mix-blend-mode: difference; */
 }
-
+.fond-paralax{
+  position: absolute;
+}
 .text-modal::before {
   content: '';
   position: absolute;
@@ -466,6 +475,8 @@ body.scroll-blocked::after {
   width: 0;
   height: 2px;
   background: var(--color-primary);
+    mix-blend-mode: difference;
+
   transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
@@ -620,6 +631,7 @@ bottom: 89px;
 
 .text-parallax{
   position: absolute;
+  z-index: 2;
 }
 
 .gaia-text-parallax{
@@ -688,7 +700,9 @@ top: -40%;
   height: 210%;
   left: 12%;
 }
-
+.Tartare{
+  height: 110%;
+}
 .fire {
     position: absolute;
     bottom: -120%;

@@ -22,7 +22,8 @@ a {
   all: unset;
   -webkit-appearance: none;
   appearance: none;
-  cursor: pointer;
+      cursor: url('./public/img/icon/cursor-pointer.svg') 16 16, pointer;
+;
 }
 /* Frame 78 */
 .window {

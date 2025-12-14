@@ -202,7 +202,6 @@ function init() {
 }
 
 init();
-
 // ========================================
 // ANIMATION PRINCIPALE DU SCROLL HORIZONTAL
 // ========================================
@@ -526,7 +525,6 @@ window.addEventListener('load', () => {
     setupOctogoneNavigation();
     setupTextParallax();
     setupEffectsParallax();
-    setupPoseidonParallax();
     setupInteractions();
     setupAutoReveal();
     

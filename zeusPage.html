@@ -88,77 +88,44 @@
       </div>
     </div>
     <section class="window">
-      <div class="help-modal-overlay">
-        <div class="modal">
-          <div class="modal-content-help">
-            <h4 class="modal-h1">Comment naviguer ?</h4>
-            <div class="lanngue-grid">
+       <div class="help-modal-overlay">
+      <div class="modal">
+        <div class="modal-content-help">
+        
+          <h4 class="modal-h1">Comment naviguer ?</h4>
+          <div class="info-column">
+           
+            <div class="flex-text-icon">
               <p>
-                Utilisez la molette de la souris ou le trackpad pour naviguer de
-                gauche à droite dans l'histoire.
-              </p>
-              <button class="secondary-button">
-                <p>J'ai compris !</p>
-                <svg
-                  class="btn-svg"
-                  width="288"
-                  height="62"
-                  viewBox="0 0 288 62"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    class="bg-hover"
-                    d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z"
-                    fill="#57280F"
-                  />
-                  <path
-                    d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z"
-                    fill="#"
-                    stroke="#EB7333"
-                    stroke-width="var(--border-size)"
-                  />
-                </svg>
-              </button>
-            </div>
+Pour avancer dans la frise horizontale, il vous suffit de scroller normalement, comme sur n’importe quel site. Vous pouvez utiliser la molette de votre souris, le trackpad de votre ordinateur ou même les barres de défilement horizontales si elles apparaissent.        
+</p>
+      <img src="./public/img/icon/souris.svg" alt="">           
+</div>
+          
           </div>
-          <button class="button close-modal">
-            <div class="item">
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 11 11"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M0.707031 0.707031L5.27539 5.27539M9.84375 9.84375L5.27539 5.27539M5.27539 5.27539L0.707031 9.84375L9.84375 0.707031"
-                  stroke="#EB7333"
-                  stroke-width="var(--border-size)"
-                />
-              </svg>
-            </div>
+          <button class="secondary-button">
+            <p>J'ai compris !</p>
+            <svg class="btn-svg" width="288" height="62" viewBox="0 0 288 62" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path class="bg-hover" d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z"
+                fill="#57280F" />
+              <path d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z" fill="#"
+                stroke="#EB7333" stroke-width="var(--border-size)" />
+            </svg>
           </button>
         </div>
-      </div>
-      <div class="next-frame">
-        <button id="toggle-btn" class="button">
+        <button class="button close-modal">
           <div class="item">
-            <svg
-              width="30"
-              height="12"
-              viewBox="0 0 30 12"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+            <svg width="16" height="16" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
-                d="M29.3351 5.29541L24.0397 10.5908L22.4489 9L25.0285 6.42041H23.7101L18.7443 11.3862L14.2443 6.88623L9.74432 11.3862L5.47723 7.11914L1.48865 10.6392L0 8.95166L5.57391 4.03363L9.74432 8.20459L14.2443 3.70459L18.7443 8.20459L22.7785 4.17041H25.0285L22.4489 1.59082L24.0397 0L29.3351 5.29541Z"
-                fill="white"
-              />
+                d="M0.707031 0.707031L5.27539 5.27539M9.84375 9.84375L5.27539 5.27539M5.27539 5.27539L0.707031 9.84375L9.84375 0.707031"
+                stroke="#EB7333" stroke-width="var(--border-size)" />
             </svg>
           </div>
         </button>
       </div>
+    </div>
+    
 
       <div class="langue-modal-overlay">
         <div class="modal">
@@ -760,11 +727,19 @@
             />
           </div>
           <div class="gaia-text-parallax text-parallax frame frame-texte">
-            <p>
+            <p class="zindex">
               Mais juste après ça,
               <button id="Gaia" class="text-modal">Gaïa</button> lui a lancé la
               phrase qui a gâché toutes ses nuits :
             </p>
+            <!-- <svg class="fond-paralax" width="405" viewBox="0 0 465 157" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="path-1-inside-1_1390_12029" fill="white">
+<path d="M439.949 0L464.043 26.3955V130.184L439.949 156.579H24.0938L0 130.184V26.3955L24.0938 0H439.949Z"/>
+</mask>
+<path d="M439.949 0L464.043 26.3955V130.184L439.949 156.579H24.0938L0 130.184V26.3955L24.0938 0H439.949Z" fill="#170800"/>
+<path d="M439.949 0L441.426 -1.34834L440.832 -2H439.949V0ZM464.043 26.3955H466.043V25.62L465.52 25.0472L464.043 26.3955ZM464.043 130.184L465.52 131.532L466.043 130.959V130.184H464.043ZM439.949 156.579V158.579H440.832L441.426 157.927L439.949 156.579ZM24.0938 156.579L22.6166 157.927L23.2114 158.579H24.0938V156.579ZM0 130.184H-2V130.959L-1.47715 131.532L0 130.184ZM0 26.3955L-1.47715 25.0472L-2 25.62V26.3955H0ZM24.0938 0V-2H23.2114L22.6166 -1.34834L24.0938 0ZM439.949 0L438.472 1.34834L462.566 27.7438L464.043 26.3955L465.52 25.0472L441.426 -1.34834L439.949 0ZM464.043 26.3955H462.043V130.184H464.043H466.043V26.3955H464.043ZM464.043 130.184L462.566 128.835L438.472 155.231L439.949 156.579L441.426 157.927L465.52 131.532L464.043 130.184ZM439.949 156.579V154.579H24.0938V156.579V158.579H439.949V156.579ZM24.0938 156.579L25.5709 155.231L1.47715 128.835L0 130.184L-1.47715 131.532L22.6166 157.927L24.0938 156.579ZM0 130.184H2V26.3955H0H-2V130.184H0ZM0 26.3955L1.47715 27.7438L25.5709 1.34834L24.0938 0L22.6166 -1.34834L-1.47715 25.0472L0 26.3955ZM24.0938 0V2H439.949V0V-2H24.0938V0Z" fill="#EB7333" mask="url(#path-1-inside-1_1390_12029)"/>
+</svg> -->
+
           </div>
           <img class="collonnes" src="./public/img/Zeus/Chapitre-1/Collones.svg" alt="">
         </div>
@@ -975,7 +950,7 @@
           </div>
         </div>
         <div class="frame illustration">
-          <img src="./public/img/Zeus/Chapitre-2/CronosQuiBoit.svg" alt="" />
+          <img src="./public/img/Zeus/Chapitre-1/CronosQuiBoit.svg" alt="" />
           <div class="text-parallax frame frame-texte">
             <p>
               Il recracha mes frères et sœurs :
@@ -992,7 +967,7 @@
         </div>
 
         <div class="frame illustration-fit">
-          <img src="./public/img/Zeus/Chapitre-2/ZeusTartare.svg" alt="" />
+          <img class="Tartare" src="./public/img/Zeus/Chapitre-2/ZeusTartare.svg" alt="" />
           <div class="text-parallax frame frame-texte">
             <p>
               Sur les conseils de
@@ -1123,10 +1098,12 @@ La bataille a duré des jours, peut-être des années je ne sais même plus.
 
     <script src="chapitre-navigation.js"></script>
     <script type="module" src="modal-system.js"></script>
-    <!-- <script src="script.js"></script> -->
+    <script src="script.js"></script>
     <script src="zeusElementAnimation.js"></script>
+    <script src="helpModal.js"></script>
     <script src="langue-modal.js"></script>
-    <script src="next-frame-navigation.js"></script>
+        <script src="music.js"></script>
+
     <!-- NOUVEAU -->
   </body>
 </html>
