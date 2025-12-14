@@ -437,6 +437,16 @@ function setupEffectsParallax() {
       moveX: -300,
     },
     {
+      selector: '.collonnes',
+      speed: 0.5, // Plus lent que le scroll
+      moveX: -300,
+    },
+    {
+      selector: '.grotte',
+      speed: 0.5, // Plus lent que le scroll
+      moveX: -400,
+    },
+    {
       selector: '.eclair',
       speed: 0.4, // Vitesse moyenne
       moveX: -800,

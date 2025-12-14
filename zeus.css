@@ -177,7 +177,8 @@ width: 400000px;
 
 .fire,
 .eclair,
-.vague {
+.vague
+.collonnes {
   will-change: transform;
   pointer-events: none;
 }
@@ -654,7 +655,7 @@ bottom: 89px;
 }
 
 .Rhea-donne-zeus-Amalthé{
-  height: 80%;
+  height: 70%;
 }
 
 .ZeusQuiLanceEclair {
@@ -674,6 +675,18 @@ top: -40%;
   right: 0;
   height: 110%;
 
+}
+.grotte-ilustration{
+  width: 4000px;
+}
+.collonnes{
+  position: absolute;
+  left: -20%;
+}
+.grotte{
+  position: absolute;
+  height: 210%;
+  left: 12%;
 }
 
 .fire {
