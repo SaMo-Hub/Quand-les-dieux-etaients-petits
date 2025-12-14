@@ -27,95 +27,111 @@ if (svgs.length > 0) {
 
 
 
-// Attendre que l'iframe soit chargée
-let audioPlayer = null;
-const audioFrame = document.getElementById('audio-player-frame');
+// // Attendre que l'iframe soit chargée
+// let audioPlayer = null;
+// const audioFrame = document.getElementById('audio-player-frame');
 
-audioFrame.addEventListener('load', () => {
-  audioPlayer = audioFrame.contentWindow;
-  initAudioControls();
-});
+// audioFrame.addEventListener('load', () => {
+//   audioPlayer = audioFrame.contentWindow;
+//   initAudioControls();
+// });
 
-// Sélectionner les éléments
-const btn = document.getElementById("toggle-btn");
-const iconOn = btn?.querySelector(".on");
-const iconOff = btn?.querySelector(".off");
+// // Sélectionner les éléments
+// const btn = document.getElementById("toggle-btn");
+// const iconOn = btn?.querySelector(".on");
+// const iconOff = btn?.querySelector(".off");
 
-function initAudioControls() {
-  if (!audioPlayer) return;
+// function initAudioControls() {
+//   if (!audioPlayer) return;
 
-  // Récupérer l'état
-  const isMusicPlaying = localStorage.getItem('musicPlaying') === 'true';
-  const hasInteracted = localStorage.getItem('hasInteracted') === 'true';
+//   // Récupérer l'état
+//   const isMusicPlaying = localStorage.getItem('musicPlaying') === 'true';
+//   const hasInteracted = localStorage.getItem('hasInteracted') === 'true';
 
-  // Fonction pour jouer la musique
-  window.playMusic = function() {
-    if (!audioPlayer) return;
+//   // Fonction pour jouer la musique
+//   window.playMusic = function() {
+//     if (!audioPlayer) return;
     
-    audioPlayer.playAudio().then(() => {
-      localStorage.setItem('musicPlaying', 'true');
+//     audioPlayer.playAudio().then(() => {
+//       localStorage.setItem('musicPlaying', 'true');
       
-      if (iconOn && iconOff) {
-        iconOn.style.display = "block";
-        iconOff.style.display = "none";
-      }
-    }).catch(err => console.error('Erreur play:', err));
-  };
+//       if (iconOn && iconOff) {
+//         iconOn.style.display = "block";
+//         iconOff.style.display = "none";
+//       }
+//     }).catch(err => console.error('Erreur play:', err));
+//   };
 
-  // Fonction pour mettre en pause
-  window.pauseMusic = function() {
-    if (!audioPlayer) return;
+//   // Fonction pour mettre en pause
+//   window.pauseMusic = function() {
+//     if (!audioPlayer) return;
     
-    audioPlayer.pauseAudio();
-    localStorage.setItem('musicPlaying', 'false');
+//     audioPlayer.pauseAudio();
+//     localStorage.setItem('musicPlaying', 'false');
     
-    if (iconOn && iconOff) {
-      iconOn.style.display = "none";
-      iconOff.style.display = "block";
-    }
-  };
+//     if (iconOn && iconOff) {
+//       iconOn.style.display = "none";
+//       iconOff.style.display = "block";
+//     }
+//   };
 
-  // Toggle au clic
-  if (btn) {
-    btn.addEventListener("click", () => {
-      if (audioPlayer && audioPlayer.isPlaying()) {
-        window.pauseMusic();
-      } else {
-        window.playMusic();
-      }
-    });
-  }
+//   // Toggle au clic
+//   if (btn) {
+//     btn.addEventListener("click", () => {
+//       if (audioPlayer && audioPlayer.isPlaying()) {
+//         window.pauseMusic();
+//       } else {
+//         window.playMusic();
+//       }
+//     });
+//   }
 
-  // Initialiser l'icône
-  if (iconOn && iconOff) {
-    if (isMusicPlaying && audioPlayer.isPlaying()) {
-      iconOn.style.display = "block";
-      iconOff.style.display = "none";
-    } else if (isMusicPlaying && hasInteracted) {
-      iconOn.style.display = "block";
-      iconOff.style.display = "none";
-      setTimeout(() => window.playMusic(), 100);
-    } else {
-      iconOn.style.display = "none";
-      iconOff.style.display = "block";
-    }
-  }
+//   // Initialiser l'icône
+//   if (iconOn && iconOff) {
+//     if (isMusicPlaying && audioPlayer.isPlaying()) {
+//       iconOn.style.display = "block";
+//       iconOff.style.display = "none";
+//     } else if (isMusicPlaying && hasInteracted) {
+//       iconOn.style.display = "block";
+//       iconOff.style.display = "none";
+//       setTimeout(() => window.playMusic(), 100);
+//     } else {
+//       iconOn.style.display = "none";
+//       iconOff.style.display = "block";
+//     }
+//   }
 
-  // Démarrage automatique au premier clic
-  if (!hasInteracted) {
-    const startMusic = (e) => {
-      if (!audioPlayer.isPlaying() && btn && !e.target.closest('#toggle-btn')) {
-        window.playMusic();
-        localStorage.setItem('hasInteracted', 'true');
-        document.removeEventListener('click', startMusic);
-      }
-    };
-    document.addEventListener('click', startMusic);
+//   // Démarrage automatique au premier clic
+//   if (!hasInteracted) {
+//     const startMusic = (e) => {
+//       if (!audioPlayer.isPlaying() && btn && !e.target.closest('#toggle-btn')) {
+//         window.playMusic();
+//         localStorage.setItem('hasInteracted', 'true');
+//         document.removeEventListener('click', startMusic);
+//       }
+//     };
+//     document.addEventListener('click', startMusic);
+//   }
+// }
+
+// // Si l'iframe est déjà chargée
+// if (audioFrame.contentWindow && audioFrame.contentWindow.playAudio) {
+//   audioPlayer = audioFrame.contentWindow;
+//   initAudioControls();
+// }
+
+function checkScreenSize() {
+  console.log(window.innerWidth);
+  const modal = document.querySelector(".screen-small");
+
+  if (window.innerWidth < 900) {
+    console.log("sfjgldf");
+    
+    modal.style.display = "flex"; // ou block selon ton design
+  } else {
+    modal.style.display = "none";
   }
 }
 
-// Si l'iframe est déjà chargée
-if (audioFrame.contentWindow && audioFrame.contentWindow.playAudio) {
-  audioPlayer = audioFrame.contentWindow;
-  initAudioControls();
-}
+checkScreenSize();
+window.addEventListener("resize", checkScreenSize);

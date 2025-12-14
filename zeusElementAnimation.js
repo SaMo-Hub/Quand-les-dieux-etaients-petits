@@ -199,7 +199,7 @@ ease: "expo.inOut",
     const leftHand = document.querySelector('.leftHand');
     const star = document.querySelector('.star');
     const baby = document.querySelector('.baby');
-    const title = document.querySelector('.chapitre-title');
+    const title = document.querySelector('.chapitre-1');
   
     // État initial : cacher tous les éléments
     gsap.set(chapitreImg, {
@@ -355,9 +355,10 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
     const elems = document.querySelectorAll(rootSelector);
     
     elems.forEach(p => {
+      
       // Éviter le double-split
       if (p.dataset._wordsSplit) return;
-
+      
       // Fonction récursive pour splitter le texte en préservant les éléments HTML
       function splitTextNodes(node) {
         const fragment = document.createDocumentFragment();
@@ -425,7 +426,7 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
       // Créer un conteneur temporaire avec le contenu original
       const tempContainer = document.createElement('div');
       tempContainer.appendChild(p.cloneNode(true));
-      
+
       // Splitter le contenu
       const splitContent = splitTextNodes(tempContainer.firstChild);
       
@@ -440,7 +441,7 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
       if (words.length === 0) return;
 
       // Cacher les mots initialement
-      gsap.set(words, { y: 24, opacity: 0 });
+      gsap.set(words, { y: 80, opacity:0});
 
       // Calculer la position du paragraphe dans le scroll horizontal
       const illustrationList = document.querySelector('.illustration-list');
@@ -454,13 +455,16 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
       
       // Créer une timeline pausée
       const tl = gsap.timeline({ paused: true });
+            console.log(p.tagName === 'P');
+
+      const chapitreSelected = p.tagName !== 'P'
 
      tl.to(words, {
         y: 0,
         opacity: 1,
         duration: 0.6,
         ease: 'power2.out',
-        stagger: 0.015,
+        stagger: chapitreSelected ? 0.2 : 0.015,
         immediateRender: false
       });
 

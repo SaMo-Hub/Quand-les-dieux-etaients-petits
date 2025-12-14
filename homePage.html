@@ -14,8 +14,42 @@
 </head>
 
 <body>
+ <div class="screen-small">
+    <div class="screen-small-modal">
+      <h2>Votre ecran n’est pas a la bonne taille</h2>
+      <div class="p-svg">
+        <p>
+          Pssst! Rotate your device to landscape.
+        </p>
+        <svg width="106" height="95" viewBox="0 0 106 95" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="42.9727" y="1.5" width="61.5273" height="30.1777" fill="#170800" stroke="#EB7333" stroke-width="3" />
+          <rect x="1.5" y="30.6777" width="103" height="62" fill="#170800" />
+          <rect x="1.5" y="30.6777" width="103" height="62" stroke="#EB7333" stroke-width="3" />
+          <path
+            d="M71.8824 82.4282L83.9995 66.3872L65.8203 43.9277L49.7788 51.057L44.4329 66.3872M44.4329 66.3872L36.6367 52.8837M44.4329 66.3872L58.0452 58.5281"
+            stroke="#EB7333" stroke-width="3" />
+        </svg>
 
+      </div>
+      <div class="p-svg">
+        <p>
+          Or resize your window so it's more wide than tall. </p>
+        <svg width="107" height="65" viewBox="0 0 107 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="32.5" y="1.5" width="73" height="62" fill="#170800" />
+          <rect x="32.5" y="1.5" width="73" height="62" stroke="#EB7333" stroke-width="3" />
+          <rect x="1.5" y="1.5" width="69" height="62" fill="#170800" />
+          <rect x="1.5" y="1.5" width="69" height="62" stroke="#EB7333" stroke-width="3" />
+          <path d="M59.0156 33.3909H89.3242M89.3242 33.3909L78.4489 22.5156M89.3242 33.3909L79.8749 42.8403"
+            stroke="#EB7333" stroke-width="3" />
+        </svg>
+
+
+      </div>
+    </div>
+  </div>
   <section class="window">
+    <div class="contour-window">
+    </div>
    <div class="langue-modal-overlay">
           <div class="modal">
             <div class="modal-content-langue">
@@ -125,162 +159,84 @@
         </button>
       </div>
     </div>
-    <nav class="nav-button">
-     
-      <button id="toggle-btn" class="button">
-        <div class="item">
-          <svg id="sound on" class="sound on" width="28" height="28" viewBox="0 0 64 64" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M34.3423 55.0938L16.5386 41.0488H7.51904V22.9521H16.5386L34.3423 8.90625V55.0938ZM56.019 31.0186L56.5728 32.001L56.019 32.9834L48.2554 46.749L44.771 44.7842L51.98 32L44.771 19.2168L48.2554 17.252L56.019 31.0186ZM47.7524 31.0117L48.3149 32L47.7524 32.9893L44.1724 39.2842L42.4341 38.2959L40.6958 37.3066L43.7124 32L40.6958 26.6934L44.1724 24.7168L47.7524 31.0117Z"
-              fill="white" />
-          </svg>
-          <svg id="sound-off" class="sound off" width="28" height="28" viewBox="0 0 64 64" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M34.3315 55.0938L16.5278 41.0488H7.5083V22.9521H16.5278L34.3315 8.90625V55.0938ZM49.314 29.0342L54.7925 23.5557L57.6206 26.3838L52.1421 31.8613L57.9653 37.6846L56.5513 39.0996L55.1372 40.5137L49.314 34.6904L43.2153 40.7891L40.3872 37.9609L46.4858 31.8623L40.6626 26.0391L43.4907 23.2109L49.314 29.0342Z"
-              fill="white" />
-          </svg>
-        </div>
-      </button>
-
-        <button class="button">
+   <nav class="nav-button">
+        <button id="toggle-btn" class="button">
           <div class="item">
-            <svg width="22" height="14" viewBox="0 0 22 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg
+              id="sound on"
+              class="sound on"
+              width="28"
+              height="28"
+              viewBox="0 0 64 64"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path
-                d="M10 2H6V4H16V2H12V0H22V2H18V6H12V8H20V12H22V14H16V12H18V10H12V12H14V14H8V12H10V10H4V12H6V14H0V12H2V8H10V6H4V2H0V0H10V2Z"
-                fill="white" />
+                d="M34.3423 55.0938L16.5386 41.0488H7.51904V22.9521H16.5386L34.3423 8.90625V55.0938ZM56.019 31.0186L56.5728 32.001L56.019 32.9834L48.2554 46.749L44.771 44.7842L51.98 32L44.771 19.2168L48.2554 17.252L56.019 31.0186ZM47.7524 31.0117L48.3149 32L47.7524 32.9893L44.1724 39.2842L42.4341 38.2959L40.6958 37.3066L43.7124 32L40.6958 26.6934L44.1724 24.7168L47.7524 31.0117Z"
+                fill="white"
+              />
+            </svg>
+            <svg
+              id="sound-off"
+              class="sound off"
+              width="28"
+              height="28"
+              viewBox="0 0 64 64"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M34.3315 55.0938L16.5278 41.0488H7.5083V22.9521H16.5278L34.3315 8.90625V55.0938ZM49.314 29.0342L54.7925 23.5557L57.6206 26.3838L52.1421 31.8613L57.9653 37.6846L56.5513 39.0996L55.1372 40.5137L49.314 34.6904L43.2153 40.7891L40.3872 37.9609L46.4858 31.8623L40.6626 26.0391L43.4907 23.2109L49.314 29.0342Z"
+                fill="white"
+              />
             </svg>
           </div>
         </button>
-     
-         <div>
-        <button id="langue" class="home-nav langue button">
-          <div class="item">
-            <p>
-              L
-            </p>
-          </div>
-        </button>
-       
-      </div>
-        <div class="help-button ">
-      <button id="toggle-btn" class="home-nav button">
-        <div class="item">
-          <p>
-            ?
-          </p>
-        </div>
-      </button>
-    </div>
-      <a href="./zeusPage.html">
-        <button class="button home-nav ">
-          <div class="item">
-            <svg width="32" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g clip-path="url(#clip0_1230_9555)">
+
+        <a href="./homePage.html">
+          <button class="button">
+            <div class="item">
+              <svg
+                width="22"
+                height="14"
+                viewBox="0 0 22 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path
-                  d="M33.039 9.63574L27.5586 29.0098H45.8506L21.7793 53.0811L20.9932 52.4775L31.6924 33.9453H17.8672L18.3008 33.1953L32.125 9.25L33.039 9.63574Z"
-                  fill="white" stroke="white" />
-              </g>
-              <defs>
-                <clipPath id="clip0_1230_9555">
-                  <rect width="31" height="45" fill="white" transform="translate(17 9)" />
-                </clipPath>
-              </defs>
-            </svg>
-          </div>
-        </button>
-      </a>
-    </nav>
+                  d="M10 2H6V4H16V2H12V0H22V2H18V6H12V8H20V12H22V14H16V12H18V10H12V12H14V14H8V12H10V10H4V12H6V14H0V12H2V8H10V6H4V2H0V0H10V2Z"
+                  fill="white"
+                />
+              </svg>
+            </div>
+          </button>
+        </a>
+        <div>
+          <button id="langue" class="home-nav langue button">
+            <div class="item">
+            
+             <svg width="28" height="28" viewBox="0 0 358 358" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M229.474 148.995V207.995L178.378 237.495L127.282 207.995V148.995L178.378 119.495L229.474 148.995ZM148.282 161.119V195.87L178.378 213.246L208.474 195.87V161.119L178.378 143.743L148.282 161.119Z" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M251.378 15.9629L251.432 15.9902L263.557 21.127L264.232 21.3965L279.497 29.0293L276.172 44.916L276.143 45.0537L276.112 45.1914L267.508 83.7188L271.47 87.7744L274.396 90.6992L311.994 81.6943L329.714 77.0537L336.586 94.2354L350.043 127.516L356.568 143.422L342.228 152.982L342.033 153.113L341.835 153.238L308.506 174.397L308.443 179.874V184.204L341.457 204.46L357.098 213.759L335.953 263.604L329.479 279.792L312.184 276.172L312.046 276.143L311.908 276.112L273.378 267.507L269.371 271.423L266.396 274.396L275.402 311.996L280.044 329.716L262.792 336.616L229.581 350.044L213.676 356.57L204.115 342.229L203.984 342.035L203.859 341.837L182.699 308.508L177.054 308.443H172.893L152.637 341.457L143.339 357.098L93.4922 335.953L77.3057 329.479L80.9258 312.184L80.9551 312.046L80.9854 311.908L89.5889 273.38L85.626 269.323L82.7012 266.399L45.1025 275.404L27.2314 280.086L20.4336 262.669L7.05469 229.584L0.529297 213.678L14.8701 204.117L15.0645 203.986L15.2627 203.861L48.5908 182.701L48.6543 177.224V172.895L15.6406 152.639L0 143.341L21.1445 93.4941L27.6191 77.3076L44.9141 80.9277L45.0518 80.957L45.1895 80.9873L83.7178 89.5918L87.5176 85.8779L90.6953 82.7002L81.6904 45.1025L77.0098 27.2314L94.3955 20.4463L127.512 7.05469L143.418 0.529297L152.979 14.8701L153.109 15.0645L153.234 15.2627L174.394 48.5908L179.871 48.6543H184.201L204.456 15.6406L213.755 0L251.378 15.9629ZM135.444 26.499L122.346 31.8027L122.344 31.7998L102.102 39.9814L102.062 39.9971L102.072 40.0381L113.856 89.2393L102.323 100.772L90.252 112.568L40.6123 101.482L40.5703 101.474L40.5547 101.513L35.043 114.524L35.0391 114.523L26.4941 134.662L26.5303 134.684L69.6543 161.142V177.383L69.458 194.328L26.5186 221.59L26.4834 221.613L26.499 221.651L31.8027 234.75L31.7998 234.752L39.9814 254.994L39.9971 255.034L40.0381 255.023L89.2393 243.239L100.604 254.604L112.566 266.846L101.48 316.485L101.472 316.527L101.511 316.543L114.522 322.055L114.521 322.059L134.66 330.604L134.682 330.567L161.14 287.443H177.213L194.326 287.642L221.588 330.581L221.611 330.616L221.649 330.601L234.748 325.297L234.75 325.3L254.993 317.118L255.032 317.103L255.021 317.062L243.237 267.86L254.604 256.492L266.846 244.531L316.485 255.617L316.527 255.626L316.543 255.587L322.055 242.575L322.059 242.576L330.604 222.438L330.567 222.416L287.443 195.958V179.716L287.64 162.771L330.579 135.51L330.614 135.486L330.599 135.448L325.295 122.35L325.298 122.348L317.116 102.104L317.101 102.065L317.06 102.076L267.858 113.86L256.492 102.495L244.531 90.2539L255.617 40.6143L255.626 40.5723L255.622 40.5703L255.583 40.5547L242.575 35.0439L242.576 35.041L242.572 35.0391L222.434 26.4941L222.412 26.5303L195.954 69.6543H179.712L162.768 69.458L135.506 26.5186L135.482 26.4834L135.444 26.499Z" fill="white"/>
+</svg>
+
+            </div>
+          </button>
+        </div>
+        <div class="help-button">
+          <button id="toggle-btn" class="home-nav button">
+            <div class="item">
+              <p>?</p>
+            </div>
+          </button>
+        </div>
+       
+      </nav>
 
     <h1>Quand les dieux étaient petits</h1>
-
-    <!-- <div class="bouton titre">
-
-        <div class="square left"></div>
-        <div class="fond-texte">
-          <svg class="svg-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 107" fill="none">
-            <path d="M31 2V105H19.4414L18.8535 104.396L2.56836 87.708L2 87.125V19.875L2.56836 19.292L18.8535 2.60352L19.4414 2H31Z" fill="#140100" stroke="#EB7333" />
-          </svg>
-          <div class="texte">
-            ddddsfsdfsdfsfsdfsdfsd
-          </div>
-          <svg class="svg-right" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 33 107" fill="none">
-            <path d="M2 2V105H13.5586L14.1465 104.396L30.4316 87.708L31 87.125V19.875L30.4316 19.292L14.1465 2.60352L13.5586 2H2Z" fill="#140100" stroke="#EB7333"/>
-          </svg>
-        </div>
-                <div class="square right"></div>
-
-      </div> -->
-
-    <!-- <div class="tree">
-        <div class="tree-container">
-          <div class="flex">
-            <div class="dieux-groupe">
-              <div class="bouton" data-text="Ouranos"></div>
-              <div class="lien"></div>
-            </div>
-
-            <div class="dieux-groupe">
-              <div class="bouton" data-text="Gaia"></div>
-              <div class="lien"></div>
-            </div>
-          </div>
-          <div class="flex">
-            <div class="dieux-groupe">
-              <div class="bouton" data-text="Chronos"></div>
-              <div class="lien"></div>
-            </div>
-
-            <div class="dieux-groupe">
-              <div class="bouton" data-text="Rhéa"></div>
-              <div class="lien"></div>
-            </div>
-          </div>
-          <div class="olympiens-container">
-            <div class="lien-horizontale"></div>
-            <div class="dieux-groupe">
-                <div class="lien"></div>
-              <div class="bouton" data-text="Demeter"></div>
-              <div class="lien"></div>
-            </div>
-
-            <div class="dieux-groupe">
-              <div class="lien"></div>
-              <div class="bouton" data-text="Hestia"></div>
-              <div class="lien"></div>
-            </div>
-            <div class="dieux-groupe">
-              <div class="lien"></div>
-              <div class="bouton" data-text="Hades"></div>
-              <div class="lien"></div>
-            </div>
-            <div class="dieux-groupe">
-              <div class="lien"></div>
-              <div class="bouton" data-text="Poseidon"></div>
-              <div class="lien"></div>
-            </div>
-
-            <div class="dieux-groupe">
-                <div class="lien"></div>
-              <div class="bouton" data-text="Hera"></div>
-              <div class="lien"></div>
-            </div>
-
-            <div class="dieux-groupe">
-                <div class="lien"></div>
-              <a href="zeusPage.html">
-                <div class="bouton" data-text="Zeus"></div>
-              </a>
-
-              <div class="lien"></div>
-            </div>
-          </div>
-        </div>
-      </div> -->
-    <div class="tree">
+ <div class="tree">
       <div class="tree-container">
-        <img src="./public/img/abre-button.svg" alt="">
+        <img src="./public/img/abre-stroke.svg" alt="">
         <div class="collumn">
 
        
@@ -746,7 +702,7 @@
   <script src="./abregenealogique.js"></script>
     <script src="langue-modal.js"></script>
 
-  <!-- <script src="helpModal.js"></script> -->
+  <script src="helpModal.js"></script>
 </body>
 
 </html>

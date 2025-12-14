@@ -149,7 +149,7 @@ h1 {
 /* .illustration img */
 .meandre-wrapper {
   width: 100%;
-  /* overflow: hidden; */
+  overflow: hidden;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -158,8 +158,8 @@ h1 {
 }
 
 .meandre {
-  /* La largeur sera calculée dynamiquement en JS */
-  height: 50px;
+width: 400000px; 
+ height: 50px;
   position: absolute;
   bottom: -5px;
   left: 0;
@@ -167,12 +167,21 @@ h1 {
   background-image: url("./public/img/meandres.png");
   background-repeat: repeat-x;
   background-size: auto 50px;
+  
   opacity: 0;
 }
 
 .text-overflow {
   overflow: hidden;
 }
+
+.fire,
+.eclair,
+.vague {
+  will-change: transform;
+  pointer-events: none;
+}
+
 
 .chapitre-title {
   font-family: var(--font-title);
@@ -183,6 +192,10 @@ h1 {
   z-index: 50;
     mix-blend-mode: difference;
 overflow: hidden;
+
+}
+.chapitre-1 {
+ 
 opacity: 0;
 }
 /* .chapitre-title {
@@ -190,13 +203,21 @@ opacity: 0;
   opacity: 1;
 
 } */
-.chapitre-title span {
+.chapitre-1 span {
  transform: translateY(500px);
   opacity: 0;
 
 }
 
+.word-wrap {
+  display: inline-block;
+  overflow: hidden;
+}
 
+.word {
+  display: inline-block;
+  will-change: transform;
+}
 
 .chapitre-frame {
 overflow: hidden;
@@ -424,9 +445,7 @@ body.scroll-blocked::after {
 
 
 
-/* ===== BOUTONS TEXT-MODAL (dans le texte) ===== */
 .text-modal {
-  background: none;
   border: none;
   color: var(--color-primary);
   font-family: inherit;
@@ -435,6 +454,7 @@ body.scroll-blocked::after {
   transition: all 0.3s ease;
   padding: 0 4px;
   position: relative;
+  background: var(--color-bg);
 }
 
 .text-modal::before {
@@ -503,6 +523,13 @@ body.scroll-blocked::after {
   align-items: center;
 }
 
+.bulle-gai-talk{
+  top: 30%;
+}
+.bulle-bebe-talk{
+  top: 10%;
+  right: 7%;
+}
 .bulle svg {
 
   position: absolute;
@@ -552,12 +579,7 @@ body.scroll-blocked::after {
   position: absolute;
 }
 
-.fire {
-    position: absolute;
-    bottom: -120%;
-    left: 0%;
-/* left:580%; */
-}
+
 
 .zindex{
   position: relative;
@@ -603,14 +625,15 @@ bottom: 89px;
   right:50%;
 }
 
-#gaia-bebe-talk{
-  top: 10%;
-  
-}
+
 #gaia-bebe-interaction{
   top: 0%;
   right: 28%;
   scale: 1.5;
+}
+#gaia-interaction{
+  top: 27%;
+  right: 27%;
 }
 
 .gaia-talk-to-chronos{
@@ -642,6 +665,8 @@ top: -40%;
 .eclair {
   position: absolute;
   top: -30%;
+      left: 50%;
+
   /* left: 800%; */
 }
 .vague {
@@ -651,17 +676,22 @@ top: -40%;
 
 }
 
-#ZeusQuiLanceEclairIllustration .text-parallax{
-left: 120%;
+.fire {
+    position: absolute;
+    bottom: -120%;
+    left: 30%;
+/* left:580%; */
 }
-
+#entre-fire-eclair{
+  margin-left: 200px;
+}
 #poseidon-vague{
-  width: 1400px;
+  width: 1600px;
 }
 
 .poseidon{
   position: relative;
-/* left: 840%; */
+left: 40%;
 }
 
 .poseidon-text{

@@ -1,4 +1,3 @@
-// Animations d'entrée / sortie pour la page de sélection de langue
 (function(){
   function splitWords(el){
     if(!el) return;
@@ -10,7 +9,7 @@
 
   function entryAnimation(){
     const tl = gsap.timeline();
-    
+
     // Animation de la fenêtre
     tl.to('.window', { 
       opacity: 1, 
@@ -18,7 +17,8 @@
       delay: 0.2,
       ease: 'power3.out' 
     }, 0);
-    
+           gsap.to('h1', { opacity: 1 });
+
     // Animation du titre
     tl.to('h1 .word', { 
       y: 0, 

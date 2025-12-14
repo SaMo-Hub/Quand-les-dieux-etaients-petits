@@ -18,7 +18,7 @@
   function entryAnimation(){
     const fromZeus = isComingFromZeusPage();
     const tl = gsap.timeline();
-    
+   gsap.to('h1', { opacity: 1 });
     // Animation du titre
     tl.to('h1 .word', { 
       y: 0, 
@@ -41,7 +41,9 @@
       tl.set('.home-nav', { 
         scale: 1,
         opacity: 1
-      }, 0);
+      }, 0)
+      
+      
     } else {
       tl.to('.home-nav', { 
         scale: 1,
@@ -92,6 +94,7 @@
     // États initiaux
     gsap.set('.word', { opacity: 0, y: 50 });
     gsap.set('.tree', { opacity: 0 });
+    gsap.set('.contour-window', { opacity: 1 });
     
     // Si on vient de zeusPage, les nav sont déjà visibles
     if (fromZeus) {

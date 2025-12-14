@@ -608,6 +608,7 @@ mix-blend-mode: difference;
   justify-content: center;
   padding: 62px;
   text-align: center;
+  display: none;
 
 }
 
@@ -725,3 +726,9 @@ grid-row-gap: 12px;
 right: 29px;
 bottom: 89px;
 }
+
+.home-nav {
+  opacity: 0;
+}
+
+

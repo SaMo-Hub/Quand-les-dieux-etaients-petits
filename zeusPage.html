@@ -1,67 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="zeus.css" />
+    <link rel="stylesheet" href="bouton.css" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="stylesheet" href="language-style.css" /> -->
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <link rel="stylesheet" href="zeus.css" />
-  <link rel="stylesheet" href="bouton.css" />
-  <link rel="stylesheet" href="style.css" />
-  <!-- <link rel="stylesheet" href="language-style.css" /> -->
+    <link rel="stylesheet" href="./abregénaologique.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/ihj8hvi.css" />
+  </head>
 
-  <link rel="stylesheet" href="./abregénaologique.css" />
-  <link rel="stylesheet" href="https://use.typekit.net/ihj8hvi.css" />
-</head>
-
-<body class="chapitre-list">
-  <section class="window">
-    <div class="help-modal-overlay">
-      <div class="modal">
-        <div class="modal-content-help">
-       
-          <h4 class="modal-h1">Comment naviguer ?</h4>
-          <div class="lanngue-grid">
-            <p>
-              Utilisez la molette de la souris ou le trackpad pour naviguer de gauche à droite dans l'histoire.</p>
-            <button class="secondary-button">
-              <p>J'ai compris !</p>
-              <svg class="btn-svg" width="288" height="62" viewBox="0 0 288 62" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path class="bg-hover" d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z"
-                  fill="#57280F" />
-                <path d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z" fill="#"
-                  stroke="#EB7333" stroke-width="var(--border-size)" />
-              </svg>
-            </button>
-
-          </div>
+  <body class="chapitre-list">
+    <div class="screen-small">
+      <div class="screen-small-modal">
+        <h2>Votre ecran n’est pas a la bonne taille</h2>
+        <div class="p-svg">
+          <p>Pssst! Rotate your device to landscape.</p>
+          <svg
+            width="106"
+            height="95"
+            viewBox="0 0 106 95"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              x="42.9727"
+              y="1.5"
+              width="61.5273"
+              height="30.1777"
+              fill="#170800"
+              stroke="#EB7333"
+              stroke-width="3"
+            />
+            <rect x="1.5" y="30.6777" width="103" height="62" fill="#170800" />
+            <rect
+              x="1.5"
+              y="30.6777"
+              width="103"
+              height="62"
+              stroke="#EB7333"
+              stroke-width="3"
+            />
+            <path
+              d="M71.8824 82.4282L83.9995 66.3872L65.8203 43.9277L49.7788 51.057L44.4329 66.3872M44.4329 66.3872L36.6367 52.8837M44.4329 66.3872L58.0452 58.5281"
+              stroke="#EB7333"
+              stroke-width="3"
+            />
+          </svg>
         </div>
-        <button class="button close-modal">
+        <div class="p-svg">
+          <p>Or resize your window so it's more wide than tall.</p>
+          <svg
+            width="107"
+            height="65"
+            viewBox="0 0 107 65"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect x="32.5" y="1.5" width="73" height="62" fill="#170800" />
+            <rect
+              x="32.5"
+              y="1.5"
+              width="73"
+              height="62"
+              stroke="#EB7333"
+              stroke-width="3"
+            />
+            <rect x="1.5" y="1.5" width="69" height="62" fill="#170800" />
+            <rect
+              x="1.5"
+              y="1.5"
+              width="69"
+              height="62"
+              stroke="#EB7333"
+              stroke-width="3"
+            />
+            <path
+              d="M59.0156 33.3909H89.3242M89.3242 33.3909L78.4489 22.5156M89.3242 33.3909L79.8749 42.8403"
+              stroke="#EB7333"
+              stroke-width="3"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <section class="window">
+      <div class="help-modal-overlay">
+        <div class="modal">
+          <div class="modal-content-help">
+            <h4 class="modal-h1">Comment naviguer ?</h4>
+            <div class="lanngue-grid">
+              <p>
+                Utilisez la molette de la souris ou le trackpad pour naviguer de
+                gauche à droite dans l'histoire.
+              </p>
+              <button class="secondary-button">
+                <p>J'ai compris !</p>
+                <svg
+                  class="btn-svg"
+                  width="288"
+                  height="62"
+                  viewBox="0 0 288 62"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="bg-hover"
+                    d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z"
+                    fill="#57280F"
+                  />
+                  <path
+                    d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z"
+                    fill="#"
+                    stroke="#EB7333"
+                    stroke-width="var(--border-size)"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <button class="button close-modal">
+            <div class="item">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 11 11"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0.707031 0.707031L5.27539 5.27539M9.84375 9.84375L5.27539 5.27539M5.27539 5.27539L0.707031 9.84375L9.84375 0.707031"
+                  stroke="#EB7333"
+                  stroke-width="var(--border-size)"
+                />
+              </svg>
+            </div>
+          </button>
+        </div>
+      </div>
+      <div class="next-frame">
+        <button id="toggle-btn" class="button">
           <div class="item">
-            <svg width="16" height="16" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg
+              width="30"
+              height="12"
+              viewBox="0 0 30 12"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path
-                d="M0.707031 0.707031L5.27539 5.27539M9.84375 9.84375L5.27539 5.27539M5.27539 5.27539L0.707031 9.84375L9.84375 0.707031"
-                stroke="#EB7333" stroke-width="var(--border-size)" />
+                d="M29.3351 5.29541L24.0397 10.5908L22.4489 9L25.0285 6.42041H23.7101L18.7443 11.3862L14.2443 6.88623L9.74432 11.3862L5.47723 7.11914L1.48865 10.6392L0 8.95166L5.57391 4.03363L9.74432 8.20459L14.2443 3.70459L18.7443 8.20459L22.7785 4.17041H25.0285L22.4489 1.59082L24.0397 0L29.3351 5.29541Z"
+                fill="white"
+              />
             </svg>
           </div>
         </button>
       </div>
-    </div>
-    <div class="next-frame">
-      <button id="toggle-btn" class="button">
-        <div class="item">
-          <svg width="30" height="12" viewBox="0 0 30 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M29.3351 5.29541L24.0397 10.5908L22.4489 9L25.0285 6.42041H23.7101L18.7443 11.3862L14.2443 6.88623L9.74432 11.3862L5.47723 7.11914L1.48865 10.6392L0 8.95166L5.57391 4.03363L9.74432 8.20459L14.2443 3.70459L18.7443 8.20459L22.7785 4.17041H25.0285L22.4489 1.59082L24.0397 0L29.3351 5.29541Z" fill="white"/>
-          </svg>
-        </div>
-      </button>
-    </div>
-    
-     <div class="langue-modal-overlay">
-          <div class="modal">
-            <div class="modal-content-langue">
-              <!-- <div class="modal-name">
+
+      <div class="langue-modal-overlay">
+        <div class="modal">
+          <div class="modal-content-langue">
+            <!-- <div class="modal-name">
                 <div class="button-primary">
                   <svg role="img" viewBox="0 0 294 50" preserveAspectRatio="xMinYMin meet" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -79,400 +181,766 @@
                   </div>
                 </div>
               </div> -->
-              <h4 class="modal-h1">Choisis ta langue</h4>
-              <div class="lanngue-grid">
-                <button class="secondary-button">
-                  <p>Francais</p>
-                  <svg class="btn-svg" width="288" height="62" viewBox="0 0 288 62" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path class="bg-hover" d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z" fill="#57280F" />
-                    <path d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z" fill="#" stroke="#EB7333" stroke-width="var(--border-size)"/>
-                  </svg>
-                </button>
-                <button class="secondary-button">
-                  <p>English</p>
-                  <svg class="btn-svg" width="288" height="62" viewBox="0 0 288 62" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path class="bg-hover" d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z" fill="#57280F" />
-                    <path d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z" fill="#" stroke="#EB7333" stroke-width="var(--border-size)"/>
-                  </svg>
-                </button>
-                <button class="secondary-button">
-                  <p>ελληνικά</p>
-                  <svg class="btn-svg" width="288" height="62" viewBox="0 0 288 62" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path class="bg-hover" d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z" fill="#57280F" />
-                    <path d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z" fill="#" stroke="#EB7333" stroke-width="var(--border-size)"/>
-                  </svg>
-                </button>
-                <button class="secondary-button">
-                  <p>español</p>
-                  <svg class="btn-svg" width="288" height="62" viewBox="0 0 288 62" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path class="bg-hover" d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z" fill="#57280F" />
-                    <path d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z" fill="#" stroke="#EB7333" stroke-width="var(--border-size)"/>
-                  </svg>
-                </button>
-                <button class="secondary-button">
-                  <p>اللغة العربية</p>
-                  <svg class="btn-svg" width="288" height="62" viewBox="0 0 288 62" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path class="bg-hover" d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z" fill="#57280F" />
-                    <path d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z" fill="#" stroke="#EB7333" stroke-width="var(--border-size)"/>
-                  </svg>
-                </button>
-                <button class="secondary-button">
-                  <p>中國</p>
-                  <svg class="btn-svg" width="288" height="62" viewBox="0 0 288 62" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path class="bg-hover" d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z" fill="#57280F" />
-                    <path d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z" fill="#" stroke="#EB7333" stroke-width="var(--border-size)"/>
-                  </svg>
-                </button>
-               
-              </div>
-            </div>
-            <button class="button close-modal">
-              <div class="item">
-                <svg width="16" height="16" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0.707031 0.707031L5.27539 5.27539M9.84375 9.84375L5.27539 5.27539M5.27539 5.27539L0.707031 9.84375L9.84375 0.707031" stroke="#EB7333" stroke-width="var(--border-size)"/>
+            <h4 class="modal-h1">Choisis ta langue</h4>
+            <div class="lanngue-grid">
+              <button class="secondary-button">
+                <p>Francais</p>
+                <svg
+                  class="btn-svg"
+                  width="288"
+                  height="62"
+                  viewBox="0 0 288 62"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="bg-hover"
+                    d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z"
+                    fill="#57280F"
+                  />
+                  <path
+                    d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z"
+                    fill="#"
+                    stroke="#EB7333"
+                    stroke-width="var(--border-size)"
+                  />
                 </svg>
-              </div>
-            </button>
+              </button>
+              <button class="secondary-button">
+                <p>English</p>
+                <svg
+                  class="btn-svg"
+                  width="288"
+                  height="62"
+                  viewBox="0 0 288 62"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="bg-hover"
+                    d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z"
+                    fill="#57280F"
+                  />
+                  <path
+                    d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z"
+                    fill="#"
+                    stroke="#EB7333"
+                    stroke-width="var(--border-size)"
+                  />
+                </svg>
+              </button>
+              <button class="secondary-button">
+                <p>ελληνικά</p>
+                <svg
+                  class="btn-svg"
+                  width="288"
+                  height="62"
+                  viewBox="0 0 288 62"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="bg-hover"
+                    d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z"
+                    fill="#57280F"
+                  />
+                  <path
+                    d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z"
+                    fill="#"
+                    stroke="#EB7333"
+                    stroke-width="var(--border-size)"
+                  />
+                </svg>
+              </button>
+              <button class="secondary-button">
+                <p>español</p>
+                <svg
+                  class="btn-svg"
+                  width="288"
+                  height="62"
+                  viewBox="0 0 288 62"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="bg-hover"
+                    d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z"
+                    fill="#57280F"
+                  />
+                  <path
+                    d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z"
+                    fill="#"
+                    stroke="#EB7333"
+                    stroke-width="var(--border-size)"
+                  />
+                </svg>
+              </button>
+              <button class="secondary-button">
+                <p>اللغة العربية</p>
+                <svg
+                  class="btn-svg"
+                  width="288"
+                  height="62"
+                  viewBox="0 0 288 62"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="bg-hover"
+                    d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z"
+                    fill="#57280F"
+                  />
+                  <path
+                    d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z"
+                    fill="#"
+                    stroke="#EB7333"
+                    stroke-width="var(--border-size)"
+                  />
+                </svg>
+              </button>
+              <button class="secondary-button">
+                <p>中國</p>
+                <svg
+                  class="btn-svg"
+                  width="288"
+                  height="62"
+                  viewBox="0 0 288 62"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="bg-hover"
+                    d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z"
+                    fill="#57280F"
+                  />
+                  <path
+                    d="M261.263 1L286.688 31L261.263 61H26.7373L1.31055 31L26.7373 1H261.263Z"
+                    fill="#"
+                    stroke="#EB7333"
+                    stroke-width="var(--border-size)"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
+          <button class="button close-modal">
+            <div class="item">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 11 11"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0.707031 0.707031L5.27539 5.27539M9.84375 9.84375L5.27539 5.27539M5.27539 5.27539L0.707031 9.84375L9.84375 0.707031"
+                  stroke="#EB7333"
+                  stroke-width="var(--border-size)"
+                />
+              </svg>
+            </div>
+          </button>
         </div>
-    <nav class="nav-button">
-     
-      <button id="toggle-btn" class="button">
-        <div class="item">
-          <svg id="sound on" class="sound on" width="28" height="28" viewBox="0 0 64 64" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M34.3423 55.0938L16.5386 41.0488H7.51904V22.9521H16.5386L34.3423 8.90625V55.0938ZM56.019 31.0186L56.5728 32.001L56.019 32.9834L48.2554 46.749L44.771 44.7842L51.98 32L44.771 19.2168L48.2554 17.252L56.019 31.0186ZM47.7524 31.0117L48.3149 32L47.7524 32.9893L44.1724 39.2842L42.4341 38.2959L40.6958 37.3066L43.7124 32L40.6958 26.6934L44.1724 24.7168L47.7524 31.0117Z"
-              fill="white" />
-          </svg>
-          <svg id="sound-off" class="sound off" width="28" height="28" viewBox="0 0 64 64" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M34.3315 55.0938L16.5278 41.0488H7.5083V22.9521H16.5278L34.3315 8.90625V55.0938ZM49.314 29.0342L54.7925 23.5557L57.6206 26.3838L52.1421 31.8613L57.9653 37.6846L56.5513 39.0996L55.1372 40.5137L49.314 34.6904L43.2153 40.7891L40.3872 37.9609L46.4858 31.8623L40.6626 26.0391L43.4907 23.2109L49.314 29.0342Z"
-              fill="white" />
-          </svg>
-        </div>
-      </button>
-
-      <a href="./homePage.html">
-        <button class="button">
+      </div>
+      <nav class="nav-button">
+        <button id="toggle-btn" class="button">
           <div class="item">
-            <svg width="22" height="14" viewBox="0 0 22 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg
+              id="sound on"
+              class="sound on"
+              width="28"
+              height="28"
+              viewBox="0 0 64 64"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path
-                d="M10 2H6V4H16V2H12V0H22V2H18V6H12V8H20V12H22V14H16V12H18V10H12V12H14V14H8V12H10V10H4V12H6V14H0V12H2V8H10V6H4V2H0V0H10V2Z"
-                fill="white" />
+                d="M34.3423 55.0938L16.5386 41.0488H7.51904V22.9521H16.5386L34.3423 8.90625V55.0938ZM56.019 31.0186L56.5728 32.001L56.019 32.9834L48.2554 46.749L44.771 44.7842L51.98 32L44.771 19.2168L48.2554 17.252L56.019 31.0186ZM47.7524 31.0117L48.3149 32L47.7524 32.9893L44.1724 39.2842L42.4341 38.2959L40.6958 37.3066L43.7124 32L40.6958 26.6934L44.1724 24.7168L47.7524 31.0117Z"
+                fill="white"
+              />
+            </svg>
+            <svg
+              id="sound-off"
+              class="sound off"
+              width="28"
+              height="28"
+              viewBox="0 0 64 64"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M34.3315 55.0938L16.5278 41.0488H7.5083V22.9521H16.5278L34.3315 8.90625V55.0938ZM49.314 29.0342L54.7925 23.5557L57.6206 26.3838L52.1421 31.8613L57.9653 37.6846L56.5513 39.0996L55.1372 40.5137L49.314 34.6904L43.2153 40.7891L40.3872 37.9609L46.4858 31.8623L40.6626 26.0391L43.4907 23.2109L49.314 29.0342Z"
+                fill="white"
+              />
             </svg>
           </div>
         </button>
-      </a>
-         <div>
-        <button id="langue" class="home-nav langue button">
-          <div class="item">
+
+        <a href="./homePage.html">
+          <button class="button">
+            <div class="item">
+              <svg
+                width="22"
+                height="14"
+                viewBox="0 0 22 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 2H6V4H16V2H12V0H22V2H18V6H12V8H20V12H22V14H16V12H18V10H12V12H14V14H8V12H10V10H4V12H6V14H0V12H2V8H10V6H4V2H0V0H10V2Z"
+                  fill="white"
+                />
+              </svg>
+            </div>
+          </button>
+        </a>
+        <div>
+          <button id="langue" class=" langue button">
+            <div class="item">
+            
+             <svg width="28" height="28" viewBox="0 0 358 358" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M229.474 148.995V207.995L178.378 237.495L127.282 207.995V148.995L178.378 119.495L229.474 148.995ZM148.282 161.119V195.87L178.378 213.246L208.474 195.87V161.119L178.378 143.743L148.282 161.119Z" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M251.378 15.9629L251.432 15.9902L263.557 21.127L264.232 21.3965L279.497 29.0293L276.172 44.916L276.143 45.0537L276.112 45.1914L267.508 83.7188L271.47 87.7744L274.396 90.6992L311.994 81.6943L329.714 77.0537L336.586 94.2354L350.043 127.516L356.568 143.422L342.228 152.982L342.033 153.113L341.835 153.238L308.506 174.397L308.443 179.874V184.204L341.457 204.46L357.098 213.759L335.953 263.604L329.479 279.792L312.184 276.172L312.046 276.143L311.908 276.112L273.378 267.507L269.371 271.423L266.396 274.396L275.402 311.996L280.044 329.716L262.792 336.616L229.581 350.044L213.676 356.57L204.115 342.229L203.984 342.035L203.859 341.837L182.699 308.508L177.054 308.443H172.893L152.637 341.457L143.339 357.098L93.4922 335.953L77.3057 329.479L80.9258 312.184L80.9551 312.046L80.9854 311.908L89.5889 273.38L85.626 269.323L82.7012 266.399L45.1025 275.404L27.2314 280.086L20.4336 262.669L7.05469 229.584L0.529297 213.678L14.8701 204.117L15.0645 203.986L15.2627 203.861L48.5908 182.701L48.6543 177.224V172.895L15.6406 152.639L0 143.341L21.1445 93.4941L27.6191 77.3076L44.9141 80.9277L45.0518 80.957L45.1895 80.9873L83.7178 89.5918L87.5176 85.8779L90.6953 82.7002L81.6904 45.1025L77.0098 27.2314L94.3955 20.4463L127.512 7.05469L143.418 0.529297L152.979 14.8701L153.109 15.0645L153.234 15.2627L174.394 48.5908L179.871 48.6543H184.201L204.456 15.6406L213.755 0L251.378 15.9629ZM135.444 26.499L122.346 31.8027L122.344 31.7998L102.102 39.9814L102.062 39.9971L102.072 40.0381L113.856 89.2393L102.323 100.772L90.252 112.568L40.6123 101.482L40.5703 101.474L40.5547 101.513L35.043 114.524L35.0391 114.523L26.4941 134.662L26.5303 134.684L69.6543 161.142V177.383L69.458 194.328L26.5186 221.59L26.4834 221.613L26.499 221.651L31.8027 234.75L31.7998 234.752L39.9814 254.994L39.9971 255.034L40.0381 255.023L89.2393 243.239L100.604 254.604L112.566 266.846L101.48 316.485L101.472 316.527L101.511 316.543L114.522 322.055L114.521 322.059L134.66 330.604L134.682 330.567L161.14 287.443H177.213L194.326 287.642L221.588 330.581L221.611 330.616L221.649 330.601L234.748 325.297L234.75 325.3L254.993 317.118L255.032 317.103L255.021 317.062L243.237 267.86L254.604 256.492L266.846 244.531L316.485 255.617L316.527 255.626L316.543 255.587L322.055 242.575L322.059 242.576L330.604 222.438L330.567 222.416L287.443 195.958V179.716L287.64 162.771L330.579 135.51L330.614 135.486L330.599 135.448L325.295 122.35L325.298 122.348L317.116 102.104L317.101 102.065L317.06 102.076L267.858 113.86L256.492 102.495L244.531 90.2539L255.617 40.6143L255.626 40.5723L255.622 40.5703L255.583 40.5547L242.575 35.0439L242.576 35.041L242.572 35.0391L222.434 26.4941L222.412 26.5303L195.954 69.6543H179.712L162.768 69.458L135.506 26.5186L135.482 26.4834L135.444 26.499Z" fill="white"/>
+</svg>
+
+            </div>
+          </button>
+        </div>
+        <div class="help-button">
+          <button id="toggle-btn" class=" button">
+            <div class="item">
+              <p>?</p>
+            </div>
+          </button>
+        </div>
+        <!-- <a href="./zeusPage.html">
+          <button class="button ">
+            <div class="item">
+              <svg
+                width="32"
+                height="64"
+                viewBox="0 0 64 64"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_1230_9555)">
+                  <path
+                    d="M33.039 9.63574L27.5586 29.0098H45.8506L21.7793 53.0811L20.9932 52.4775L31.6924 33.9453H17.8672L18.3008 33.1953L32.125 9.25L33.039 9.63574Z"
+                    fill="white"
+                    stroke="white"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1230_9555">
+                    <rect
+                      width="31"
+                      height="45"
+                      fill="white"
+                      transform="translate(17 9)"
+                    />
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+          </button>
+        </a> -->
+      </nav>
+
+      <div class="nav-chapitre-wrapper">
+        <div class="chapitre-name-animation">
+          <div class="button-primary">
+            <svg
+              role="img"
+              viewBox="0 0 294 50"
+              preserveAspectRatio="xMinYMin meet"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M21 1H273L281 9V41L273 49H21L13 40.5V9L21 1Z"
+                fill="var(--color-bg)"
+                stroke="var(--color-primary)"
+                stroke-width="var(--border-size)"
+              ></path>
+
+              <rect
+                x="2"
+                y="25"
+                width="15.5563"
+                height="15.5563"
+                transform="rotate(-45 2 25)"
+                fill="var(--color-bg)"
+                stroke="var(--color-primary)"
+                stroke-width="var(--border-size)"
+              ></rect>
+              <rect
+                x="10"
+                y="25"
+                width="4.24264"
+                height="4.24264"
+                transform="rotate(-45 10 25)"
+                fill="#fff"
+              ></rect>
+              <rect
+                x="270"
+                y="25"
+                width="15.5563"
+                height="15.5563"
+                transform="rotate(-45 270 25)"
+                fill="var(--color-bg)"
+                stroke="var(--color-primary)"
+                stroke-width="var(--border-size)"
+              ></rect>
+              <rect
+                x="278"
+                y="25"
+                width="4.24264"
+                height="4.24264"
+                transform="rotate(-45 278 25)"
+                fill="#fff"
+              ></rect>
+            </svg>
+            <div class="chapitre-name-overflow">
+              <p id="chapitre-name" class="">You selected...</p>
+            </div>
+          </div>
+        </div>
+
+        <nav class="nav-chapitre">
+          <svg
+            class="arrow"
+            height="24"
+            viewBox="0 0 120 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M119.686 8.70312L110.982 17.4072L103.27 9.69434L0 8.70312L103.27 7.71094L110.982 0L119.686 8.70312ZM105.107 8.70312L110.982 14.5781L116.857 8.70312L110.982 2.82812L105.107 8.70312ZM112.793 8.94043L110.765 10.9697L108.735 8.94043L110.765 6.91211L112.793 8.94043Z"
+              fill="#EB7333"
+            />
+          </svg>
+
+          <div class="chapitre">
+            <div class="selected octogone pulse">
+              <p>1</p>
+              <svg
+                viewBox="0 0 89 102"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <!-- <path stroke-width="0" fill="var(--color-bg)" class="oct-bg"
+              d="M86.6631 26.4453V75.5283L44.1562 100.069L1.64941 75.5283V26.4453L44.1562 1.9043L86.6631 26.4453Z" /> -->
+
+                <path
+                  class="oct-stroke"
+                  d="M86.6631 26.4453V75.5283L44.1562 100.069L1.64941 75.5283V26.4453L44.1562 1.9043L86.6631 26.4453Z"
+                  stroke="#EB7333"
+                  stroke-width="2"
+                />
+                <path
+                  stroke-width="0"
+                  fill="var(--color-primary)"
+                  class="oct-bg-pourcentage"
+                  d="M86.6631 26.4453V75.5283L44.1562 100.069L1.64941 75.5283V26.4453L44.1562 1.9043L86.6631 26.4453Z"
+                />
+                <path
+                  class="oct-stroke"
+                  fill="none"
+                  d="M86.6631 26.4453V75.5283L44.1562 100.069L1.64941 75.5283V26.4453L44.1562 1.9043L86.6631 26.4453Z"
+                  stroke="#EB7333"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+            <div class="octogone pulse">
+              <p>2</p>
+              <svg
+                viewBox="0 0 89 102"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="oct-stroke"
+                  d="M86.6631 26.4453V75.5283L44.1562 100.069L1.64941 75.5283V26.4453L44.1562 1.9043L86.6631 26.4453Z"
+                  stroke="#EB7333"
+                  stroke-width="2"
+                />
+                <path
+                  stroke-width="0"
+                  fill="var(--color-primary)"
+                  class="oct-bg-pourcentage"
+                  d="M86.6631 26.4453V75.5283L44.1562 100.069L1.64941 75.5283V26.4453L44.1562 1.9043L86.6631 26.4453Z"
+                />
+                <path
+                  class="oct-stroke"
+                  fill="none"
+                  d="M86.6631 26.4453V75.5283L44.1562 100.069L1.64941 75.5283V26.4453L44.1562 1.9043L86.6631 26.4453Z"
+                  stroke="#EB7333"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <svg
+            class="arrow"
+            height="24"
+            viewBox="0 0 120 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 8.70312L8.70312 17.4072L16.416 9.69434L119.686 8.70312L16.416 7.71094L8.70312 0L0 8.70312ZM14.5781 8.70312L8.70312 14.5781L2.82812 8.70312L8.70312 2.82812L14.5781 8.70312ZM6.89258 8.94043L8.9209 10.9697L10.9502 8.94043L8.9209 6.91211L6.89258 8.94043Z"
+              fill="#EB7333"
+            />
+          </svg>
+        </nav>
+      </div>
+    </section>
+
+    <div class="illustration-list">
+      <div class="meandre-wrapper">
+        <div class="meandre"></div>
+      </div>
+
+      <div class="all-chapitre">
+        <!-- CHAPITRE 1 -->
+        <div class="chapitre-frame">
+          <div class="text-overflow">
+            <h1 class="chapitre-1 chapitre-title">
+              L'enfant de <br />
+              la prophétie
+            </h1>
+          </div>
+          <div class="chapitre-img">
+            <div class="baby-star">
+              <img
+                class="star"
+                src="./public/img/Zeus/Chapitre-1/chapitre-frame/Star.svg"
+                alt=""
+              />
+              <img
+                class="baby"
+                src="./public/img/Zeus/Chapitre-1/chapitre-frame/Baby.svg"
+                alt=""
+              />
+            </div>
+            <div class="hand">
+              <img
+                class="rightHand"
+                src="./public/img/Zeus/Chapitre-1/chapitre-frame/RightHand.svg"
+                alt=""
+              />
+              <img
+                class="leftHand"
+                src="./public/img/Zeus/Chapitre-1/chapitre-frame/LeftHand.svg"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="frame-space">
+          <div class="frame frame-texte right">
             <p>
-              L
+              On m'a raconté que mes grands-parents,
+              <button id="Gaia" class="text-modal">Gaïa</button> et
+              <button id="Ouranos" class="text-modal">Ouranos</button>, avaient
+              créé les <button id="Titans" class="text-modal">Titans</button>.
+              <br /><br />
+              Un jour, il a décidé que son père était de trop et l'a renversé
+              pour prendre sa place. Voilà. Ambiance familiale sympa, hein ?
             </p>
           </div>
-        </button>
-       
-      </div>
-        <div class="help-button ">
-      <button id="toggle-btn" class="home-nav button">
-        <div class="item">
-          <p>
-            ?
-          </p>
         </div>
-      </button>
-    </div>
-      <a href="./zeusPage.html">
-        <button class="button home-nav ">
-          <div class="item">
-            <svg width="32" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g clip-path="url(#clip0_1230_9555)">
+
+        <div id="gaia-talk" class="frame illustration">
+          <div id="gaia-interaction" class="interaction-bouton">
+            <div class="spin-wrapper">
+              <svg
+                class="spin"
+                xmlns="http://www.w3.org/2000/svg"
+                width="76"
+                height="76"
+                viewBox="0 0 76 88"
+                fill="none"
+              >
                 <path
-                  d="M33.039 9.63574L27.5586 29.0098H45.8506L21.7793 53.0811L20.9932 52.4775L31.6924 33.9453H17.8672L18.3008 33.1953L32.125 9.25L33.039 9.63574Z"
-                  fill="white" stroke="white" />
-              </g>
-              <defs>
-                <clipPath id="clip0_1230_9555">
-                  <rect width="31" height="45" fill="white" transform="translate(17 9)" />
-                </clipPath>
-              </defs>
+                  d="M73.9688 22.6514V64.4912L37.7344 85.4111L1.5 64.4912V22.6514L37.7344 1.73145L73.9688 22.6514Z"
+                  stroke="#FFFF9E"
+                  stroke-width="3"
+                />
+              </svg>
+            </div>
+            <div class="spin-wrapper">
+              <svg
+                class="spin"
+                xmlns="http://www.w3.org/2000/svg"
+                width="52"
+                height="52"
+                viewBox="0 0 76 88"
+                fill="none"
+              >
+                <path
+                  d="M73.9688 22.6514V64.4912L37.7344 85.4111L1.5 64.4912V22.6514L37.7344 1.73145L73.9688 22.6514Z"
+                  stroke="#FFFF9E"
+                  stroke-width="5"
+                />
+              </svg>
+            </div>
+            <div class="spin-wrapper">
+              <svg
+                class="spin"
+                xmlns="http://www.w3.org/2000/svg"
+                width="28"
+                height="28"
+                viewBox="0 0 76 88"
+                fill="none"
+              >
+                <path
+                  d="M73.9688 22.6514V64.4912L37.7344 85.4111L1.5 64.4912V22.6514L37.7344 1.73145L73.9688 22.6514Z"
+                  stroke="#FFFF9E"
+                  stroke-width="7"
+                />
+              </svg>
+            </div>
+            <div class="spin-wrapper">
+              <svg
+                class="spin"
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                viewBox="0 0 76 88"
+                fill="none"
+              >
+                <path
+                  d="M73.9688 22.6514V64.4912L37.7344 85.4111L1.5 64.4912V22.6514L37.7344 1.73145L73.9688 22.6514Z"
+                  stroke="#FFFF9E"
+                  stroke-width="12"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <div id="gaia-talk-bulle" class="bulle bulle-gai-talk">
+            <p>Un de tes enfants sera plus fort que toi.</p>
+            <svg
+              width="278"
+              height="129"
+              viewBox="0 0 278 129"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <mask id="path-1-inside-1_1120_8132" fill="white">
+                <path
+                  d="M273.492 0C275.701 0 277.492 1.79086 277.492 4V125C277.492 127.209 275.701 129 273.492 129H4C1.79087 129 0 127.209 0 125V4C1.03083e-06 1.79086 1.79086 0 4 0H273.492Z"
+                />
+              </mask>
+              <path
+                d="M273.492 0C275.701 0 277.492 1.79086 277.492 4V125C277.492 127.209 275.701 129 273.492 129H4C1.79087 129 0 127.209 0 125V4C1.03083e-06 1.79086 1.79086 0 4 0H273.492Z"
+                fill="#190901"
+              />
+              <path
+                d="M277.492 125L279.492 125V125H277.492ZM4 129L3.99999 131H4V129ZM0 4L-2 4V4H0ZM273.492 0V2C274.597 2 275.492 2.89543 275.492 4H277.492H279.492C279.492 0.686292 276.806 -2 273.492 -2V0ZM277.492 4H275.492V125H277.492H279.492V4H277.492ZM277.492 125L275.492 125C275.492 126.105 274.597 127 273.492 127V129V131C276.806 131 279.492 128.314 279.492 125L277.492 125ZM273.492 129V127H4V129V131H273.492V129ZM4 129L4.00001 127C2.89543 127 2 126.105 2 125H0H-2C-2 128.314 0.686303 131 3.99999 131L4 129ZM0 125H2V4H0H-2V125H0ZM0 4L2 4C2 2.89543 2.89543 2 4 2V0V-2C0.686291 -2 -2 0.686293 -2 4L0 4ZM4 0V2H273.492V0V-2H4V0Z"
+                fill="#EB7333"
+                mask="url(#path-1-inside-1_1120_8132)"
+              />
             </svg>
           </div>
-        </button>
-      </a>
-    </nav>
-    
-    <div class="nav-chapitre-wrapper">
-      <div class="chapitre-name-animation">
-        <div class="button-primary">
-          <svg role="img" viewBox="0 0 294 50" preserveAspectRatio="xMinYMin meet" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path d="M21 1H273L281 9V41L273 49H21L13 40.5V9L21 1Z" fill="var(--color-bg)" stroke="var(--color-primary)"
-              stroke-width="var(--border-size)"></path>
-           
-            <rect x="2" y="25" width="15.5563" height="15.5563" transform="rotate(-45 2 25)" fill="var(--color-bg)"
-              stroke="var(--color-primary)" stroke-width="var(--border-size)"></rect>
-            <rect x="10" y="25" width="4.24264" height="4.24264" transform="rotate(-45 10 25)" fill="#fff"></rect>
-            <rect x="270" y="25" width="15.5563" height="15.5563" transform="rotate(-45 270 25)" fill="var(--color-bg)"
-              stroke="var(--color-primary)" stroke-width="var(--border-size)"></rect>
-            <rect x="278" y="25" width="4.24264" height="4.24264" transform="rotate(-45 278 25)" fill="#fff"></rect>
-          </svg>
-          <div class="chapitre-name-overflow">
-            <p id="chapitre-name" class="">You selected...</p>
+          <div class="gaia-talk-to-chronos">
+            <img
+              class="cronos-agenouiller"
+              src="./public/img/Zeus/Chapitre-1/cronos-agenouiller.svg"
+              alt=""
+            />
+            <img
+              class="gaia-talk"
+              src="./public/img/Zeus/Chapitre-1/Gaia-talk.svg"
+              alt=""
+            />
+          </div>
+          <div class="gaia-text-parallax text-parallax frame frame-texte">
+            <p>
+              Mais juste après ça,
+              <button id="Gaia" class="text-modal">Gaïa</button> lui a lancé la
+              phrase qui a gâché toutes ses nuits :
+            </p>
+          </div>
+        </div>
+
+        <div class="frame-space">
+          <div class="frame frame-texte right">
+            <p>
+              Et là, croyez-moi, mon père n'a plus pensé à rien d'autre. Pas aux
+              bisous, pas aux anniversaires… Juste à sa future défaite.
+            </p>
+          </div>
+        </div>
+
+        <div class="frame illustration">
+          <img
+            class="CronosQuiMange"
+            src="./public/img/Zeus/Chapitre-1/CronosQuiMange.svg"
+            alt=""
+          />
+          <div class="text-parallax frame frame-texte">
+            <p>
+              Mes frères et sœurs naissaient, et mon père les faisait
+              disparaître aussitôt. Un, deux, trois, quatre, cinq. Ma mère
+              <button id="Rhea" class="text-modal">Rhéa</button> pleurait, mais
+              se taisait.
+            </p>
+          </div>
+        </div>
+
+        <div id="gaia-bebe-frame" class="frame illustration">
+          <div id="gaia-bebe-talk" class="bulle bulle-bebe-talk">
+            <p>Plus jamais.</p>
+            <svg
+              width="278"
+              height="129"
+              viewBox="0 0 278 129"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <mask id="path-1-inside-1_1120_8132" fill="white">
+                <path
+                  d="M273.492 0C275.701 0 277.492 1.79086 277.492 4V125C277.492 127.209 275.701 129 273.492 129H4C1.79087 129 0 127.209 0 125V4C1.03083e-06 1.79086 1.79086 0 4 0H273.492Z"
+                />
+              </mask>
+              <path
+                d="M273.492 0C275.701 0 277.492 1.79086 277.492 4V125C277.492 127.209 275.701 129 273.492 129H4C1.79087 129 0 127.209 0 125V4C1.03083e-06 1.79086 1.79086 0 4 0H273.492Z"
+                fill="#190901"
+              />
+              <path
+                d="M277.492 125L279.492 125V125H277.492ZM4 129L3.99999 131H4V129ZM0 4L-2 4V4H0ZM273.492 0V2C274.597 2 275.492 2.89543 275.492 4H277.492H279.492C279.492 0.686292 276.806 -2 273.492 -2V0ZM277.492 4H275.492V125H277.492H279.492V4H277.492ZM277.492 125L275.492 125C275.492 126.105 274.597 127 273.492 127V129V131C276.806 131 279.492 128.314 279.492 125L277.492 125ZM273.492 129V127H4V129V131H273.492V129ZM4 129L4.00001 127C2.89543 127 2 126.105 2 125H0H-2C-2 128.314 0.686303 131 3.99999 131L4 129ZM0 125H2V4H0H-2V125H0ZM0 4L2 4C2 2.89543 2.89543 2 4 2V0V-2C0.686291 -2 -2 0.686293 -2 4L0 4ZM4 0V2H273.492V0V-2H4V0Z"
+                fill="#EB7333"
+                mask="url(#path-1-inside-1_1120_8132)"
+              />
+            </svg>
+          </div>
+          <div id="gaia-bebe-interaction" class="interaction-bouton">
+            <div class="spin-wrapper">
+              <svg
+                class="spin"
+                xmlns="http://www.w3.org/2000/svg"
+                width="76"
+                height="76"
+                viewBox="0 0 76 88"
+                fill="none"
+              >
+                <path
+                  d="M73.9688 22.6514V64.4912L37.7344 85.4111L1.5 64.4912V22.6514L37.7344 1.73145L73.9688 22.6514Z"
+                  stroke="#FFFF9E"
+                  stroke-width="3"
+                />
+              </svg>
+            </div>
+            <div class="spin-wrapper">
+              <svg
+                class="spin"
+                xmlns="http://www.w3.org/2000/svg"
+                width="52"
+                height="52"
+                viewBox="0 0 76 88"
+                fill="none"
+              >
+                <path
+                  d="M73.9688 22.6514V64.4912L37.7344 85.4111L1.5 64.4912V22.6514L37.7344 1.73145L73.9688 22.6514Z"
+                  stroke="#FFFF9E"
+                  stroke-width="5"
+                />
+              </svg>
+            </div>
+            <div class="spin-wrapper">
+              <svg
+                class="spin"
+                xmlns="http://www.w3.org/2000/svg"
+                width="28"
+                height="28"
+                viewBox="0 0 76 88"
+                fill="none"
+              >
+                <path
+                  d="M73.9688 22.6514V64.4912L37.7344 85.4111L1.5 64.4912V22.6514L37.7344 1.73145L73.9688 22.6514Z"
+                  stroke="#FFFF9E"
+                  stroke-width="7"
+                />
+              </svg>
+            </div>
+            <div class="spin-wrapper">
+              <svg
+                class="spin"
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                viewBox="0 0 76 88"
+                fill="none"
+              >
+                <path
+                  d="M73.9688 22.6514V64.4912L37.7344 85.4111L1.5 64.4912V22.6514L37.7344 1.73145L73.9688 22.6514Z"
+                  stroke="#FFFF9E"
+                  stroke-width="12"
+                />
+              </svg>
+            </div>
+          </div>
+          <img src="./public/img/Zeus/Chapitre-1/Rhéa-avec-zeus.png" alt="" />
+          <div class="text-parallax frame frame-texte">
+            <p>Mais quand je suis arrivé, elle a dit :</p>
+          </div>
+        </div>
+
+        <div class="frame illustration">
+          <img
+            class="Rhea-donne-zeus-Amalthé"
+            src="./public/img/Zeus/Chapitre-1/Rhea-donne-zeus-Amalthé.svg"
+            alt=""
+          />
+          <div class="text-parallax frame frame-texte">
+            <p>
+              Je suis né dans une grotte sombre de
+              <button id="Crete" class="text-modal">Crète</button>. Avec une
+              chèvre sacrée pour nounou,
+              <button id="Amalthee" class="text-modal">Amalthée</button>, et des
+              guerriers, les
+              <button id="Curete" class="text-modal">Curètes</button>, qui
+              frappaient leurs boucliers pour couvrir mes pleurs.
+            </p>
+          </div>
+        </div>
+
+        <div class="frame-space">
+          <div class="frame frame-texte right">
+            <p>
+              Pendant ce temps, ma mère tendait à
+              <button id="Cronos" class="text-modal">Cronos</button> une pierre
+              enveloppée dans un linge pour lui faire croire que c'était moi. Il
+              y crut. Grâce à cette ruse, je pus grandir en sécurité.
+            </p>
           </div>
         </div>
       </div>
-      
-      <nav class="nav-chapitre">
-        <svg class="arrow" height="24" viewBox="0 0 120 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M119.686 8.70312L110.982 17.4072L103.27 9.69434L0 8.70312L103.27 7.71094L110.982 0L119.686 8.70312ZM105.107 8.70312L110.982 14.5781L116.857 8.70312L110.982 2.82812L105.107 8.70312ZM112.793 8.94043L110.765 10.9697L108.735 8.94043L110.765 6.91211L112.793 8.94043Z"
-            fill="#EB7333" />
-        </svg>
 
-        <div class="chapitre">
-          <div class="selected octogone pulse">
-            <p>1</p>
-            <svg viewBox="0 0 89 102" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <!-- <path stroke-width="0" fill="var(--color-bg)" class="oct-bg"
-              d="M86.6631 26.4453V75.5283L44.1562 100.069L1.64941 75.5283V26.4453L44.1562 1.9043L86.6631 26.4453Z" /> -->
-              
-              <path class="oct-stroke"
-              d="M86.6631 26.4453V75.5283L44.1562 100.069L1.64941 75.5283V26.4453L44.1562 1.9043L86.6631 26.4453Z"
-              stroke="#EB7333" stroke-width="2" />
-              <path stroke-width="0" fill="var(--color-primary)" class="oct-bg-pourcentage"
-              d="M86.6631 26.4453V75.5283L44.1562 100.069L1.64941 75.5283V26.4453L44.1562 1.9043L86.6631 26.4453Z" />
-              <path class="oct-stroke" fill="none"
-              d="M86.6631 26.4453V75.5283L44.1562 100.069L1.64941 75.5283V26.4453L44.1562 1.9043L86.6631 26.4453Z"
-              stroke="#EB7333" stroke-width="2" />
-            </svg>
-          </div>
-          <div class="octogone pulse">
-            <p>2</p>
-            <svg viewBox="0 0 89 102" fill="none" xmlns="http://www.w3.org/2000/svg">
-             <path class="oct-stroke"
-              d="M86.6631 26.4453V75.5283L44.1562 100.069L1.64941 75.5283V26.4453L44.1562 1.9043L86.6631 26.4453Z"
-              stroke="#EB7333" stroke-width="2" />
-              <path stroke-width="0" fill="var(--color-primary)" class="oct-bg-pourcentage"
-              d="M86.6631 26.4453V75.5283L44.1562 100.069L1.64941 75.5283V26.4453L44.1562 1.9043L86.6631 26.4453Z" />
-              <path class="oct-stroke" fill="none"
-              d="M86.6631 26.4453V75.5283L44.1562 100.069L1.64941 75.5283V26.4453L44.1562 1.9043L86.6631 26.4453Z"
-              stroke="#EB7333" stroke-width="2" />
-            </svg>
-          </div>
-        </div>
-        
-        <svg class="arrow" height="24" viewBox="0 0 120 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M0 8.70312L8.70312 17.4072L16.416 9.69434L119.686 8.70312L16.416 7.71094L8.70312 0L0 8.70312ZM14.5781 8.70312L8.70312 14.5781L2.82812 8.70312L8.70312 2.82812L14.5781 8.70312ZM6.89258 8.94043L8.9209 10.9697L10.9502 8.94043L8.9209 6.91211L6.89258 8.94043Z"
-            fill="#EB7333" />
-        </svg>
-      </nav>
-    </div>
-  </section>
-
-  <div class="illustration-list">
-    <div class="meandre-wrapper">
-      <div class="meandre"></div>
-    </div>
-    
-    <div class="all-chapitre">
-      <!-- CHAPITRE 1 -->
-      <div class="chapitre-frame">
-        <div class="text-overflow">
-          <h1 class="chapitre-title">
-            L'enfant de <br />
-            la prophétie
+      <!-- CHAPITRE 2 -->
+      <div class="all-chapitre">
+        <div class="chapitre-frame">
+          <h1 class="chapitre-title chapitre-2 text-animate">
+            Le choc des Titans
           </h1>
+          <img
+            class="zeusTitan"
+            src="./public/img/Zeus/Chapitre-2/Zeus-Confrontation.svg"
+            alt=""
+          />
+          <img
+            class="cronosTitan"
+            src="./public/img/Zeus/Chapitre-2/Chronos-Confrontation.svg"
+            alt=""
+          />
         </div>
-        <div class="chapitre-img">
-          <div class="baby-star">
-            <img class="star" src="./public/img/Zeus/Chapitre-1/chapitre-frame/Star.svg" alt="">
-            <img class="baby" src="./public/img/Zeus/Chapitre-1/chapitre-frame/Baby.svg" alt="">
-          </div>
-          <div class="hand">
-            <img class="rightHand" src="./public/img/Zeus/Chapitre-1/chapitre-frame/RightHand.svg" alt="">
-            <img class="leftHand" src="./public/img/Zeus/Chapitre-1/chapitre-frame/LeftHand.svg" alt="">
-          </div>
-        </div>
-      </div>
 
-      <div class="frame-space">
-        <div class="frame frame-texte right">
-          <p>
-            On m'a raconté que mes grands-parents, 
-            <button id="Gaia" class="text-modal">Gaïa</button> et 
-            <button id="Ouranos" class="text-modal">Ouranos</button>, 
-            avaient créé les <button id="Titans" class="text-modal">Titans</button>.
-            <br><br>
-            Un jour, il a décidé que son père était de trop et l'a renversé pour prendre sa place. Voilà. Ambiance
-            familiale sympa, hein ?
-          </p>
-        </div>
-      </div>
-
-      <div id="gaia-talk" class="frame illustration">
-        <div id="gaia-interaction" class="interaction-bouton">
-          <div class="spin-wrapper">
-            <svg class="spin" xmlns="http://www.w3.org/2000/svg" width="76" height="76" viewBox="0 0 76 88" fill="none">
-              <path d="M73.9688 22.6514V64.4912L37.7344 85.4111L1.5 64.4912V22.6514L37.7344 1.73145L73.9688 22.6514Z"
-                stroke="#FFFF9E" stroke-width="3" />
-            </svg>
-          </div>
-          <div class="spin-wrapper">
-            <svg class="spin" xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 76 88" fill="none">
-              <path d="M73.9688 22.6514V64.4912L37.7344 85.4111L1.5 64.4912V22.6514L37.7344 1.73145L73.9688 22.6514Z"
-                stroke="#FFFF9E" stroke-width="5" />
-            </svg>
-          </div>
-          <div class="spin-wrapper">
-            <svg class="spin" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 76 88" fill="none">
-              <path d="M73.9688 22.6514V64.4912L37.7344 85.4111L1.5 64.4912V22.6514L37.7344 1.73145L73.9688 22.6514Z"
-                stroke="#FFFF9E" stroke-width="7" />
-            </svg>
-          </div>
-          <div class="spin-wrapper">
-            <svg class="spin" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 76 88" fill="none">
-              <path d="M73.9688 22.6514V64.4912L37.7344 85.4111L1.5 64.4912V22.6514L37.7344 1.73145L73.9688 22.6514Z"
-                stroke="#FFFF9E" stroke-width="12" />
-            </svg>
-          </div>
-        </div>
-       
-        <div id="gaia-talk-bulle" class="bulle-gai-talk">
-          <p>
-            Un de tes enfants sera plus fort que toi.
-          </p>
-          <svg width="278" height="129" viewBox="0 0 278 129" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <mask id="path-1-inside-1_1120_8132" fill="white">
-              <path
-                d="M273.492 0C275.701 0 277.492 1.79086 277.492 4V125C277.492 127.209 275.701 129 273.492 129H4C1.79087 129 0 127.209 0 125V4C1.03083e-06 1.79086 1.79086 0 4 0H273.492Z" />
-            </mask>
-            <path
-              d="M273.492 0C275.701 0 277.492 1.79086 277.492 4V125C277.492 127.209 275.701 129 273.492 129H4C1.79087 129 0 127.209 0 125V4C1.03083e-06 1.79086 1.79086 0 4 0H273.492Z"
-              fill="#190901" />
-            <path
-              d="M277.492 125L279.492 125V125H277.492ZM4 129L3.99999 131H4V129ZM0 4L-2 4V4H0ZM273.492 0V2C274.597 2 275.492 2.89543 275.492 4H277.492H279.492C279.492 0.686292 276.806 -2 273.492 -2V0ZM277.492 4H275.492V125H277.492H279.492V4H277.492ZM277.492 125L275.492 125C275.492 126.105 274.597 127 273.492 127V129V131C276.806 131 279.492 128.314 279.492 125L277.492 125ZM273.492 129V127H4V129V131H273.492V129ZM4 129L4.00001 127C2.89543 127 2 126.105 2 125H0H-2C-2 128.314 0.686303 131 3.99999 131L4 129ZM0 125H2V4H0H-2V125H0ZM0 4L2 4C2 2.89543 2.89543 2 4 2V0V-2C0.686291 -2 -2 0.686293 -2 4L0 4ZM4 0V2H273.492V0V-2H4V0Z"
-              fill="#EB7333" mask="url(#path-1-inside-1_1120_8132)" />
-          </svg>
-        </div>
-       <div class="gaia-talk-to-chronos">
-        <img class="cronos-agenouiller"  src="./public/img/Zeus/Chapitre-1/cronos-agenouiller.svg" alt="">
-        <img class="gaia-talk" src="./public/img/Zeus/Chapitre-1/Gaia-talk.svg" alt="">
-       </div>
-        <div class="gaia-text-parallax text-parallax frame frame-texte">
-          <p>
-            Mais juste après ça, <button id="Gaia" class="text-modal">Gaïa</button> lui a lancé la phrase qui a gâché toutes ses nuits :
-          </p>
-        </div>
-      </div>
-      
-      <div class="frame-space">
-        <div class="frame frame-texte right">
-          <p>
-            Et là, croyez-moi, mon père n'a plus pensé à rien d'autre. Pas aux bisous, pas aux anniversaires… Juste à sa
-            future défaite.
-          </p>
-        </div>
-      </div>
-
-      <div class="frame illustration">
-        <img class="CronosQuiMange" src="./public/img/Zeus/Chapitre-1/CronosQuiMange.svg" alt="" />
-        <div class="text-parallax frame frame-texte">
-          <p>
-            Mes frères et sœurs naissaient, et mon père les faisait disparaître aussitôt. Un, deux, trois, quatre, cinq.
-            Ma mère <button id="Rhea" class="text-modal">Rhéa</button> pleurait, mais se taisait.
-          </p>
-        </div>
-      </div>
-
-      <div  id="gaia-bebe-frame" class="frame illustration">
-         <div id="gaia-bebe-talk" class="bulle">
-          <p>
-          Plus jamais. 
-          </p>
-          <svg width="278" height="129" viewBox="0 0 278 129" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <mask id="path-1-inside-1_1120_8132" fill="white">
-              <path
-                d="M273.492 0C275.701 0 277.492 1.79086 277.492 4V125C277.492 127.209 275.701 129 273.492 129H4C1.79087 129 0 127.209 0 125V4C1.03083e-06 1.79086 1.79086 0 4 0H273.492Z" />
-            </mask>
-            <path
-              d="M273.492 0C275.701 0 277.492 1.79086 277.492 4V125C277.492 127.209 275.701 129 273.492 129H4C1.79087 129 0 127.209 0 125V4C1.03083e-06 1.79086 1.79086 0 4 0H273.492Z"
-              fill="#190901" />
-            <path
-              d="M277.492 125L279.492 125V125H277.492ZM4 129L3.99999 131H4V129ZM0 4L-2 4V4H0ZM273.492 0V2C274.597 2 275.492 2.89543 275.492 4H277.492H279.492C279.492 0.686292 276.806 -2 273.492 -2V0ZM277.492 4H275.492V125H277.492H279.492V4H277.492ZM277.492 125L275.492 125C275.492 126.105 274.597 127 273.492 127V129V131C276.806 131 279.492 128.314 279.492 125L277.492 125ZM273.492 129V127H4V129V131H273.492V129ZM4 129L4.00001 127C2.89543 127 2 126.105 2 125H0H-2C-2 128.314 0.686303 131 3.99999 131L4 129ZM0 125H2V4H0H-2V125H0ZM0 4L2 4C2 2.89543 2.89543 2 4 2V0V-2C0.686291 -2 -2 0.686293 -2 4L0 4ZM4 0V2H273.492V0V-2H4V0Z"
-              fill="#EB7333" mask="url(#path-1-inside-1_1120_8132)" />
-          </svg>
-        </div>
-         <div id="gaia-bebe-interaction" class="interaction-bouton">
-          <div class="spin-wrapper">
-            <svg class="spin" xmlns="http://www.w3.org/2000/svg" width="76" height="76" viewBox="0 0 76 88" fill="none">
-              <path d="M73.9688 22.6514V64.4912L37.7344 85.4111L1.5 64.4912V22.6514L37.7344 1.73145L73.9688 22.6514Z"
-                stroke="#FFFF9E" stroke-width="3" />
-            </svg>
-          </div>
-          <div class="spin-wrapper">
-            <svg class="spin" xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 76 88" fill="none">
-              <path d="M73.9688 22.6514V64.4912L37.7344 85.4111L1.5 64.4912V22.6514L37.7344 1.73145L73.9688 22.6514Z"
-                stroke="#FFFF9E" stroke-width="5" />
-            </svg>
-          </div>
-          <div class="spin-wrapper">
-            <svg class="spin" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 76 88" fill="none">
-              <path d="M73.9688 22.6514V64.4912L37.7344 85.4111L1.5 64.4912V22.6514L37.7344 1.73145L73.9688 22.6514Z"
-                stroke="#FFFF9E" stroke-width="7" />
-            </svg>
-          </div>
-          <div class="spin-wrapper">
-            <svg class="spin" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 76 88" fill="none">
-              <path d="M73.9688 22.6514V64.4912L37.7344 85.4111L1.5 64.4912V22.6514L37.7344 1.73145L73.9688 22.6514Z"
-                stroke="#FFFF9E" stroke-width="12" />
-            </svg>
-          </div>
-        </div>
-        <img src="./public/img/Zeus/Chapitre-1/Rhéa-avec-zeus.png" alt="" />
-        <div class="text-parallax frame frame-texte">
-          <p>
-            Mais quand je suis arrivé, elle a dit : 
-          </p>
-        </div>
-      </div>
-
-      <div class="frame illustration">
-        <img class="Rhea-donne-zeus-Amalthé" src="./public/img/Zeus/Chapitre-1/Rhea-donne-zeus-Amalthé.svg" alt="" />
-        <div class="text-parallax frame frame-texte">
-          <p>
-            Je suis né dans une grotte sombre de <button id="Crete" class="text-modal">Crète</button>. 
-            Avec une chèvre sacrée pour nounou, <button id="Amalthee" class="text-modal">Amalthée</button>, 
-            et des guerriers, les <button id="Curete" class="text-modal">Curètes</button>, 
-            qui frappaient leurs boucliers pour couvrir mes pleurs.
-          </p>
-        </div>
-      </div>
-      
-      <div class="frame-space">
-        <div class="frame frame-texte right">
-          <p>
-            Pendant ce temps, ma mère tendait à
-            <button id="Cronos" class="text-modal">Cronos</button> une pierre
-            enveloppée dans un linge pour lui faire croire que c'était moi. Il
-            y crut. Grâce à cette ruse, je pus grandir en sécurité.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- CHAPITRE 2 -->
-    <div class="all-chapitre">
-      <div class="chapitre-frame">
-        <h1 class="chapitre-title text-animate">Le choc des Titans</h1>
-        <img class="zeusTitan" src="./public/img/Zeus/Chapitre-2/Zeus-Confrontation.svg" alt="">
-        <img class="cronosTitan" src="./public/img/Zeus/Chapitre-2/Chronos-Confrontation.svg" alt="">
-      </div>
-
-      <!-- <div class="frame-space">
+        <!-- <div class="frame-space">
         <div class="frame frame-texte right">
           <p>
             En grandissant, je me suis dit : « Ok, <button id="Zeus" class="text-modal">Zeus</button>, il est temps d'agir. »<br /><br />
@@ -480,162 +948,184 @@
           </p>
         </div>
       </div> -->
-  <div class="frame illustration">
-       <img src="./public/img/Zeus/Chapitre-2/Zeus-pret.svg" alt="">
-        <div class="text-parallax frame frame-texte">
-           <p>
-            En grandissant, je me suis dit : « Ok, <button id="Zeus" class="text-modal">Zeus</button>, il est temps d'agir. »<br /><br />
-            J'ai retrouvé <button id="Metis" class="text-modal">Métis</button>, l'océanide la plus rusée de toutes.
-          </p>
-        </div>
-      </div>
-
-      <div class="frame-space">
-        <div class="frame frame-texte right">
-          <p>
-            <button id="Metis" class="text-modal">Métis</button> m'a donné une potion qui ferait vomir un géant.
-            Je me suis déguisé en serviteur et je l'ai servie à <button id="Cronos" class="text-modal">Cronos</button>.
-          </p>
-        </div>
-      </div>
         <div class="frame illustration">
-       <img src="./public/img/Zeus/Chapitre-2/CronosQuiBoit.svg" alt="">
-        <div class="text-parallax frame frame-texte">
-          <p>
-            Il recracha mes frères et sœurs : <button id="Hestia" class="text-modal">Hestia</button>, 
-            <button id="Demeter" class="text-modal">Déméter</button>, 
-            <button id="Hera" class="text-modal">Héra</button>, 
-            <button id="Hades" class="text-modal">Hadès</button> et 
-            <button id="Poseidon" class="text-modal">Poséidon</button>.<br /><br />
-            Mais nous n'avions pas encore la force de vaincre les <button id="Titans" class="text-modal">Titans</button>.
-          </p>
-        </div>
-      
-      </div>
-    
-
-      <div class="frame illustration-fit">
-        <img src="./public/img/Zeus/Chapitre-2/Zeus-tartare.png" alt="" />
+          <img src="./public/img/Zeus/Chapitre-2/Zeus-pret.svg" alt="" />
           <div class="text-parallax frame frame-texte">
-           <p>
-            Sur les conseils de <button id="Gaia" class="text-modal">Gaïa</button>, 
-            je descendis dans le <button id="Tartare" class="text-modal">Tartare</button>, 
-            là où <button id="Cronos" class="text-modal">Cronos</button> avait enfermé les 
-            <button id="Cyclopes" class="text-modal">Cyclopes</button> et les 
-            <button id="Hecatonchires" class="text-modal">Hécatonchires</button>.<br /><br />
-            Je brisai leurs chaînes, et en échange...
-          </p>
+            <p>
+              En grandissant, je me suis dit : « Ok,
+              <button id="Zeus" class="text-modal">Zeus</button>, il est temps
+              d'agir. »<br /><br />
+              J'ai retrouvé
+              <button id="Metis" class="text-modal">Métis</button>, l'océanide
+              la plus rusée de toutes.
+            </p>
+          </div>
         </div>
-      </div>
 
-      <div id="tartare-door" class="frame illustration-fit">
-        <img src="./public/img/Zeus/Chapitre-2/Porte-tartare.png" alt="" />
-      </div>
         <div class="frame-space">
-        <div class="frame frame-texte right">
-          <p>
-         Je brisai leurs chaînes, et en échange...
-          </p>
+          <div class="frame frame-texte right">
+            <p>
+              <button id="Metis" class="text-modal">Métis</button> m'a donné une
+              potion qui ferait vomir un géant. Je me suis déguisé en serviteur
+              et je l'ai servie à
+              <button id="Cronos" class="text-modal">Cronos</button>.
+            </p>
+          </div>
         </div>
-      </div>
-
-      <div class="frame illustration">
-        <div class="text-parallax zindex2 poseidon-text frame frame-texte">
-       <p>
-ils nous ont offert trois armes incroyables :
-
-ma foudre,
-
-le trident,
-
-le casque d’ombre.          </p>
-    </div>
-        <img class="fire" src="./public/img/Zeus/Chapitre-2/fire.svg" alt="" />
-        <img class="zindex" src="./public/img/Zeus/Chapitre-2/Cyclope-forgeron.svg" alt="" />
-      </div>
-         <div class="frame-space">
-        <div class="frame frame-texte right">
-          <p>
-         Quand la bataille prit fin, les Titans étaient à genoux.
-<br><br>
-On ne voulait plus qu’ils puissent refaire du mal à qui que ce soit.
- <br>Alors on les a enchaînés et envoyés tout au fond du Tartare
-          </p>
+        <div class="frame illustration">
+          <img src="./public/img/Zeus/Chapitre-2/CronosQuiBoit.svg" alt="" />
+          <div class="text-parallax frame frame-texte">
+            <p>
+              Il recracha mes frères et sœurs :
+              <button id="Hestia" class="text-modal">Hestia</button>,
+              <button id="Demeter" class="text-modal">Déméter</button>,
+              <button id="Hera" class="text-modal">Héra</button>,
+              <button id="Hades" class="text-modal">Hadès</button> et
+              <button id="Poseidon" class="text-modal">Poséidon</button
+              >.<br /><br />
+              Mais nous n'avions pas encore la force de vaincre les
+              <button id="Titans" class="text-modal">Titans</button>.
+            </p>
+          </div>
         </div>
-      </div>
-      <div id="ZeusQuiLanceEclairIllustration" class="frame illustration-large">
-        <img class="zindex ZeusQuiLanceEclair" src="./public/img/Zeus/Chapitre-2/ZeusQuiLanceEclair.svg" alt="" />
-        <img class="eclair" src="./public/img/Zeus/Chapitre-2/Eclair.svg" alt="" />
+
+        <div class="frame illustration-fit">
+          <img src="./public/img/Zeus/Chapitre-2/Zeus-tartare.png" alt="" />
+          <div class="text-parallax frame frame-texte">
+            <p>
+              Sur les conseils de
+              <button id="Gaia" class="text-modal">Gaïa</button>, je descendis
+              dans le <button id="Tartare" class="text-modal">Tartare</button>,
+              là où <button id="Cronos" class="text-modal">Cronos</button> avait
+              enfermé les
+              <button id="Cyclopes" class="text-modal">Cyclopes</button> et les
+              <button id="Hecatonchires" class="text-modal">
+                Hécatonchires</button
+              >.<br /><br />
+              Je brisai leurs chaînes, et en échange...
+            </p>
+          </div>
+        </div>
+
+        <div id="tartare-door" class="frame illustration-fit">
+          <img src="./public/img/Zeus/Chapitre-2/Porte-tartare.png" alt="" />
+        </div>
+        <div class="frame-space">
+          <div class="frame frame-texte right">
+            <p>Je brisai leurs chaînes, et en échange...</p>
+          </div>
+        </div>
+
+        <div id="fireparaalx" class="frame illustration">
           <div class="text-parallax zindex2 frame frame-texte">
-           <p>
-          Je lançais mes éclairs,
-          </p>
+            <p>
+              ils nous ont offert trois armes incroyables : ma foudre, le
+              trident, le casque d’ombre.
+            </p>
+          </div>
+          <img
+            class="fire paralximg"
+            src="./public/img/Zeus/Chapitre-2/fire.svg"
+            alt=""
+          />
+          <img
+            class="zindex"
+            src="./public/img/Zeus/Chapitre-2/Cyclope-forgeron.svg"
+            alt=""
+          />
         </div>
-      </div>
-      <div id="poseidon-vague" class="frame illustration-large">
-        <div class="text-parallax zindex2 frame frame-texte">
-           <p>
-        dfgdfgdfgdg
-          </p>
+        <div id="entre-fire-eclair" class="frame-space">
+          <div class="frame frame-texte right">
+            <p>
+             On est remontés et on a fait face à Cronos.
+La bataille a duré des jours, peut-être des années je ne sais même plus.
+            </p>
+          </div>
         </div>
-        <div>
-          <img class=" poseidon" src="./public/img/Zeus/Chapitre-2/poseidon-vague.svg" alt="" />
+        <div
+          id="ZeusQuiLanceEclairIllustration"
+          class="frame illustration-large"
+        >
+          <img
+            class="zindex ZeusQuiLanceEclair"
+            src="./public/img/Zeus/Chapitre-2/ZeusQuiLanceEclair.svg"
+            alt=""
+          />
+          <img
+            class="eclair paralximg"
+            src="./public/img/Zeus/Chapitre-2/Eclair.svg"
+            alt=""
+          />
+          <div class="text-parallax zindex2 frame frame-texte">
+            <p>Je lançais mes éclairs,</p>
+          </div>
         </div>
-        <img class="vague" src="./public/img/Zeus/Chapitre-2/vague-poseidon.svg" alt="" />
-        
-      </div>
-       <div class="frame-space">
-        <div class="frame frame-texte right">
-          <p>
-         Quand la bataille prit fin, les Titans étaient à genoux.
-<br><br>
-On ne voulait plus qu’ils puissent refaire du mal à qui que ce soit.
- <br>Alors on les a enchaînés et envoyés tout au fond du Tartare
-          </p>
+        <div id="poseidon-vague" class="frame illustration-large">
+          <div class="text-parallax zindex2 frame frame-texte">
+            <p>Poséidon faisait trembler la mer,</p>
+          </div>
+          <div>
+            <img
+              class="poseidon"
+              src="./public/img/Zeus/Chapitre-2/poseidon-vague.svg"
+              alt=""
+            />
+          </div>
+          <img
+            class="vague paralximg"
+            src="./public/img/Zeus/Chapitre-2/vague-poseidon.svg"
+            alt=""
+          />
         </div>
-      </div>
-      <div class="frame illustration-fit">
-        <img src="./public/img/Zeus/Chapitre-2/cronos-enfermer.svg" alt="" />
-      </div>
-      
-     
-      
-      <div class="frame-space">
-        <div class="frame frame-texte right">
-          <p>
-           Une fois la bataille terminée, on s’est rassemblés tous les trois pour décider qui allait diriger quoi. <br><br>
-On a choisi un tirage, simple et sans triche on avait eu assez de conflits comme ça.
-          </p>
+        <div class="frame-space">
+          <div class="frame frame-texte right">
+            <p>
+              Quand la bataille prit fin, les Titans étaient à genoux.
+              <br /><br />
+              On ne voulait plus qu’ils puissent refaire du mal à qui que ce
+              soit.
+              <br />Alors on les a enchaînés et envoyés tout au fond du Tartare
+            </p>
+          </div>
         </div>
-      </div>
-      
-     
-      
-      <div class="frame-space">
-        <div class="frame frame-texte right">
-          <p>
-         Poséidon a hérité de la Mer, <br>
-Hadès des Enfers,<br>
- et moi, du Ciel.
-          </p>
+        <div class="frame illustration-fit">
+          <img src="./public/img/Zeus/Chapitre-2/cronos-enfermer.svg" alt="" />
+        </div>
+
+        <div class="frame-space">
+          <div class="frame frame-texte right">
+            <p>
+              Une fois la bataille terminée, on s’est rassemblés tous les trois
+              pour décider qui allait diriger quoi. <br /><br />
+              On a choisi un tirage, simple et sans triche on avait eu assez de
+              conflits comme ça.
+            </p>
+          </div>
+        </div>
+
+        <div class="frame-space">
+          <div class="frame frame-texte right">
+            <p>
+              Poséidon a hérité de la Mer, <br />
+              Hadès des Enfers,<br />
+              et moi, du Ciel.
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
-<script src="translatation.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="translatation.js"></script>
 
-  <script src="chapitre-navigation.js"></script>
-  <script type="module" src="modal-system.js"></script>
-  <script src="script.js"></script>
-  <script src="ss.js"></script>
-  <script src="zeusElementAnimation.js"></script>
-  <script src="langue-modal.js"></script>
-  <script src="next-frame-navigation.js"></script> <!-- NOUVEAU -->
-
-</body>
-
+    <script src="chapitre-navigation.js"></script>
+    <script type="module" src="modal-system.js"></script>
+    <!-- <script src="script.js"></script> -->
+    <script src="zeusElementAnimation.js"></script>
+    <script src="langue-modal.js"></script>
+    <script src="next-frame-navigation.js"></script>
+    <!-- NOUVEAU -->
+  </body>
 </html>
