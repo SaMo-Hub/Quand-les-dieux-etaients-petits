@@ -173,7 +173,7 @@
   localStorage.setItem('selectedLanguage', selectedLanguage);
 
   exitAnimation().then(() => {
-    window.location.href = '../Home/homePage.html';
+    window.location.href = './pages/Home/homePage.html';
            
           
         });
