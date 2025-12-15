@@ -6,13 +6,13 @@
 const musicConfig = {
   // Même musique pour index, homePage et chapitre1
   ambient: {
-    path: './public/music/NujabesLuv.mp3',
+    path: '/public/music/NujabesLuv.mp3',
     name: 'Musique Ambient',
     pages: ['index.html', '', 'homePage.html', 'zeusPage.html#chapitre1']
   },
   // Musique pour chapitre 2
   battle: {
-    path: './public/music/ChocDesTitan.mp3',
+    path: '/public/music/ChocDesTitan.mp3',
     name: 'Musique Bataille',
     pages: ['zeusPage.html#chapitre2']
   }

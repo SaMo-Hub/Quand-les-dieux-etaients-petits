@@ -18,7 +18,7 @@ const treeData = {
     { name: "Poseidon" },
     { name: "Demeter" },
     { name: "Hera" },
-    { name: "Zeus", link: "./zeusPage.html" },
+    { name: "Zeus", link: "../Zeus/zeusPage.html" },
     { name: "Metis" },
     { name: "Dione" },
     { name: "Atlas" }
