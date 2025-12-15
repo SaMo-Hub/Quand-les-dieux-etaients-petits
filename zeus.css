@@ -640,9 +640,19 @@ bottom: 89px;
 
 
 #gaia-bebe-interaction{
-  top: 0%;
+  /* top: 22%;
   right: 28%;
-  scale: 1.5;
+
+  transform: scale(3); */
+  /* scale: ; */
+}
+
+.gaia-bebe-div{
+  top: 20%;
+  right: 28%;
+position: absolute;
+  transform: scale(1.7);
+  /* scale: ; */
 }
 #gaia-interaction{
   top: 27%;

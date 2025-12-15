@@ -1,4 +1,4 @@
-// Configuration du scroll horizontal avec GSAP + Interactions bulles
+// Configuration du scroll horizontal avec GSAP + Fix Firefox
 gsap.registerPlugin(ScrollTrigger);
 
 // ========================================
@@ -57,6 +57,52 @@ function getChapitrePositions() {
 }
 
 // ========================================
+// FIX FIREFOX - Empêcher le scroll vertical excessif
+// ========================================
+function fixFirefoxScroll() {
+  // Détecter Firefox
+  const isFirefox = typeof InstallTrigger !== 'undefined';
+  
+  if (isFirefox) {
+    console.log('🦊 Firefox détecté - Application des correctifs');
+    
+    const scrollAmount = getScrollAmount();
+    const maxScroll = scrollAmount;
+    
+    // Empêcher le scroll au-delà de la limite
+    window.addEventListener('wheel', (e) => {
+      const currentScroll = window.scrollY;
+      
+      // Si on est proche de la fin et qu'on essaie de scroller vers le bas
+      if (currentScroll >= maxScroll - 50 && e.deltaY > 0) {
+        e.preventDefault();
+        e.stopPropagation();
+        // Forcer le scroll à la position max
+        if (currentScroll > maxScroll) {
+          window.scrollTo(0, maxScroll);
+        }
+      }
+    }, { passive: false, capture: true });
+    
+    // Surveillance du scroll
+    let scrollCheckInterval = setInterval(() => {
+      const currentScroll = window.scrollY;
+      
+      // Si on dépasse la limite, ramener à la limite
+      if (currentScroll > maxScroll + 10) {
+        window.scrollTo(0, maxScroll);
+        console.log('🛑 Scroll corrigé:', currentScroll, '→', maxScroll);
+      }
+    }, 100);
+    
+    // Nettoyer l'intervalle si on change de page
+    window.addEventListener('beforeunload', () => {
+      clearInterval(scrollCheckInterval);
+    });
+  }
+}
+
+// ========================================
 // CALCUL DES POSITIONS DES INTERACTIONS
 // ========================================
 function getInteractionPosition(frame) {
@@ -64,8 +110,6 @@ function getInteractionPosition(frame) {
   
   const listRect = illustrationList.getBoundingClientRect();
   const frameRect = frame.getBoundingClientRect();
-  
-  // Position absolue de la frame dans le scroll horizontal
   const frameLeft = frameRect.left - listRect.left;
   
   return frameLeft;
@@ -107,16 +151,11 @@ function setupInteractions() {
     
     point.interaction.style.cursor = 'pointer';
     
-    // Au clic : afficher la bulle et cacher l'interaction
     point.interaction.addEventListener('click', () => {
       console.log(`✨ Interaction cliquée: ${key}`);
-      
       point.revealed = true;
-      
-      // Afficher la bulle
       showBulle(point.bulle);
       
-      // Animation de disparition de l'icône d'interaction
       gsap.to(point.interaction, {
         scale: 0,
         opacity: 0,
@@ -129,7 +168,6 @@ function setupInteractions() {
       });
     });
     
-    // Animation de pulsation pour attirer l'attention
     gsap.to(point.interaction, {
       scale: 1.1,
       duration: 1,
@@ -150,21 +188,16 @@ function setupAutoReveal() {
     const position = getInteractionPosition(point.frame);
     if (position === null) return;
     
-    // Créer un trigger qui détecte quand on dépasse la frame
     ScrollTrigger.create({
       trigger: document.body,
-      start: () => `top top-=${position + 500}`, // 500px après la frame
+      start: () => `top top-=${position + 500}`,
       id: `auto-reveal-${key}`,
       onEnter: () => {
-        // Si on dépasse sans avoir cliqué, révéler automatiquement
         if (!point.revealed) {
           console.log(`🔄 Auto-révélation: ${key}`);
           point.revealed = true;
-          
-          // Afficher la bulle
           showBulle(point.bulle);
           
-          // Cacher l'interaction
           if (point.interaction) {
             gsap.to(point.interaction, {
               opacity: 0,
@@ -193,7 +226,6 @@ function init() {
   
   console.log(`📏 Scroll amount: ${scrollAmount}px`);
   
-  // Cacher les bulles au départ
   Object.values(interactionPoints).forEach(point => {
     if (point.bulle) {
       gsap.set(point.bulle, { opacity: 0, scale: 0.8, y: 20 });
@@ -202,6 +234,7 @@ function init() {
 }
 
 init();
+
 // ========================================
 // ANIMATION PRINCIPALE DU SCROLL HORIZONTAL
 // ========================================
@@ -430,57 +463,27 @@ function setupTextParallax() {
 // ========================================
 function setupEffectsParallax() {
   const effects = [
-    {
-      selector: '.fire',
-      speed: 0.5, // Plus lent que le scroll
-      moveX: -300,
-    },
-    {
-      selector: '.collonnes',
-      speed: 0.5, // Plus lent que le scroll
-      moveX: -300,
-    },
-    {
-      selector: '.grotte',
-      speed: 0.5, // Plus lent que le scroll
-      moveX: -400,
-    },
-    {
-      selector: '.eclair',
-      speed: 0.4, // Vitesse moyenne
-      moveX: -800,
-    },
-    {
-      selector: '.poseidon',
-      speed: 0.4, // Légèrement plus lent
-      moveX: -600,
-    }
+    { selector: '.fire', speed: 0.5, moveX: -300 },
+    { selector: '.collonnes', speed: 0.5, moveX: -300 },
+    { selector: '.grotte', speed: 0.5, moveX: -400 },
+    { selector: '.eclair', speed: 0.4, moveX: -800 },
+    { selector: '.poseidon', speed: 0.4, moveX: -600 }
   ];
 
   effects.forEach(effect => {
     const element = document.querySelector(effect.selector);
     if (!element) return;
 
-    // Trouver le parent .illustration ou .illustration-large
     const parentFrame = element.closest('.illustration, .illustration-large, .frame');
     if (!parentFrame) return;
 
-    // Calculer la position de la frame
     const listRect = illustrationList.getBoundingClientRect();
     const frameRect = parentFrame.getBoundingClientRect();
     const frameLeft = frameRect.left - listRect.left;
     
-    // Zone de début et fin du parallaxe
     const startPos = Math.max(0, frameLeft - window.innerWidth);
     const endPos = frameLeft + frameRect.width;
 
-    console.log(`🎨 Parallaxe ${effect.selector}:`, {
-      start: startPos,
-      end: endPos,
-      moveX: effect.moveX,
-    });
-
-    // Créer l'animation parallaxe
     gsap.to(element, {
       x: effect.moveX,
       ease: "none",
@@ -495,11 +498,6 @@ function setupEffectsParallax() {
     });
   });
 }
-
-// ========================================
-// PARALLAXE SPÉCIAL POUR POSEIDON + VAGUE
-// ========================================
-
 
 // ========================================
 // GESTION DU RESIZE
@@ -528,7 +526,10 @@ window.addEventListener('load', () => {
     setupInteractions();
     setupAutoReveal();
     
+    // APPLIQUER LE FIX FIREFOX
+    fixFirefoxScroll();
+    
     ScrollTrigger.refresh();
-    console.log('✅ Page chargée - Système d\'interactions et parallaxe actifs');
+    console.log('✅ Page chargée - Système complet activé');
   });
 });

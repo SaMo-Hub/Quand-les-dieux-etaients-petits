@@ -82,6 +82,7 @@ height: 76px;
   animation: rotate 3s linear infinite;
   transform-origin: center;
     transition: opacity 0.3s ease; /* durée et style du fade */
+  display: block;
 
 }
 
@@ -410,7 +411,10 @@ mix-blend-mode: difference;
 }
 
 /* Hover → fond glisse depuis la droite */
+.secondary-button.selected .bg-hover{
 
+  clip-path: inset(0 0 0 0); /* montre tout le fond */
+}
 
 
 .button-primary p {
@@ -755,3 +759,11 @@ body{
 }
 
 
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+}
+::-moz-selection {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+}

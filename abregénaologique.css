@@ -10,7 +10,9 @@ margin-top: 120px;
     overflow: hidden;
       /* overflow-x: auto; */
     cursor: url('./public/img/icon/cursor-grab.svg') 16 16, grab;
-
+  user-select: none;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; 
     position: relative;
     opacity: 0;
 }
@@ -78,7 +80,8 @@ margin-top: 120px;
 }
 
 .abre-button p {
-   
+     margin-top: 2.5px;
+
     color: var(--color-primary);
     font-family: var(--font-title);
     font-size: 0.9em;

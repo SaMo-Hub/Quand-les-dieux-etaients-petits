@@ -77,10 +77,13 @@ z-index: 4;
 
   
 }
-
+.langue-butt{
+  opacity: 0;
+}
 #enter-site{
   scale: 3;
   top: 25%;
+  opacity: 0;
 }
 .chapitre{
   display: flex;
@@ -175,14 +178,14 @@ html::-webkit-scrollbar {
 
 .Intro{
   /* height: 70%; */
-  width: 100%;
+  width: 2000px;
   position: absolute;
-  top: -15%;
+  top: -20%;
 }
 
 .selected-langue{
   position: absolute;
-  bottom: 6%;
+  bottom: 10%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -192,4 +195,13 @@ html::-webkit-scrollbar {
 h2{
   font-family: var(--font-title);
   font-weight: 100;
+  font-size: 32px
+}
+
+/* Styles pour les boutons de langue */
+
+
+/* Animation du bouton d'interaction */
+#enter-site {
+  transition: all 0.3s ease-out;
 }
