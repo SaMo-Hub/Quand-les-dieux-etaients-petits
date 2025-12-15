@@ -178,14 +178,14 @@ html::-webkit-scrollbar {
 
 .Intro{
   /* height: 70%; */
-  width: 2000px;
+  width: 1800px;
   position: absolute;
   top: -20%;
 }
 
 .selected-langue{
   position: absolute;
-  bottom: 10%;
+  bottom: 8%;
   display: flex;
   flex-direction: column;
   justify-content: center;
