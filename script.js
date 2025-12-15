@@ -28,17 +28,17 @@ if (svgs.length > 0) {
 
 
 
-// function checkScreenSize() {
-//   console.log(window.innerWidth);
-//   const modal = document.querySelector(".screen-small");
+function checkScreenSize() {
+  console.log(window.innerWidth);
+  const modal = document.querySelector(".screen-small");
 
-//   if (window.innerWidth < 900) {
+  if (window.innerWidth < 900) {
     
-//     modal.style.display = "flex"; // ou block selon ton design
-//   } else {
-//     modal.style.display = "none";
-//   }
-// }
+    modal.style.display = "flex"; // ou block selon ton design
+  } else {
+    modal.style.display = "none";
+  }
+}
 
-// checkScreenSize();
-// window.addEventListener("resize", checkScreenSize);
+checkScreenSize();
+window.addEventListener("resize", checkScreenSize);

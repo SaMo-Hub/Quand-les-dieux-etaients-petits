@@ -533,30 +533,34 @@ body.scroll-blocked::after {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
+      font-size: 22px;
+
+  
 }
 
 .bulle-gai-talk{
-  top: 30%;
+  top: 20%;
+  right: 38%;
+  z-index: 2;
+
+
 }
 .bulle-bebe-talk{
-  top: 10%;
-  right: 7%;
+  top: 0%;
+  right: 0%;
 }
 .bulle svg {
+  position: relative;
 
-  position: absolute;
 }
 
 .bulle p {
-
-  position: relative;
+  position: absolute;
+top: 30%;
   z-index: 1;
 }
 
-.bulle svg {
-
-  position: absolute;
-}
 .chapitre-img {
   position: absolute;
   display: flex;
@@ -631,6 +635,10 @@ bottom: 89px;
 
 .text-parallax{
   position: absolute;
+  z-index: 2;
+}
+
+.text-parallax p{
   z-index: 2;
 }
 
