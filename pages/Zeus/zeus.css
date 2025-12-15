@@ -37,7 +37,7 @@ a {
   all: unset;
   -webkit-appearance: none;
   appearance: none;
-      cursor: url('./public/img/icon/cursor-pointer.svg') 16 16, pointer;
+      cursor: url('../public/img/icon/cursor-pointer.svg') 16 16, pointer;
 ;
 }
 
@@ -126,6 +126,7 @@ h1 {
   position: relative;
   height: 100%;
 }
+
 
 .illustration-list {
   display: flex;
@@ -454,8 +455,8 @@ body.scroll-blocked::after {
   color: var(--color-primary);
   font-family: inherit;
   font-size: inherit;
-      cursor: url('./public/img/icon/cursor-pointer.svg') 16 16, pointer;
-;
+      cursor: url('../../public/img/icon/cursor-pointer.svg') 16 16, grab;
+
   transition: all 0.3s ease;
   padding: 0 4px;
   position: relative;

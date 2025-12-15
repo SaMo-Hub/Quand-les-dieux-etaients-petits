@@ -149,7 +149,8 @@ function setupInteractions() {
   Object.entries(interactionPoints).forEach(([key, point]) => {
     if (!point.interaction || !point.bulle) return;
     
-    point.interaction.style.cursor = 'pointer';
+point.interaction.style.cursor =
+  "url('/public/img/icon/cursor-pointer.svg') 16 16, pointer";
     
     point.interaction.addEventListener('click', () => {
       console.log(`✨ Interaction cliquée: ${key}`);
@@ -387,7 +388,7 @@ function updateActiveChapitre(index) {
 // ========================================
 function setupOctogoneNavigation() {
   octogones.forEach((octogone, index) => {
-    octogone.style.cursor = 'pointer';
+    octogone.style.cursor =   "url('/public/img/icon/cursor-pointer.svg') 16 16, pointer";
     octogone.addEventListener('click', () => {
       if (isAnimating || index === currentChapitreIndex) return;
 

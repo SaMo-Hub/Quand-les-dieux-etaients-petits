@@ -2,13 +2,13 @@
 @font-face {
   font-family: archides;
   /* set name */
-  src: url("./public/font/archides.otf");
+  src: url("../public/font/archides.otf");
   /* url of the font */
 }
 @font-face {
   font-family: spartacus;
   /* set name */
-  src: url("./public/font/spartacus.otf");
+  src: url("../public/font/spartacus.otf");
   /* url of the font */
 }
 
@@ -28,8 +28,6 @@
   /* ===== FONTS ===== */
   --font-primary: "futura-100-greek-book";
   --font-title: Archides;
-  --font-title-greek :
-  --font-mono: "JetBrains Mono", "Fira Code", monospace;
 
   --border-size: 2px;
 }
@@ -115,7 +113,7 @@ height: 76px;
   transform: rotate(45deg);
   color: white;
   background: var(--color-bg);
-      cursor: url('./public/img/icon/cursor-pointer.svg') 16 16, pointer;
+      cursor: url('../public/img/icon/cursor-pointer.svg') 16 16, pointer;
 ;
   position: relative;
   overflow: hidden;
@@ -182,7 +180,7 @@ button .item {
   justify-content: center;
   z-index: 20;
   height: 76px;
-      cursor: url('./public/img/icon/cursor-pointer.svg') 16 16, pointer;
+      cursor: url('../public/img/icon/cursor-pointer.svg') 16 16, pointer;
 ;
   transition: transform 0.3s ease;
 }
@@ -291,6 +289,8 @@ scale: 0;
   align-items: center;
   height: 40px;
   /* position: relative; */
+        cursor: url('../../public/img/icon/cursor-pointer.svg') 16 16, pointer;
+
 }
 
 .octogone.selected {
@@ -305,6 +305,7 @@ scale: 0;
   justify-content: center;
   align-items: center;
   height: 80px;
+      cursor: url('../../public/img/icon/cursor-pointer.svg') 16 16, pointer;
 
   /* position: relative; */
 }
@@ -549,7 +550,7 @@ mix-blend-mode: difference;
   padding: 12px 30px;
   border: none;
   border-radius: 8px;
-      cursor: url('./public/img/icon/cursor-pointer.svg') 16 16, pointer;
+      cursor: url('../public/img/icon/cursor-pointer.svg') 16 16, pointer;
 ;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(235, 115, 51, 0.3);
@@ -588,7 +589,7 @@ mix-blend-mode: difference;
 
 /* ===== BOUTON FERMER MODAL ===== */
 .close-modal {
-      cursor: url('./public/img/icon/cursor-pointer.svg') 16 16, pointer;
+      cursor: url('../public/img/icon/cursor-pointer.svg') 16 16, pointer;
 ;
   transition: all 0.3s ease;
   transform: scale(0);
@@ -754,7 +755,7 @@ bottom: 89px;
 }
 
 body{
-    cursor: url('./public/img/icon/cursor-normal.svg') 16 16, grab;
+    cursor: url('../public/img/icon/cursor-normal.svg') 16 16, grab;
 
 }
 
